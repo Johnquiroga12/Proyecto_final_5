@@ -1,11 +1,19 @@
 body {
-    background: rgb(rgb(208, 10, 10), rgb(0, 192, 0), blue);
-    background: linear-gradient(to right, #0e9cb9, #0e9cb9);
-}
-
+    background: linear-gradient(rgb(80, 170, 255), rgb(94, 230, 105));
+    min-height: 100vh;
+    box-sizing: border-box;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+  }
 .bg {
-    
-   background-image: url('https://depor.com/resizer/-ff-6d9vg7CILcQh-WvejY7_3lQ=/1200x1200/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/6FUBT6XQXNHHNFOMCHIT7I34NA.jpg');
-    background-position: center center;
+   background-position: center center;
     text-align: center;
+}
+.row{
+  background: linear-gradient(rgb(4, 52, 97), rgb(239, 245, 240));
+    
 }

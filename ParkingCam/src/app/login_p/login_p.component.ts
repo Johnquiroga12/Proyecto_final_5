@@ -5,8 +5,11 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './login_p.component.html',
   styleUrls: ['./login_p.component.css']
 })
+
 export class Login_pComponent implements OnInit {
 
+  user:any;
+  password:any;
   constructor() { }
 
   ngOnInit() {

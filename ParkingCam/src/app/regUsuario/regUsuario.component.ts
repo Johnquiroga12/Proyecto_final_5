@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RegusuService } from '../Services/regusu.service';
-import { Registro } from '../Services/Registro';
+import { Registro } from '../Services/class/Registro';
 import Swal from 'sweetalert2'
 import { Router } from '@angular/router';
 @Component({
@@ -17,11 +17,12 @@ export class RegUsuarioComponent implements OnInit {
   ngOnInit() {
 
   }
+  
   public create(): void {
     this.registroserve.create(this.registro).subscribe(
       response => {
-               this.router.navigate(['/login'])
-        Swal.fire('llamta guardado',` usuario ${this.registro.nombre} guardado con exito`, 'success');
+        Swal.fire('El ususario se a guardado',` usuario ${this.registro.nombre} guardado con exito`, 'success');
+        this.router.navigate(['/login'])
       }
 
     )

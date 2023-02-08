@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from "rxjs";
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { map } from 'rxjs/operators';
-import { Registro } from './Registro';
+import { Registro } from './class/Registro';
 @Injectable( 
     {
         providedIn: 'root'

@@ -1,6 +1,6 @@
-
+<app-heder></app-heder>
+<body>  
 <form   ngNativeValidate (ngSubmit)="create()">
-
 <section class="form-register">
     <input class="controls" type="text" [(ngModel)]="registro.nombre" name="nombres"  id="nombres" placeholder="Ingrese su Nombre">    
     <input class="controls" type="text" [(ngModel)]="registro.apellido" name="apellidos" id="apellidos" placeholder="Ingrese su Apellido">
@@ -11,6 +11,5 @@
     <input class="botons" type="submit" value="Registrar">
     <p><a href="/login">¿Ya tengo Cuenta?</a></p>
   </section>
-  }
-
 </form>
+</body>
