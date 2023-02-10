@@ -1,37 +1,68 @@
 <app-pag_prin_bienvenida></app-pag_prin_bienvenida>
 <body>
-  <div class="div-titulo">
-      <h1>CRUD </h1>
-  </div>
-  
-  <div class="contenedor">
+    <div class="div-titulo">
+        <h1>REGISTRO DE PERSONA </h1>
+    </div>
+    <div class="contenedor">
+        <div class="div-formulario">
+            <h2>Formulario</h2>
+            <form (ngSubmit)="guar()" action="#" id="formulario">
+                <input type="text" [(ngModel)]="persona.nombre" name="nombre" id="nombre"
+                    placeholder="Ingresa un nombre">
+                <input type="text" [(ngModel)]="persona.apellido" name="apellido" id="apellido  "
+                    placeholder="Ingrese su apellido">
+                <input type="text" [(ngModel)]="persona.cedula" name="cedula" id="cedula "
+                    placeholder="Ingrese su cedula">
+                <input type="text" [(ngModel)]="persona.correo" name="correo" id="correo"
+                    placeholder="Ingrese su correo">
+                <select id="genero"  name="tipo" [(ngModel)]="persona.tipo">
+                    <option value="" disabled selected>Selecciona un tipo</option>
+                    <option value="Guardia">Guardia</option>
+                    <option value="Profesor">Profesor</option>
+                    <option value="Estudiante">Estudiante</option>
+                </select>
+                <button type="submit" id="btnAgregar" class="btnAgregar"> Guardar</button>
+            </form>
+        </div>
+        <div class="div-listado">
+            <h2>Listado de Persona  {{sumatotal}}</h2>
+            
+            
+            <div class="div-per">
 
-      <div class="div-formulario">
-          <h2>Formulario</h2>
+                <table id="miTabla" class="table" [scrollLeft]="true">
+                    <thead>
+                        <tr>
+                            <th scope="col">Cedula </th>
+                            <th scope="col">Nombre </th>
+                            <th scope="col">Apellido</th>
+                            <th scope="col">Correo</th>
+                            <th scope="col">Tipo</th>
+                            <th scope="col">Editar</th>
+                            <th scope="col">Eliminar</th>
 
-          <form action="#" id="formulario">
-              <input type="text" id="nombre" placeholder="Ingresa un nombre">
-              <input type="text" id="apellido  " placeholder="Ingrese su apellido">
-              <input type="text" id="cedula " placeholder="Ingrese su cedula">
-              <input type="text" id="correo" placeholder="Ingrese su correo">
-              <select>
-                <option selected="selected">Seleccione el tipo </option>
-                <option >Betis</option>
-                <option>FC. Barcelona</option>
-                <option>Real Madrid</option>
-                <option>Zaragoza</option>
-              </select>
-              <button type="submit" id="btnAgregar">Agregar</button>
-          </form>
-      </div>
-
-      <div class="div-listado">
-          <h2>Listado Empleados</h2>
-          <div class="div-empleados">
-              
-          </div>
-      </div>
-
-  </div>
-  <script src="./app.js"></script>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let per of perso">
+                            <td>{{per.cedula}}</td>
+                            <td>{{per.nombre}}</td>
+                            <td>{{per.apellido}}</td>
+                            <td>{{per.correo}}</td>
+                            <td>{{per.tipo}}</td>
+                            <td>
+                                <button type="button" id="editarBoton" name="button"(click)="cargar(per)" 
+                                    class="btn-editar">editar</button>
+                            </td>
+                            <td>
+                                <button type="button" name="button" (click)="eliminar(per)"
+                                    class="btn-eliminar">eliminar</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+               
+            </div>
+        </div>
+    </div>
 </body>
