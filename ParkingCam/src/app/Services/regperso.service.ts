@@ -13,6 +13,7 @@ export class RegpersoService {
   private guardardatos: string = 'http://localhost:8080/apiox/per/crear';
   private editardatos: string =  'http://localhost:8080/apiox/per/update';
   private eliminardatos: string = 'http://localhost:8080/apiox/per/delete';
+  private buscar: string = 'http://localhost:8080/apiox/per/buscar';
   
   private httpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' })
 

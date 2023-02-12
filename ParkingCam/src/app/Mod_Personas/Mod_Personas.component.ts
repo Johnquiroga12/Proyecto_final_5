@@ -10,7 +10,7 @@ import { Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./Mod_Personas.component.css']
 })
 export class Mod_PersonasComponent implements OnInit {
-
+buscar='';
 sumatotal=0;
   persona = new Persona();
   perso: Persona[] = [];

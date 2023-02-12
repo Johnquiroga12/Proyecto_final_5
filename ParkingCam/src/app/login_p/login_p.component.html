@@ -14,21 +14,21 @@
               <h2 class="fw-bold text-center py-5"> PARKING CAM </h2>
 
               <!--login-->
-              <form action="#">
+              <form action="#" ngNativeValidate (ngSubmit)="login()">
                   <div class="mb-4">
-                      <label for="email" class="form-label "> Coreo electronico </label>
-                      <input type="email" class="form-control" name="email">-
+                      <label for="email" class="form-label  "> Coreo electronico </label>
+                      <input type="email" class="form-control" [(ngModel)]="datos.correo" id="correo" name="correo">-
                   </div>
                   <div class="mb-4">
                       <label for="contraseña" class="form-label "> contraseña </label>
-                      <input type="password" class="form-control" name="password">
+                      <input type="password" class="form-control" [(ngModel)]="datos.contrasenia" id="contrasenia" name="contrasenia">
                   </div>
                   <div class="mb-4">
                       <input type="checkbox" name="connected" class="form-check-input">
                       <label for="connected" class="form-check-label">mantenerme conectado</label>
                   </div>
                   <div class="d-grid">
-                      <button type="submit"  class="btn btn-primary"> Iniciar Sesión </button>
+                      <button type="submit"  class="btn btn-primary" > Iniciar Sesión </button>
                   </div>
                   <div class="d-my-3">
                       <span> No tienes cuenta? <a href="/regusu">Registrarte </a></span>

@@ -11,6 +11,7 @@ import { InicioComponent } from './inicio/inicio.component';
 import { HederComponent } from './header/heder.component';
 import { Pag_prin_bienvenidaComponent } from './pag_prin_bienvenida/pag_prin_bienvenida.component';
 import { Mod_PersonasComponent } from './Mod_Personas/Mod_Personas.component';
+import { SearchPipe } from './Services/class/search.pipe';
 @NgModule({
   declarations: [						
     AppComponent,
@@ -19,7 +20,8 @@ import { Mod_PersonasComponent } from './Mod_Personas/Mod_Personas.component';
       InicioComponent,
       HederComponent,
       Pag_prin_bienvenidaComponent,
-      Mod_PersonasComponent
+      Mod_PersonasComponent,
+      SearchPipe
    ],
   imports: [
     BrowserModule,

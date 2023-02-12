@@ -26,7 +26,10 @@
         </div>
         <div class="div-listado">
             <h2>Listado de Persona  {{sumatotal}}</h2>
-            
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" name="codigo" 
+                        placeholder="buscar" [(ngModel)]="buscar" maxlength="10" required />
+                </div>
             
             <div class="div-per">
 
@@ -44,7 +47,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let per of perso">
+                        <tr *ngFor="let per of perso | search:buscar ">
                             <td>{{per.cedula}}</td>
                             <td>{{per.nombre}}</td>
                             <td>{{per.apellido}}</td>
