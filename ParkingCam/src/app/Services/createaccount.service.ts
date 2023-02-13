@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import { Registro } from './class/Registro';
+import { Registro } from './class/Usuarios';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 
-const urlEndPoint = 'http://localhost:8080/apiox';
+const urlEndPoint = 'http://localhost:8080/apiss';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -41,12 +41,12 @@ export class CreateAccountService {
 
   login(correo: any, contrasenia: any) {
     return this.http.get(
-      urlEndPoint + '/per/'+correo+'/'+contrasenia,
+      urlEndPoint + '/usu/'+correo+'/'+contrasenia,
     )
   }
 
-  logout(): Observable<any> {
-    return this.http.post(urlEndPoint + '/signout', { }, httpOptions);
-  }
+ // logout(): Observable<any> {
+  //  return this.http.post(urlEndPoint + '/signout', { }, httpOptions);
+  //}
   
 }

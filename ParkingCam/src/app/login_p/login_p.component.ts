@@ -46,13 +46,11 @@ export class Login_pComponent implements OnInit {
             `La cuenta no esta registrada en el sistema`,
             'error'
           );
-
-
         } else {
+     //     this.storageService.saveUser(data);
+   //       this.isLoginFailed = false;
+ //         this.isLoggedIn = true;
 
-          this.storageService.saveUser(data);
-          this.isLoginFailed = false;
-          this.isLoggedIn = true;
           Swal.fire({
             position: 'top',
             icon: 'success',

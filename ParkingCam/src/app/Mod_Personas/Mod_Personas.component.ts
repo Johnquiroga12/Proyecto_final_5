@@ -14,13 +14,11 @@ buscar='';
 sumatotal=0;
   persona = new Persona();
   perso: Persona[] = [];
-  getclientes: Persona[] = [];
-
-  tableIndex = 0;
 
   constructor(private regperso: RegpersoService, private router: Router, private acrouter: ActivatedRoute) { }
 
   ngOnInit() {
+    this.SumatoriaPor(this.perso);
     this.Lista();
   }
 
@@ -91,11 +89,13 @@ sumatotal=0;
     this.persona.correo = carga.correo;
     this.persona.tipo = carga.tipo;
   }
- sumArray(array: number[]): number {
-    this.sumatotal = 0;
-    for (let i = 0; i < array.length; i++) {
-      this.sumatotal += array[i];
+
+  SumatoriaPor(perso:any): number{
+  this.sumatotal=0;
+    for (let i = 0; i < perso; i++) {
+  this.sumatotal =  perso[i];
     }
     return this.sumatotal;
   }
+
 }

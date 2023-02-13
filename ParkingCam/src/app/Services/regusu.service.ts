@@ -2,14 +2,14 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from "rxjs";
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { map } from 'rxjs/operators';
-import { Registro } from './class/Registro';
+import { Registro } from './class/Usuarios';
 @Injectable( 
     {
         providedIn: 'root'
     }
      )
 export class RegusuService {
-    private guardardatos: string = 'http://localhost:8080/api/do/crear';
+    private guardardatos: string = 'http://localhost:8080/apiss/usu/crear';
     private httpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' })
 
 
