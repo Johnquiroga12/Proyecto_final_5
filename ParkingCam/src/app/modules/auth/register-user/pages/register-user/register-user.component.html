@@ -1,11 +1,10 @@
-<!--
 <body>  
 <form  ngNativeValidate (ngSubmit)="create()">
 <section class="form-register">
-    <input class="controls" type="email" [(ngModel)]="registro.username" name="correo" id="correo" placeholder="Ingrese su Correo">
-    <input class="controls" type="text " [(ngModel)]="registro.password" name="contraseña" id="contraseña" placeholder="Ingrese su Contraseña">
-    <input class="controls" type="text" [(ngModel)]="registro.instruccion"name="instruccion" id="instruccion" placeholder="instuccion">   
-    <select class="controls" id="genero"  name="tipo" [(ngModel)]="registro.rol">
+    <input class="controls" type="email" (ngModel)="registro.username" name="correo" id="correo" placeholder="Ingrese su Correo">
+    <input class="controls" type="text " (ngModel)="registro.password" name="contraseña" id="contraseña" placeholder="Ingrese su Contraseña">
+    <input class="controls" type="text" (ngModel)="registro.instruccion"name="instruccion" id="instruccion" placeholder="instuccion">   
+    <select class="controls" id="genero"  name="tipo" (ngModel)="registro.rol">
       <option value="" disabled selected>Selecciona un tipo</option>
       <option value="Guardia">Guardia</option>
       <option value="Profesor">Profesor</option>
@@ -16,4 +15,3 @@
   </section>
 </form>
 </body>
--->

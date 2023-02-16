@@ -1,6 +1,5 @@
 import  Swal from 'sweetalert2';
 import { Router } from '@angular/router';
-
 import { Component, OnInit } from '@angular/core';
 import { Registro } from 'src/app/Services/class/Usuarios';
 import { RegusuService } from 'src/app/Services/regusu.service';

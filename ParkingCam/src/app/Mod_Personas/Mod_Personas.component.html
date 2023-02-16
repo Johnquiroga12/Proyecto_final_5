@@ -1,7 +1,7 @@
-<app-pag_prin_bienvenida></app-pag_prin_bienvenida>
+<!--<app-pag_prin_bienvenida></app-pag_prin_bienvenida>
 <body>
     <div class="div-titulo">
-        <h1>REGISTRO DE PERSONA </h1>
+        <h1>REGISTRO </h1>
     </div>
     <div class="contenedor">
         <div class="div-formulario">
@@ -15,7 +15,7 @@
                     placeholder="Ingrese su cedula">
                 <input type="text" [(ngModel)]="persona.correo" name="correo" id="correo"
                     placeholder="Ingrese su correo">
-                <select id="genero"  name="tipo" [(ngModel)]="persona.tipo">
+                <select id="genero" name="tipo" [(ngModel)]="persona.tipo">
                     <option value="" disabled selected>Selecciona un tipo</option>
                     <option value="Guardia">Guardia</option>
                     <option value="Profesor">Profesor</option>
@@ -24,48 +24,44 @@
                 <button type="submit" id="btnAgregar" class="btnAgregar"> Guardar</button>
             </form>
         </div>
-        <div class="div-listado">
-            <h2>Listado de Persona  {{sumatotal}}</h2>
-                <div class="col-sm-6">
-                    <input type="text" class="form-control" name="codigo" 
-                        placeholder="buscar" [(ngModel)]="buscar" maxlength="10" required />
-                </div>
-            
-            <div class="div-per">
-
-                <table id="miTabla" class="table" [scrollLeft]="true">
-                    <thead>
-                        <tr>
-                            <th scope="col">Cedula </th>
-                            <th scope="col">Nombre </th>
-                            <th scope="col">Apellido</th>
-                            <th scope="col">Correo</th>
-                            <th scope="col">Tipo</th>
-                            <th scope="col">Editar</th>
-                            <th scope="col">Eliminar</th>
-
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr *ngFor="let per of perso | search:buscar ">
-                            <td>{{per.cedula}}</td>
-                            <td>{{per.nombre}}</td>
-                            <td>{{per.apellido}}</td>
-                            <td>{{per.correo}}</td>
-                            <td>{{per.tipo}}</td>
-                            <td>
-                                <button type="button" id="editarBoton" name="button"(click)="cargar(per)" 
-                                    class="btn-editar">editar</button>
-                            </td>
-                            <td>
-                                <button type="button" name="button" (click)="eliminar(per)"
-                                    class="btn-eliminar">eliminar</button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-               
-            </div>
-        </div>
     </div>
 </body>
+<button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
+  {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
+</button>
+<mat-stepper [linear]="isLinear" #stepper>
+  <mat-step [stepControl]="firstFormGroup">
+    <form [formGroup]="firstFormGroup">
+      <ng-template matStepLabel>Fill out your name</ng-template>
+      <mat-form-field appearance="fill">
+        <mat-label>Name</mat-label>
+        <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="secondFormGroup" label="Fill out your address">
+    <form [formGroup]="secondFormGroup">
+      <mat-form-field appearance="fill">
+        <mat-label>Address</mat-label>
+        <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY"
+               required>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Done</ng-template>
+    <p>You are now done.</p>
+    <div>
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button (click)="stepper.reset()">Reset</button>
+    </div>
+  </mat-step>
+</mat-stepper>
+-->
