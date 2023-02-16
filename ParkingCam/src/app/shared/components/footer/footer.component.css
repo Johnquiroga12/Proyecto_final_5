@@ -1,0 +1,16 @@
+
+  .container{
+
+    background-color: rgb(25, 142, 171);
+    position: fixed;
+    width: 100%;
+    bottom: 0px;
+    align-content: center;
+
+    
+  }
+
+  .d-flex flex-column flex-sm-row{
+
+    text-align: center;
+  }

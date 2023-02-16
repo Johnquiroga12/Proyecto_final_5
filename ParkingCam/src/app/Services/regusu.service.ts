@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from "rxjs";
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { map } from 'rxjs/operators';
 import { Registro } from './class/Usuarios';
 @Injectable( 
     {

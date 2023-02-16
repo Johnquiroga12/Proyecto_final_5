@@ -1,0 +1,19 @@
+body {
+    background: linear-gradient(rgb(80, 170, 255), rgb(94, 230, 105));
+    min-height: 100vh;
+    box-sizing: border-box;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+  }
+.bg {
+   background-position: center center;
+    text-align: center;
+}
+.row{
+  background: linear-gradient(rgb(4, 52, 97), rgb(239, 245, 240));
+    
+}

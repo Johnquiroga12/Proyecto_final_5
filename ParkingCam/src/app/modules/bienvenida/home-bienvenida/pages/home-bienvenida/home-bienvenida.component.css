@@ -1,0 +1,81 @@
+body {
+    background: linear-gradient(rgb(66, 164, 255), rgb(145, 229, 250));
+    min-height: 100vh;
+    box-sizing: border-box;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+  }
+  section {
+    min-height: 100vh;
+    padding: 0 9%;
+    padding-top: 7.5rem;
+    padding-bottom: 2rem;
+  }
+  
+  .btn {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: .8rem 3rem;
+    border-radius: 5rem;
+    background: rgb(14, 36, 133);
+    font-size: 1.8rem;
+    color: wheat;
+    cursor: pointer;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0);
+    transition: all .3s linear;
+  }
+  
+  .inicio {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(rgb(14, 36, 133));
+    background-size: cover;
+    background-position: center;
+  
+  }
+  
+  .inicio .image img {
+    width: 40vw;
+    animation: float 3s linear infinite;
+  
+  }
+  
+  @keyframes float {
+  
+    0%,
+    100% {
+      transform: translateY(0rem);
+    }
+  
+    50% {
+      transform: translateY(-3.5rem);
+    }
+  
+  }
+  
+  .inicio .content h3 {
+    font-size: 6rem;
+    color: black;
+  }
+  
+  
+  .inicio .content h3 {
+    font-size: 4rem;
+    color: black;
+  }
+  
+  
+  .inicio .content p {
+    font-size: 1.7rem;
+    color: #ffffff;
+    padding: 1rem 0;
+    justify-content: left;
+  
+  }
+  
+  

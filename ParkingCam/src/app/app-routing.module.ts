@@ -1,18 +1,38 @@
+import { WelcolmeAdministradorComponent } from './modules/administrador/welcolme-administrador/welcolme-administrador.component';
+import { WelcomeHomeComponent } from './modules/home/welcome-home/welcome-home.component';
+import { WelcomeBienvenidaComponent } from './modules/bienvenida/welcome-bienvenida/welcome-bienvenida.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { InicioComponent } from './inicio/inicio.component';
-import { Login_pComponent } from './login_p/login_p.component';
-import { Mod_PersonasComponent } from './Mod_Personas/Mod_Personas.component';
-import { Pag_prin_bienvenidaComponent } from './pag_prin_bienvenida/pag_prin_bienvenida.component';
-import { RegUsuarioComponent } from './regUsuario/regUsuario.component';
+
 
 const routes: Routes = [
-{path: 'login', component:Login_pComponent},
-{path: 'regusu', component:RegUsuarioComponent},
-{path: 'pag_prin', component:Pag_prin_bienvenidaComponent},
-{path: 'personas_reg', component:Mod_PersonasComponent},
-{path: 'inicio', component:InicioComponent},
-{path : '', redirectTo: 'inicio', pathMatch:'full'}
+  {
+    path: 'bienvenida',
+    component: WelcomeBienvenidaComponent,
+    loadChildren: () => import("./modules/bienvenida/bienvenida.module").then(m => m.BienvenidaModule)
+  },
+
+  {
+    path: 'auth',
+    component: WelcomeBienvenidaComponent,
+    loadChildren: () => import("./modules/auth/auth.module").then(m => m.AuthModule)
+  },
+
+  {
+  
+    path: 'home',
+    component: WelcomeHomeComponent,
+    loadChildren: () => import("./modules/home/home.module").then(m => m.HomeModule)
+  },
+
+  {
+    path: 'administrador',
+    component: WelcolmeAdministradorComponent,
+    loadChildren: () => import("./modules/administrador/administrador.module").then(m => m.AdministradorModule)
+  },
+
+
+
 ];
 
 @NgModule({
