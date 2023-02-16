@@ -12,7 +12,8 @@ import { WelcomeAuthComponent } from './welcome-auth/welcome-auth.component';
   ],
   imports: [
     CommonModule,
-    AuthRoutingModule
+    AuthRoutingModule,
+    SharedModule
   ]
 })
 export class AuthModule { }

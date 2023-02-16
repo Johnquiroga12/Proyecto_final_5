@@ -8,7 +8,7 @@ import { WelcolmeAdministradorComponent } from './welcolme-administrador/welcolm
 @NgModule({
   declarations: [
     WelcolmeAdministradorComponent
-  ],
+    ],
   imports: [
     CommonModule,
     AdministradorRoutingModule,
