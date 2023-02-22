@@ -1,73 +1,73 @@
-body {
-    background: linear-gradient(rgb(80, 170, 255), rgb(94, 230, 105));
-    min-height: 100vh;
-    box-sizing: border-box;
-    display: -webkit-box;
-    display: flex;
-    -webkit-box-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    justify-content: center;
+   .cosas {
+
+      text-align: center;
+      color:black;
+      font-size: 28px;
+  
+  
   }
   
-  * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }  
-    .form-register {
-      width: 400px;
-      background: linear-gradient(rgb(5, 67, 124), rgb(90, 189, 60));
+  .btn{
+      border: 1px solid darkblue;
+  background-color: rgb(88, 129, 200);
+  }
+  
+  
       
-      padding: 10px;
-      margin: auto;
-      margin-top: 100px;
-      border-radius: 4px;
-      font-family: 'calibri';
-      color: white;
-      box-shadow: 7px 13px 37px #000;
+  
+  
+  .suples{
+      width: 1150px;
+      height: 500px;
+      margin: -550px auto;
+      justify-content: center;
+      display: flex;
+  
+  }
+  /* 
+    .box{
+      border: 1px solid darkblue;
+      width: 1150px;
+      height: 500px;
+      margin: -550px auto;
+      justify-content: center;
+      display: flex;
+    } */
+    .box{
+      border: 1px solid darkblue;
     }
-    
-    .form-register h4 {
-      font-size: 22px;
-      margin-bottom: 20px;
-    }
-    
-    .controls {
-      width: 100%;
-      background: #24303c;
-      padding: 10px;
-      border-radius: 4px;
-      margin-bottom: 16px;
-      border: 1px solid #1f53c5;
-      font-family: 'calibri';
-      font-size: 18px;
-      color: white;
-    }
-    
-    .form-register p {
-      height: 40px;
-      text-align: center;
-      font-size: 18px;
-      line-height: 40px;
-    }
-    
-    .form-register a {
-      color: white;
-      text-decoration: none;
-    }
-    
-    .form-register a:hover {
-      color: white;
-      text-decoration: underline;
-    }
-    
-    .form-register .botons {
-      width: 100%;
-      background: #1f53c5;
-      border: none;
-      padding: 12px;
-      color: white;
-      margin: 16px 0;
-      font-size: 16px;
-    }
+    .card {
+      border: 1px solid darkblue;
+  margin: auto;    
+      width: 800px;
+      height: 550px;
+  
+      justify-content: start;
+  }
+  
+   
+  button{
+  align-content: center;
+  margin: -100px auto;
+      /* padding: 1%; */
+  }
+  
+  
+      .btnneon {
+         position : relative ;
+         display : inline-block ;
+         padding : 15px 30px ;
+         color : rgb(14, 14, 14) ;
+         letter-spacing : 4px ;
+          font-size : 15px ;
+         text-decoration : wavy ;
+         overflow : hidden ;
+      }
+       
+      
+      
+      .btnneon:hover {
+                 background : #4166cc ;
+         box-shadow : 0 0 10px #4545c7, 0 0 40px
+         #454cc76e, 0 0 80px #4545c7 ;
+      }

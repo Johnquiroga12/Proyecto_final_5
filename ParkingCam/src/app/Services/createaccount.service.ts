@@ -22,23 +22,9 @@ export class CreateAccountService {
   constructor(private http: HttpClient) { }
 
   public createUser(nuevoUsuario: Registro): Observable<Registro> {
-    return this.http.post<Registro>(urlEndPoint + '/signup', nuevoUsuario);
+    return this.http.post<Registro>(urlEndPoint + '/signup', nuevoUsuario);  
   }
-
-  registerUser(cedula: string, nombre: string, apellido: string, correo: string, contrasenia: string): Observable<any> {
-    return this.http.post(
-      urlEndPoint + '/signup',
-      {
-        cedula,
-        nombre,
-        apellido,
-        correo,
-        contrasenia,
-      },
-      httpOptions
-    );
-  }
-
+  
   login(correo: any, contrasenia: any) {
     return this.http.get(
       urlEndPoint + '/usu/'+correo+'/'+contrasenia,

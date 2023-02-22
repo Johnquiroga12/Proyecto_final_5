@@ -51,7 +51,6 @@ export class AuthLoginComponent implements OnInit{
      //     this.storageService.saveUser(data);
    //       this.isLoginFailed = false;
  //         this.isLoggedIn = true;
-
           Swal.fire({
             position: 'top',
             icon: 'success',
@@ -59,7 +58,8 @@ export class AuthLoginComponent implements OnInit{
             showConfirmButton: false,
             timer: 2000,
           });
-          this.router.navigate(['/pag_prin']).then(() => { window.location.reload(); });
+          location.replace('/administrador')
+        //  this.router.navigate(['/administrador']).then(() => { window.location.reload(); });
         }
       },
     });

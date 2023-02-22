@@ -1,17 +1,107 @@
-<body>  
-<form  ngNativeValidate (ngSubmit)="create()">
-<section class="form-register">
-    <input class="controls" type="email" (ngModel)="registro.username" name="correo" id="correo" placeholder="Ingrese su Correo">
-    <input class="controls" type="text " (ngModel)="registro.password" name="contraseña" id="contraseña" placeholder="Ingrese su Contraseña">
-    <input class="controls" type="text" (ngModel)="registro.instruccion"name="instruccion" id="instruccion" placeholder="instuccion">   
-    <select class="controls" id="genero"  name="tipo" (ngModel)="registro.rol">
-      <option value="" disabled selected>Selecciona un tipo</option>
-      <option value="Guardia">Guardia</option>
-      <option value="Profesor">Profesor</option>
-      <option value="Estudiante">Estudiante</option>
-  </select>
- <input class="botons" type="submit" value="Registrar">
-    <p><a href="/auth/login">¿Ya tengo Cuenta?</a></p>
-  </section>
-</form>
-</body>
+<div style=" padding: 100px; ">
+    <div class="box">
+        <mat-stepper #stepper>
+            <mat-step [stepControl]="firstFormGroup" errorMessage="Name is required.">
+                <form [formGroup]="firstFormGroup">
+                    <ng-template matStepLabel>Datos personales</ng-template>
+                    <form (ngSubmit)="guar()" action="#" id="formulario">
+                        <div class="grid grid-cols-6 gap-6">
+                            <div class="col-span-6 sm:col-span-3">
+                                <label for="first-name" class="block text-sm font-medium text-gray-700">Cedula *</label>
+                                <input type="text" [(ngModel)]="persona.cedula" name="cedula" id="cedula"
+                                    class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-green-500 focus:border-green-500 focus:z-10 sm:text-sm">
+                            </div>
+                            <div class="col-span-6 sm:col-span-3">
+                                <label for="first-name" class="block text-sm font-medium text-gray-700">Nombre *</label>
+                                <input type="text" [(ngModel)]="persona.nombre" name="nombre" id="nombre"
+                                    class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-green-500 focus:border-green-500 focus:z-10 sm:text-sm">
+                            </div>
+                            <div class="col-span-6 sm:col-span-3">
+                                <label for="first-name" class="block text-sm font-medium text-gray-700">Apellido
+                                    *</label>
+                                <input type="text" [(ngModel)]="persona.apellido" name="apellido" id="apellido  "
+                                    class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-green-500 focus:border-green-500 focus:z-10 sm:text-sm">
+                            </div>
+                            <div class="col-span-6 sm:col-span-3">
+                                <label for="first-name" class="block text-sm font-medium text-gray-700">Celular *</label>
+                                <input
+                                    class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-green-500 focus:border-green-500 focus:z-10 sm:text-sm"
+                                    type="text" [(ngModel)]="persona.celular" name="celular" id="celular">
+                            </div>
+                            <div class="col-span-6 sm:col-span-3">
+                                <select id="genero" name="tipo" [(ngModel)]="persona.tipo">
+                                    <option value="" disabled selected>Seleccione su cargo </option>
+                                    <option value="Guardia">Guardia</option>
+                                    <option value="Profesor">Profesor</option>
+                                    <option value="Estudiante">Estudiante</option>
+                                </select>
+                            </div>
+                            <div class="col-span-6 sm:col-span-3">
+                                <label for="first-name" class="block text-sm font-medium text-gray-700">N_Emergencia
+                                    *</label>
+                                <input type="text"[(ngModel)]="persona.n_emergencia" name="emergen" id="emergen" autocomplete="given-name"
+                                    class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-green-500 focus:border-green-500 focus:z-10 sm:text-sm">
+                            </div>
+                            <div class="col-span-6 sm:col-span-3">
+                                <label for="last-name" class="block text-sm font-medium text-gray-700">Carrera *</label>
+                                <input type="text" name="carrera" id="carrera" autocomplete="family-name"
+                                [(ngModel)]="persona.carrera"   class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-green-500 focus:border-green-500 focus:z-10 sm:text-sm">
+                            </div>
+                            <div class="col-span-6 sm:col-span-3">
+                                <label for="email-address" class="block text-sm font-medium text-gray-700">Jornada
+                                    *</label>
+                                <input class="form-control" type="text" name="jornada" id="jornada"
+                                    autocomplete="email"
+                                    [(ngModel)]="persona.jornada"  class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-green-500 focus:border-green-500 focus:z-10 sm:text-sm">
+                            </div>
+                        </div>
+
+                    </form>
+                    <div>
+                        <button class="btn" mat-button matStepperNext>Siguiente</button>
+                    </div>
+                </form>
+            </mat-step>
+            <mat-step [stepControl]="secondFormGroup" errorMessage="Address is required.">
+                <form [formGroup]="secondFormGroup">
+                    <ng-template matStepLabel>Datos de su auto</ng-template>
+
+
+                    <div>
+                        <br>
+                        <br>
+                        <br>
+                        <button class="btn" mat-button matStepperPrevious>Volver</button>
+                        <button class="btn" name="btnsp" mat-button matStepperNext>Siguiente</button>
+                    </div>
+                </form>
+            </mat-step>
+            <mat-step [stepControl]="secondFormGroup" errorMessage="Address is required.">
+                <form [formGroup]="secondFormGroup">
+                    <ng-template matStepLabel>Subir archivo</ng-template>
+
+                    <div>
+                        <button class="btn" mat-button matStepperPrevious>Volver</button>
+                        <button class="btn" mat-button matStepperNext>Siguiente</button>
+
+                    </div>
+                </form>
+            </mat-step>
+            <mat-step [stepControl]="secondFormGroup" errorMessage="Address is required.">
+                <form [formGroup]="secondFormGroup">
+                    <ng-template matStepLabel>FIN DEL PROCESO</ng-template>
+
+                    <div>
+                        <br>
+                        <br>
+                        <br>
+                        <button class="btn" mat-button (click)="stepper.reset()">Repetir proceso</button>
+                    </div>
+                </form>
+            </mat-step>
+
+
+        </mat-stepper>
+
+    </div>
+</div>
