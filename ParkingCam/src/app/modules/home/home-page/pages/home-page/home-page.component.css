@@ -1,9 +1,9 @@
 
 .content{
 
-    background-color: black;
-    width: 800px;
-    height: 800px;
-    position: absolute;
-    padding: 16px;
-;}
+    background-color: #114a6d;
+    width: 1800px;
+    height: 600px;
+    align-content: center;
+    padding-top: 300px;
+}
