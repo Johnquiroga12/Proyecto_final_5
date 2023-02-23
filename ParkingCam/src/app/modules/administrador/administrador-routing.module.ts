@@ -16,6 +16,11 @@ const routes: Routes = [
   {
     path: 'registro-personal',
     loadChildren: () => import("./registra-personal/registra-personal.module").then(m => m.RegistraPersonalModule)
+  },
+
+  {
+    path: 'control-bloques',
+    loadChildren: () => import("./control-bloques/control-bloques.module").then(m => m.ControlBloquesModule)
   }
 
 ];
