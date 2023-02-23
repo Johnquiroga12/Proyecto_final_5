@@ -4,11 +4,9 @@ export class Persona {
         apellido: string="";
         cedula: string="";
         correo: string="";
-        tipo: string="";
+        cargo: string="";
         celular: string="";
         n_emergencia: string="";
         carrera: string="";
         jornada: string="";
       }
-    
-
