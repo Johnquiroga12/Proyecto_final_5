@@ -406,3 +406,10 @@
     box-shadow: 0 0 0 0.2rem rgba(135, 126, 241, 0.5);
   }
   
+
+  .card{
+
+    width: 600px;
+    transform: translate(-15%, 5%);
+
+  }
