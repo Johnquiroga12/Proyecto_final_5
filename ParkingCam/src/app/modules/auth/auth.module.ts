@@ -5,11 +5,6 @@ import { AuthRoutingModule } from './auth-routing.module';
 import { WelcomeAuthComponent } from './welcome-auth/welcome-auth.component';
 // import john
 
-import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { BrowserModule } from '@angular/platform-browser';
-
 @NgModule({
   declarations: [
     WelcomeAuthComponent
@@ -17,7 +12,7 @@ import { BrowserModule } from '@angular/platform-browser';
   imports: [
     CommonModule,
     AuthRoutingModule
-  ],
+      ],
 
     exports: [
 

@@ -6,7 +6,7 @@ import { RegpersoService } from 'src/app/Services/regperso.service';
 
 @Component({
   selector: 'app-register-user',
-  templateUrl: './register-user.component.html',
+  templateUrl: './/register-user.component.html',
   styleUrls: ['./register-user.component.css']
 })
 
