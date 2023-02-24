@@ -21,6 +21,11 @@ const routes: Routes = [
   {
     path: 'control-bloques',
     loadChildren: () => import("./control-bloques/control-bloques.module").then(m => m.ControlBloquesModule)
+  },
+
+  {
+    path: 'asignar-credencial',
+    loadChildren: () => import("./asignar-credencial/asignar-credencial.module").then(m => m.AsignarCredencialModule)
   }
 
 ];
