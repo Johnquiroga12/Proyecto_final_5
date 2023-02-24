@@ -26,6 +26,10 @@ const routes: Routes = [
   {
     path: 'asignar-credencial',
     loadChildren: () => import("./asignar-credencial/asignar-credencial.module").then(m => m.AsignarCredencialModule)
+  },
+  {
+    path: 'profile',
+    loadChildren: () => import("./profile/profile.module").then(m => m.ProfileModule)
   }
 
 ];
