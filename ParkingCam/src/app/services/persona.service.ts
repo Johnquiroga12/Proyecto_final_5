@@ -8,14 +8,14 @@ import { Observable } from 'rxjs';
 })
 export class PersonaService {
 
-  URL: string = 'http://localhost:8080/api/persona/list';
+  URL: string = 'http://localhost:8080/api/persona/';
 
   constructor(private http:HttpClient) { }
 
   getPersonas() : Observable<Persona[]>{
-    return this.http.get<Persona[]>(this.URL);
+    return this.http.get<Persona[]>(`${this.URL}list`);
   }
 
-   
+
 
 }
