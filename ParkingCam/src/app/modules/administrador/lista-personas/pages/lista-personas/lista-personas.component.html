@@ -11,6 +11,7 @@
 				<th>Carrera</th>
 				<th>Jornada</th>
 				<th>Cargo</th>
+				<th></th>
 			</tr>
 		</thead>
 		<tbody>
@@ -24,6 +25,9 @@
 				<td>{{ persona.carrera}} </td>
 				<td>{{ persona.jornada}} </td>
 				<td>{{ persona.cargo}} </td>
+				<td>
+					<button class="btn btn-warning" [routerLink] = "['detalle-personas', persona.id_persona]">Detalles</button> 
+				</td>
 				
 			</tr>
 		</tbody>

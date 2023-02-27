@@ -16,5 +16,7 @@ export class PersonaService {
     return this.http.get<Persona[]>(`${this.URL}list`);
   }
 
-  
+  getPersona(id_persona) : Observable<Persona> {
+    return this.http.get<Persona>(`${this.URL}search/${id_persona}`)
+  }
 }

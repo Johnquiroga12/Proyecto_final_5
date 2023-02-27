@@ -1,3 +1,4 @@
+import { PersonaService } from 'src/app/services/persona.service';
 import { Persona } from 'src/app/services/class/persona';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router'
@@ -9,12 +10,13 @@ import { ActivatedRoute } from '@angular/router'
 })
 export class DetallePersonasComponent implements OnInit {
   
-  constructor(private activatedRoute: ActivatedRoute) { }
+  constructor(private activatedRoute: ActivatedRoute, private personaService: PersonaService) { }
 
   persona : Persona = new Persona();
 
   ngOnInit(): void {
     
+    this.detallesPersona()
   }
 
   detallesPersona() {
@@ -22,6 +24,12 @@ export class DetallePersonasComponent implements OnInit {
 
       params => {
         
+        let id = params['id']
+        if(id){
+          this.personaService.getPersona(id).subscribe(
+            (persona) => this.persona = persona
+          )
+        }
       }
 
     )

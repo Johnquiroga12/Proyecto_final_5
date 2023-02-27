@@ -1,3 +1,4 @@
+import { DetallePersonasComponent } from './detalle-personas/pages/detalle-personas/detalle-personas.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -32,7 +33,7 @@ const routes: Routes = [
     loadChildren: () => import("./profile/profile.module").then(m => m.ProfileModule)
   },
   {
-    path: 'detalle-personas',
+    path: 'detalle-personas/:id',
     loadChildren: () => import("./detalle-personas/detalle-personas.module").then(m => m.DetallePersonasModule)
   }
 

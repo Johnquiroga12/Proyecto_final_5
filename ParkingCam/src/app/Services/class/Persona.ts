@@ -1,5 +1,6 @@
 export class Persona{
 
+    id_persona: string = "";
     nombre: string = "";
     apellido: string = "";
     cedula: string = "";

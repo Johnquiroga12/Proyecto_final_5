@@ -13,6 +13,7 @@ import { WelcolmeAdministradorComponent } from './welcolme-administrador/welcolm
     CommonModule,
     AdministradorRoutingModule,
     SharedModule
-  ]
+  ],
+  
 })
 export class AdministradorModule { }

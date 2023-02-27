@@ -34,7 +34,11 @@
 
   "compilerOptions": {
     "strictPropertyInitialization": false,
+    "noImplicitAny": false
+
     
 }
+
+
 
 }
