@@ -1,32 +1,24 @@
+import { PersonaService } from "src/app/services/persona.service";
 import { Component, OnInit } from '@angular/core';
-import { Persona } from 'src/app/Services/class/Persona';
-import { RegpersoService } from 'src/app/Services/regperso.service';
+import { Persona } from "src/app/services/class/persona";
 
 @Component({
   selector: 'app-lista-personas',
   templateUrl: './lista-personas.component.html',
   styleUrls: ['./lista-personas.component.css']
 })
+
 export class ListaPersonasComponent implements OnInit {
 
-  perso: Persona[] = [];
+  personas : Persona[];
 
+  constructor(private personasService: PersonaService) { }
 
-
-  constructor(private regperso: RegpersoService) { }
-
-  ngOnInit() {
-    this.Lista();
-
-
+  ngOnInit(): void {
+    
+    this.personasService.getPersonas().subscribe(
+      res => this.personas = res
+    )
   }
-
-
-  Lista(): void {
-    this.regperso.getmostrardatosperso().subscribe(
-      Persona => this.perso = Persona
-    );
-  }
-
 
 }
