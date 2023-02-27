@@ -4,5 +4,6 @@ export class Vehiculos{
     marca: string="";
     modelo: string = "";
     color: string = "";
-
+    id_persona: string = "";
+    
 }
