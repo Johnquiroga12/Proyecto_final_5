@@ -6,6 +6,7 @@
 				<th>Marca</th>
 				<th>Modelo</th>
 				<th>Color</th>
+				<th></th>
 			</tr>
 		</thead>
 		<tbody>
@@ -13,7 +14,10 @@
 				<td>{{ vehiculo.placa}} </td>
 				<td>{{ vehiculo.marca}} </td>
 				<td>{{ vehiculo.modelo}} </td>
-				<td>{{ vehiculo.color}} </td>				
+				<td>{{ vehiculo.color}} </td>
+				<td>
+					<button class="btn btn-warning" [routerLink] = "['/administrador/detalle-vehiculos', vehiculo.id_vehiculo]">Detalles</button> 
+				</td>				
 			</tr>
 		</tbody>
 	</table>

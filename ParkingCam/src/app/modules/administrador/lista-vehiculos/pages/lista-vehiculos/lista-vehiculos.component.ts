@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Vehiculos } from 'src/app/services/class/vehiculo';
+import { Vehiculo } from 'src/app/services/class/vehiculo';
 import { VehiculoService } from 'src/app/services/vehiculo.service';
 
 @Component({
@@ -8,13 +8,14 @@ import { VehiculoService } from 'src/app/services/vehiculo.service';
   styleUrls: ['./lista-vehiculos.component.css'],
 })
 export class ListaVehiculosComponent implements OnInit {
-  vehiculos: Vehiculos[];
+  
+  vehiculos: Vehiculo[];
 
   constructor(private vehiculosService: VehiculoService) {}
 
   ngOnInit(): void {
     this.vehiculosService
-      .getVehiculo()
+      .getVehiculos()
       .subscribe((res) => (this.vehiculos = res));
   }
 }

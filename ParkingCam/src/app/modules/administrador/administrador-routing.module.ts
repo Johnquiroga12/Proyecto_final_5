@@ -35,6 +35,10 @@ const routes: Routes = [
   {
     path: 'detalle-personas/:id',
     loadChildren: () => import("./detalle-personas/detalle-personas.module").then(m => m.DetallePersonasModule)
+  },
+  {
+    path: 'detalle-vehiculos/:id',
+    loadChildren: () => import("./detalle-vehiculos/detalle-vehiculos.module").then(m => m.DetalleVehiculosModule)
   }
 
 ];
