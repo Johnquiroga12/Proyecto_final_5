@@ -1,6 +1,6 @@
 import { Persona } from './class/persona';
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -9,6 +9,7 @@ import { Observable } from 'rxjs';
 export class PersonaService {
 
   URL: string = 'http://localhost:8080/api/persona/';
+  private httpHeaders = new HttpHeaders({'Content-Type': 'application/json'});
 
   constructor(private http:HttpClient) { }
 
@@ -18,5 +19,9 @@ export class PersonaService {
 
   getPersona(id_persona) : Observable<Persona> {
     return this.http.get<Persona>(`${this.URL}search/${id_persona}`)
+  }
+
+  savePersona(persona:Persona) : Observable<Persona> {
+    return this.http.post<Persona>(`${this.URL}create`, persona, {headers:this.httpHeaders});
   }
 }
