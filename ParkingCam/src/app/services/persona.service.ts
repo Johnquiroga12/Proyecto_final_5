@@ -16,6 +16,5 @@ export class PersonaService {
     return this.http.get<Persona[]>(`${this.URL}list`);
   }
 
-
-
+  
 }
