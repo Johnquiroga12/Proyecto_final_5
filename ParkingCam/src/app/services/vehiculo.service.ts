@@ -1,5 +1,6 @@
+import { RegisterVehiculoRoutingModule } from './../modules/auth/register-vehiculo/register-vehiculo-routing.module';
 import { Vehiculo } from './class/vehiculo';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
@@ -9,6 +10,7 @@ import { Observable } from 'rxjs';
 export class VehiculoService {
 
   URL: string = 'http://localhost:8080/api/vehiculo/';
+  private httpHeaders = new HttpHeaders({'Content-Type': 'application/json'});
 
   constructor(private http:HttpClient) { }
 
@@ -19,5 +21,9 @@ export class VehiculoService {
   getVehiculo(id_vehiculo) : Observable<Vehiculo> {
     return this.http.get<Vehiculo>(`${this.URL}search/${id_vehiculo}`)
   } 
+
+  saveVehiculo(vehiculo:Vehiculo) : Observable<Vehiculo>{
+    return this.http.post<Vehiculo>(`${this.URL}create`, vehiculo, {headers:this.httpHeaders});
+  }
   
 }

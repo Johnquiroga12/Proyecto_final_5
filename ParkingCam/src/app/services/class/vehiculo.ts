@@ -1,4 +1,5 @@
 export class Vehiculo {
+  
   id_vehiculo: string = '';
   placa: string = '';
   marca: string = '';

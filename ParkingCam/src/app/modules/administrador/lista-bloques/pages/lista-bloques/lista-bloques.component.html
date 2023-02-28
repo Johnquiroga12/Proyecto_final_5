@@ -1,0 +1,20 @@
+<div ng-app="myApp" ng-controller="tablaController">
+	<table>
+		<thead>
+			<tr>
+				<th>ID Bloque</th>
+				<th>Nro de Plazas</th>
+
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let bloque of bloques">
+				<td>{{ bloque.id_bloque}} </td>
+				<td>{{ bloque.plazas}} </td>
+				
+			</tr>
+		</tbody>
+	</table>
+
+</div>
+

@@ -1,0 +1,36 @@
+<div ng-app="myApp" ng-controller="tablaController">
+	<table>
+		<thead>
+			<tr>
+				<th>Nro Registro</th>
+				<th>Fecha</th>
+				<th>Hora Entrada</th>
+				<th>Hora Salida</th>
+				<th>Observaciones</th>
+				<th>ID Bloque</th>
+				<th>ID Usuario</th>
+				<th>ID Vehiculo</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let registro of registros">
+				<td>{{ registro.id_registro}} </td>
+                <td>{{ registro.fecha}} </td>
+                <td>{{ registro.hora_entrada}} </td>
+				<td>{{ registro.hora_salida}} </td>
+				<td>{{ registro.observaciones}} </td>
+				<td>{{ registro.id_bloque}} </td>
+                <td>{{ registro.id_usuario}} </td>
+                <td>{{ registro.id_vehiculo}} </td>
+
+				<td>
+					<button class="btn btn-warning" [routerLink] = "['/administrador/detalle-registros', registro.id_registro]">Detalles</button> 
+				</td>
+				
+			</tr>
+		</tbody>
+	</table>
+
+</div>
+
