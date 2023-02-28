@@ -1,7 +1,9 @@
+import { Persona } from './../../../../../services/class/persona';
 import { Router } from '@angular/router';
 import { Vehiculo } from 'src/app/services/class/vehiculo';
 import { Component, OnInit } from '@angular/core';
 import { VehiculoService } from 'src/app/services/vehiculo.service';
+import { PersonaService } from 'src/app/services/persona.service';
 
 @Component({
   selector: 'app-register-vehiculo',
@@ -11,11 +13,23 @@ import { VehiculoService } from 'src/app/services/vehiculo.service';
 export class RegisterVehiculoComponent implements OnInit{
 
   vehiculo: Vehiculo = new Vehiculo;
+  listaPersonas : Persona[];
+  listaVehiculo : Vehiculo[];
 
-  constructor(private router: Router, private vehiculoService: VehiculoService){}
+
+  constructor(private router: Router, private vehiculoService: VehiculoService,
+    private personaService: PersonaService,
+    private VehiculoService: VehiculoService){}
 
   ngOnInit(): void {
     
+    this.vehiculoService.getVehiculos().subscribe(
+      listaV => this.listaVehiculo = listaV
+    );
+
+    this.personaService.getPersonas().subscribe(
+      lista => this.listaPersonas = lista
+    );
   }
 
   createVehiculo(){

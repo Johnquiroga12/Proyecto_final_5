@@ -54,6 +54,11 @@ const routes: Routes = [
   {
     path: 'detalle-registros/:id',
     loadChildren: () => import("./detalle-registros/detalle-registros.module").then(m => m.DetalleRegistrosModule)
+  },
+
+  {
+    path: 'editar-persona',
+    loadChildren: () => import("./editar-persona/editar-persona.module").then(m => m.EditarPersonaModule)
   }
 
 ];

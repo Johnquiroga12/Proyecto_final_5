@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-//import { SearchPipe } from './Services/class/search.pipe';
 
 @NgModule({
   declarations: [
