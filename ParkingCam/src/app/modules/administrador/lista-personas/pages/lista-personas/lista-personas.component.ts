@@ -11,7 +11,7 @@ import { Persona } from "src/app/services/class/persona";
 export class ListaPersonasComponent implements OnInit {
 
   personas : Persona[];
-
+buscar='';
   constructor(private personasService: PersonaService) { }
 
   ngOnInit(): void {

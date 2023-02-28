@@ -1,4 +1,11 @@
-<div ng-app="myApp" ng-controller="tablaController">
+<div ng-app="myApp" ng-controller="tablaController" >
+	<div class="form-group row">
+		<label for="" class="col-form-label col-sm-2">Buscar:</label>
+		<div class="col-sm-5">
+			<input type="text" class="form-control" name="codigo" 
+				placeholder="codigo" (ngModel)="buscar" maxlength="10" required />
+		</div>
+	</div>
 	<table>
 		<thead>
 			<tr>
@@ -15,7 +22,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr *ngFor="let persona of personas">
+			<tr *ngFor="let persona of personas | search:buscar "> 
 				<td>{{ persona.cedula}} </td>
 				<td>{{ persona.nombre}} </td>
 				<td>{{ persona.apellido}} </td>
@@ -30,6 +37,10 @@
 				</td>
 
 				<td>
+					<button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal">Editar</button> 
+				</td>
+
+				<td>
 					<button class="btn btn-danger" (click)="eliminar(persona.id_persona) " >Detalles</button> 
 				</td>
 				
@@ -37,5 +48,23 @@
 		</tbody>
 	</table>
 
-</div>
-
+	
+	</div>
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+		  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+		</div>
+		<div class="modal-body">
+		  ...
+		</div>
+		<div class="modal-footer">
+		  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+		  <button type="button" class="btn btn-primary">Save changes</button>
+		</div>
+	  </div>
+	</div>
+  </div>
