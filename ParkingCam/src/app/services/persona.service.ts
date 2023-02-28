@@ -24,4 +24,8 @@ export class PersonaService {
   savePersona(persona:Persona) : Observable<Persona> {
     return this.http.post<Persona>(`${this.URL}create`, persona, {headers:this.httpHeaders});
   }
+
+  deletePersona(id): Observable<Persona>{
+    return this.http.delete<Persona>(`${this.URL}delete/${id}`);
+  }
 }

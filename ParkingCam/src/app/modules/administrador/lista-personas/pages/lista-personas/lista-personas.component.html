@@ -28,6 +28,10 @@
 				<td>
 					<button class="btn btn-warning" [routerLink] = "['/administrador/detalle-personas', persona.id_persona]">Detalles</button> 
 				</td>
+
+				<td>
+					<button class="btn btn-danger" (click)="eliminar(persona.id_persona) " >Detalles</button> 
+				</td>
 				
 			</tr>
 		</tbody>

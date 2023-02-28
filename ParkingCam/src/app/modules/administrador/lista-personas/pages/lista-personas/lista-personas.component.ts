@@ -19,6 +19,14 @@ export class ListaPersonasComponent implements OnInit {
     this.personasService.getPersonas().subscribe(
       res => this.personas = res
     )
+
+    
+  }
+
+  eliminar(persona){
+    this.personasService.deletePersona(persona).subscribe(
+    )
   }
 
 }
+

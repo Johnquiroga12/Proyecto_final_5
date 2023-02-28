@@ -8,7 +8,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'bienvenida',
+    path: '',
     component: WelcomeBienvenidaComponent,
     loadChildren: () => import("./modules/bienvenida/bienvenida.module").then(m => m.BienvenidaModule)
   },
