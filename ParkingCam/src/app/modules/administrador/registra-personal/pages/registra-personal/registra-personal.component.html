@@ -10,7 +10,12 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i data-feather="mail"></i></span>
                     </div>
-                    <input type="email" class="form-control" placeholder="Ingresar Cedula">
+
+                    <select style="background-color: rgb(225, 225, 225);">
+                        <option selected style="color: aliceblue;">Selecciona la persona</option>
+                        <option *ngFor="let persona of personaLista" [value]="persona.nombre">{{ persona.nombre }}
+                        </option>
+                    </select>
                 </div>
 
                 <a href="#!" class="btn  btn-primary">Buscar Persona</a>

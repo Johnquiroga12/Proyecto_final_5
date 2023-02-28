@@ -3,6 +3,7 @@
 		<thead>
 			<tr>
 				<th>ID Bloque</th>
+				<th>Nombre</th>
 				<th>Nro de Plazas</th>
 
 			</tr>
@@ -10,6 +11,7 @@
 		<tbody>
 			<tr *ngFor="let bloque of bloques">
 				<td>{{ bloque.id_bloque}} </td>
+				<td> {{ bloque.nombre}}</td>
 				<td>{{ bloque.plazas}} </td>
 				
 			</tr>
