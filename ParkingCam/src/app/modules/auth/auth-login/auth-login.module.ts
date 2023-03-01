@@ -1,3 +1,4 @@
+import { FormGroup, FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -11,7 +12,8 @@ import { AuthLoginComponent } from './pages/auth-login/auth-login.component';
   ],
   imports: [
     CommonModule,
-    AuthLoginRoutingModule
+    AuthLoginRoutingModule,
+    FormsModule
   ],
   
   exports: [

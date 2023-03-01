@@ -64,6 +64,10 @@ const routes: Routes = [
   {
     path: 'editar-vehiculo/:id',
     loadChildren: () => import("./editar-vehiculo/editar-vehiculo.module").then(m => m.EditarVehiculoModule)
+  },
+  {
+    path: 'editar-bloque/:id',
+    loadChildren: () => import("./editar-bloque/editar-bloque.module").then(m => m.EditarBloqueModule)
   }
 
 ];

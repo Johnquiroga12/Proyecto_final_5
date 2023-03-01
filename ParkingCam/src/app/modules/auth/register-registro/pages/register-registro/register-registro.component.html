@@ -40,6 +40,29 @@
 								<input type="text" id="register" class="input-group-text" name="observaciones" [(ngModel)] = "registro.observaciones" placeholder="Observaciones">
 							</div>
 
+							<div class="input-group mb-3">
+
+								<select class="form-select" id="seleccionar" name="seleccion" id="bloque" [(ngModel)] = "registro.bloque">
+									<option selected disabled>Seleccione Bloque</option>
+									<option *ngFor="let bloque of listaBloques" [value]="bloque.nombre"> {{bloque.nombre}} </option>
+								</select>
+							</div>
+
+							<div class="input-group mb-3">
+
+								<select class="form-select" id="seleccionar" name="seleccion" id="bloque" [(ngModel)] = "registro.vehiculo">
+									<option selected disabled>Seleccione Bloque</option>
+									<option *ngFor="let vehiculo of listaVehiculos" [value]="vehiculo.placa"> {{vehiculo.id_vehiculo}} </option>
+								</select>
+							</div>
+
+							<div class="input-group mb-3">
+
+								<select class="form-select" id="seleccionar" name="seleccion" id="bloque" [(ngModel)] = "registro.usuario">
+									<option selected disabled>Seleccione Bloque</option>
+									<option *ngFor="let usuario of listaUsuarios" [value]="usuario.username"> {{usuario.id_usuario}} </option>
+								</select>
+							</div>
 
 							<input type="submit" class="btn btn-primary" value="Guardar">
 							
