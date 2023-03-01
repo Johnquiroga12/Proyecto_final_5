@@ -7,6 +7,9 @@
 				<th>Modelo</th>
 				<th>Color</th>
 				<th></th>
+				<th></th>
+				<th></th>
+
 			</tr>
 		</thead>
 		<tbody>
@@ -16,10 +19,13 @@
 				<td>{{ vehiculo.modelo}} </td>
 				<td>{{ vehiculo.color}} </td>
 				<td>
-					<button class="btn btn-warning" [routerLink] = "['/administrador/detalle-vehiculos', vehiculo.id_vehiculo]">Detalles</button> 
+					<button class="detalle" [routerLink] = "['/administrador/detalle-vehiculos', vehiculo.id_vehiculo]">Detalles</button> 
 				</td>		
 				<td>
-					<button class="btn btn-warning" [routerLink] = "['/administrador/editar-vehiculo', vehiculo.id_vehiculo]">Editar</button> 
+					<button class="editar" [routerLink] = "['/administrador/editar-vehiculo', vehiculo.id_vehiculo]">Editar</button> 
+				</td>		
+				<td>
+					<button class="eliminar" >Eliminar</button> 
 				</td>		
 
 			</tr>
