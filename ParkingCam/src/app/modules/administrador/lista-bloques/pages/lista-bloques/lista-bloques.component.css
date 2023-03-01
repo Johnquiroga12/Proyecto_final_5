@@ -1,0 +1,90 @@
+.editar {
+    background-color: #2980B9 ;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.eliminar {
+    background-color: #E74C3C ;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.detalle {
+    background-color:#2ECC71 ;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+.dialog {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 90%;
+    height: 60%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.dialog-contenido {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 10px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.cerrar {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.cerrar:hover,
+.cerrar:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/*table*/
+table{
+    align-items: center;
+	background-color: white;
+	text-align: left;
+	border-collapse: collapse;
+}
+th{
+    font-size:17px;
+	padding: 8px;
+
+}
+
+td{
+	padding: 8px;
+    font-size: 15px;
+}
+
+thead{
+	background-color: #34495E ;
+	border-bottom: solid 5px #0F362D;
+	color: white;
+    font-size: 42px;
+    width: 80%;
+  text-align: center;
+}
+
+tr:nth-child(even){
+	background-color: #ddd;
+}
+
+tr:hover td{
+    background-color: #366196;
+	color: white;
+}
+
