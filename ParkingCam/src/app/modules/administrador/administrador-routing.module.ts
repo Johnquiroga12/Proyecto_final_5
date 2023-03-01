@@ -57,7 +57,7 @@ const routes: Routes = [
   },
 
   {
-    path: 'editar-persona',
+    path: 'editar-persona/:id',
     loadChildren: () => import("./editar-persona/editar-persona.module").then(m => m.EditarPersonaModule)
   }
 

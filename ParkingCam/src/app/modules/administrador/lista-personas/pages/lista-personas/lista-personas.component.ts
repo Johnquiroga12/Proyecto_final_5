@@ -1,6 +1,7 @@
 import { PersonaService } from "src/app/services/persona.service";
 import { Component, OnInit } from '@angular/core';
 import { Persona } from "src/app/services/class/persona";
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-lista-personas',
@@ -12,7 +13,9 @@ export class ListaPersonasComponent implements OnInit {
 
   personas : Persona[];
 buscar='';
-  constructor(private personasService: PersonaService) { }
+persona = new Persona();
+  
+constructor(private personasService: PersonaService, private router: Router) { }
 
   ngOnInit(): void {
     
@@ -27,6 +30,29 @@ buscar='';
     this.personasService.deletePersona(persona).subscribe(
     )
   }
+  cargar(carga: Persona): void {
+    this.persona.id_persona = carga.id_persona;
+    this.persona.nombre = carga.nombre;
+    this.persona.apellido = carga.apellido;
+    this.persona.cedula = carga.cedula;
+    this.persona.correo = carga.correo;
+  }
+
+
+  editar(evento){
+    let id = evento.target.value;
+    console.log(id)
+    console.log(id)
+    if(evento.target.value == ''){
+      this.personasService.getPersonas();
+    }else{
+      this.personasService.getPersona(id).subscribe(
+         error => (console.log(error))
+    
+         )
+      }
+    
+    }     
 
 }
 
