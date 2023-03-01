@@ -40,7 +40,7 @@
 
 							<div class="input-group mb-3">
 
-								<select class="form-select" id="seleccionar" name="seleccion" id="vehiculs" [(ngModel)] = "vehiculo.id_persona">
+								<select class="form-select" id="seleccionar" name="seleccion" id="vehiculs" [(ngModel)] = "vehiculo.persona">
 									<option selected disabled>Seleccione Persona</option>
 									<option *ngFor="let persona of listaPersonas" [value]="persona.id_persona"> {{persona.nombre}} </option>
 								</select>
@@ -52,7 +52,9 @@
 							<p class="mb-2">Regresar al Inicio? <a href="/auth/login" class="f-w-400">Ir al Inicio</a>
 							
 							</p>
-							
+							<pre>
+								{{vehiculo |  json}} 
+							 </pre>
 						</form>
 					</div>
 				</div>

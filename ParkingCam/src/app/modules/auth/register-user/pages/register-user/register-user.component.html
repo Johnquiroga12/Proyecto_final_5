@@ -14,13 +14,13 @@
 								<div class="input-group-prepend">
 									<span class="input-group-text"><i data-feather="text"></i></span>
 								</div>
-								<input type="text" id="login" class="input-group-text" name="cedula" [(ngModel)] = "persona.cedula" placeholder="Cedula">
+								<input type="text" id="user" class="input-group-text" name="username" [(ngModel)] = "usuario.username" placeholder="Nombre de Usuario">
 								
 								<div class="input-group-prepend">
 									<span class="input-group-text"><i data-feather="text"></i></span>
 								</div>
 
-								<input type="text" id="login" class="input-group-text" name="nombre" [(ngModel)] = "persona.nombre" placeholder="Nombre">
+								<input type="text" id="user" class="input-group-text" name="password" [(ngModel)] = "usuario.password" placeholder="Ingrese su contraseña">
 
 							</div>
 
@@ -29,51 +29,17 @@
 								<div class="input-group-prepend">
 									<span class="input-group-text"><i data-feather="text"></i></span>
 								</div>
-								<input type="text" id="login" class="input-group-text" name="apellido" [(ngModel)] = "persona.apellido" placeholder="Apellido">
+								<input type="text" id="user" class="input-group-text" name="rol" [(ngModel)] = "usuario.rol" placeholder="Rol">
 							
-								<div class="input-group-prepend">
-									<span class="input-group-text"><i data-feather="text"></i></span>
-								</div>
-								<input type="text" id="login" class="input-group-text" name="correo" [(ngModel)] = "persona.correo" placeholder="correo">
-
-							</div>
-
-
-							<div class="input-group mb-3">
-								<div class="input-group-prepend">
-									<span class="input-group-text"><i data-feather="text"></i></span>
-								</div>
-								<input type="text" id="login" class="input-group-text" name="celular" [(ngModel)] = "persona.celular" placeholder="Celular">
-							
-								<div class="input-group-prepend">
-									<span class="input-group-text"><i data-feather="text"></i></span>
-								</div>
-								<input type="text" id="login" class="input-group-text" name="n_emergencia" [(ngModel)] = "persona.n_emergencia" placeholder="Numero Emergencia">
-
 							</div>
 
 							<div class="input-group mb-3">
-								<div class="input-group-prepend">
-									<span class="input-group-text"><i data-feather="text"></i></span>
-								</div>
-								<input type="text" id="login" class="input-group-text" name="carrera" [(ngModel)] = "persona.carrera" placeholder="Carrera">
-							
-								<div class="input-group-prepend">
-									<span class="input-group-text"><i data-feather="text"></i></span>
-								</div>
-								<input type="text" id="login" class="input-group-text" name="jornada" [(ngModel)] = "persona.jornada" placeholder="Jornada">
 
+								<select class="form-select" id="seleccionar" name="seleccion" id="persons" [(ngModel)] = "usuario.persona">
+									<option selected disabled>Seleccione Persona</option>
+									<option *ngFor="let persona of listaPersonas" [value]="persona.id_persona"> {{persona.nombre}} </option>
+								</select>
 							</div>
-
-							<div class="input-group mb-3">
-								<div class="input-group-prepend">
-									<span class="input-group-text"><i data-feather="text"></i></span>
-								</div>
-								<input type="text" id="login" class="input-group-text" name="cargo" [(ngModel)] = "persona.cargo" placeholder="Cargo">
-							
-							</div>
-
-
 
 
 

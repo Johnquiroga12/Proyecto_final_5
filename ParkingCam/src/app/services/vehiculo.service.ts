@@ -10,8 +10,9 @@ import { Observable } from 'rxjs';
 export class VehiculoService {
 
   URL: string = 'http://localhost:8080/api/vehiculo/';
+  
   private httpHeaders = new HttpHeaders({'Content-Type': 'application/json'});
-
+  
   constructor(private http:HttpClient) { }
 
   getVehiculos() : Observable<Vehiculo[]>{

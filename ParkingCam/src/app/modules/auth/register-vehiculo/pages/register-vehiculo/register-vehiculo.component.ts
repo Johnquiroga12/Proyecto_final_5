@@ -1,4 +1,4 @@
-import { Persona } from './../../../../../services/class/persona';
+import { Persona } from 'src/app/services/class/persona';
 import { Router } from '@angular/router';
 import { Vehiculo } from 'src/app/services/class/vehiculo';
 import { Component, OnInit } from '@angular/core';
@@ -18,8 +18,7 @@ export class RegisterVehiculoComponent implements OnInit{
 
 
   constructor(private router: Router, private vehiculoService: VehiculoService,
-    private personaService: PersonaService,
-    private VehiculoService: VehiculoService){}
+    private personaService: PersonaService){}
 
   ngOnInit(): void {
     

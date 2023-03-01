@@ -5,8 +5,43 @@ export class Registro{
     hora_entrada: string = "";
     hora_salida: string = "";
     observaciones: string = "";
-    id_bloque: string = "";
-    id_usuario: string = "";
-    id_vehiculo: string = "";
+
+    bloque: Bloque | undefined;
+
+    usuario: Usuario | undefined;
+
+    vehiculo: Vehiculo | undefined;
+
+}
+
+interface Bloque{
+
+    id_bloque: number;
+    nombre: string;
+    plazas: string;
+
+}
+
+
+interface Usuario{
+
+    id_usuario: number;
+    estado: string;
+    password: string;
+    rol: string;
+    username: string;
+    id_persona: number;
+
+}
+
+interface Vehiculo{
+
+    id_vehiculo: number;
+    color: string;
+    estado: string;
+    marca: string;
+    modelo: string;
+    placa: string;
+    id_persona: number;
 
 }
