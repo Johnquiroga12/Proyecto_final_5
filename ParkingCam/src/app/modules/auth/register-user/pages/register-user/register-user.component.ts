@@ -2,7 +2,7 @@
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { PersonaService } from 'src/app/services/persona.service';
-import { Persona } from 'src/app/services/class/Persona';
+import { Persona } from 'src/app/services/class/persona';
 import { Usuario } from 'src/app/services/class/usuario';
 import { UsuarioService } from 'src/app/services/usuario.service';
 
