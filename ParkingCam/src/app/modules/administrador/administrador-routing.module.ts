@@ -59,6 +59,11 @@ const routes: Routes = [
   {
     path: 'editar-persona/:id',
     loadChildren: () => import("./editar-persona/editar-persona.module").then(m => m.EditarPersonaModule)
+  },
+
+  {
+    path: 'editar-vehiculo/:id',
+    loadChildren: () => import("./editar-vehiculo/editar-vehiculo.module").then(m => m.EditarVehiculoModule)
   }
 
 ];
