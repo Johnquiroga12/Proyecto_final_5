@@ -16,6 +16,9 @@ export class BloqueService {
   getBloques(): Observable<Bloque[]> {
     return this.http.get<Bloque[]>(`${this.URL}list`);
   }
+  getbloque(id_bloque) : Observable<Bloque> {
+    return this.http.get<Bloque>(`${this.URL}search/${id_bloque}`)
+  }
 
   saveBloque(bloque: Bloque) : Observable<Bloque> { 
     return this.http.post<Bloque>(`${this.URL}create`, bloque, {headers: this.httpHeaders});

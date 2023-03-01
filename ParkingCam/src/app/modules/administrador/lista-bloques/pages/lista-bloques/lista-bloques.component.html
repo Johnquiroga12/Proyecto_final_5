@@ -13,7 +13,18 @@
 				<td>{{ bloque.id_bloque}} </td>
 				<td> {{ bloque.nombre}}</td>
 				<td>{{ bloque.plazas}} </td>
-				
+				<td>
+					<button class="btn btn-warning" [routerLink] = "['/administrador/editar-bloque', bloque.id_bloque]">Detalles</button> 
+				</td>
+
+				<td>
+					<button class="btn btn-warning" [routerLink] = "['/administrador/editar-bloque', bloque.id_bloque]">Editar</button> 
+				</td>
+
+				<td>
+					<button class="btn btn-danger"  >eliminar</button> 
+				</td>
+
 			</tr>
 		</tbody>
 	</table>
