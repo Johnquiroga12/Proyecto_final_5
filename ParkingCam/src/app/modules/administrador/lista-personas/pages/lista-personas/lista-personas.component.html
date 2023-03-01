@@ -19,6 +19,9 @@
 				<th>Jornada</th>
 				<th>Cargo</th>
 				<th></th>
+				<th></th>
+				<th></th>
+
 			</tr>
 		</thead>
 		<tbody>
@@ -33,15 +36,15 @@
 				<td>{{ persona.jornada}} </td>
 				<td>{{ persona.cargo}} </td>
 				<td>
-					<button class="btn btn-warning" [routerLink] = "['/administrador/detalle-personas', persona.id_persona]">Detalles</button> 
+					<button class="detalle" [routerLink] = "['/administrador/detalle-personas', persona.id_persona]">Detalles</button> 
 				</td>
 
 				<td>
-					<button class="btn btn-warning" [routerLink] = "['/administrador/editar-persona', persona.id_persona]">Editar</button> 
+					<button class="editar" [routerLink] = "['/administrador/editar-persona', persona.id_persona]">Editar</button> 
 				</td>
 
 				<td>
-					<button class="btn btn-danger" (click)="eliminar(persona.id_persona) " >eliminar</button> 
+					<button class="eliminar" (click)="eliminar(persona.id_persona) " >eliminar</button> 
 				</td>
 				
 			</tr>
