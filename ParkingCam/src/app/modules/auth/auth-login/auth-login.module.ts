@@ -1,4 +1,5 @@
-import { FormGroup, FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -8,12 +9,15 @@ import { AuthLoginComponent } from './pages/auth-login/auth-login.component';
 
 @NgModule({
   declarations: [
-    AuthLoginComponent
+    AuthLoginComponent,
+
   ],
   imports: [
     CommonModule,
     AuthLoginRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   
   exports: [

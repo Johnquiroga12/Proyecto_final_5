@@ -21,7 +21,6 @@ export class AuthLoginComponent implements OnInit {
   }
 
   onLogin(form) {
-
     console.log(form)
   }
 
