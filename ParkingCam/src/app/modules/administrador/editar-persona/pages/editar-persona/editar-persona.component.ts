@@ -27,7 +27,7 @@ dataname: boolean=false;
   createPersona(){
     return this.regperso.savePersona(this.persona).subscribe(
       res => {
-//        this.router.navigate(['/home/dashboard'])
+        this.router.navigate(['/administrador/lista-personas'])
       console.log(res)
     },
 
