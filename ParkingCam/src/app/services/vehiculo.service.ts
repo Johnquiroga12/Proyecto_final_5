@@ -1,4 +1,3 @@
-import { RegisterVehiculoRoutingModule } from './../modules/auth/register-vehiculo/register-vehiculo-routing.module';
 import { Vehiculo } from './class/vehiculo';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';

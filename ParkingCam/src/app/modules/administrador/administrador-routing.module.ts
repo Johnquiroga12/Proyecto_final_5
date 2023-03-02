@@ -25,6 +25,11 @@ const routes: Routes = [
   },
 
   {
+    path: 'lista-usuarios',
+    loadChildren: () => import("./lista-usuarios/lista-usuarios.module").then(m => m.ListaUsuariosModule)
+  },
+
+  {
     path: 'registro-personal',
     loadChildren: () => import("./registra-personal/registra-personal.module").then(m => m.RegistraPersonalModule)
   },
@@ -72,6 +77,14 @@ const routes: Routes = [
   {
     path: 'registro-vehiculo',
     loadChildren: () => import("./register-vehiculo/register-vehiculo.module").then(m => m.RegisterVehiculoModule)
+  },
+  {
+    path: 'registro-usuario',
+    loadChildren: () => import("./register-user/register-user.module").then(m => m.RegisterUserModule)
+  },
+  {
+    path: 'registro-bloque',
+    loadChildren: () => import("./register-bloque/register-bloque.module").then(m => m.RegisterBloqueModule)
   }
 
 ];

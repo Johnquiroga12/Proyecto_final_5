@@ -1,4 +1,3 @@
-
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { PersonaService } from 'src/app/services/persona.service';
@@ -8,11 +7,10 @@ import { UsuarioService } from 'src/app/services/usuario.service';
 
 @Component({
   selector: 'app-register-user',
-  templateUrl: './/register-user.component.html',
+  templateUrl: './register-user.component.html',
   styleUrls: ['./register-user.component.css']
 })
-
-export class RegisterUserComponent implements OnInit {
+export class RegisterUserComponent {
 
   usuario: Usuario = new Usuario;
   listaPersonas : Persona[];
@@ -42,6 +40,5 @@ export class RegisterUserComponent implements OnInit {
       err => console.error(err)
     )
   }
-
 
 }

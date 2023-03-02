@@ -4,11 +4,11 @@ import { Bloque } from 'src/app/services/class/bloque';
 import { BloqueService } from 'src/app/services/bloque.service';
 
 @Component({
-  selector: 'app-register-bloques',
-  templateUrl: './register-bloques.component.html',
-  styleUrls: ['./register-bloques.component.css']
+  selector: 'app-register-bloque',
+  templateUrl: './register-bloque.component.html',
+  styleUrls: ['./register-bloque.component.css']
 })
-export class RegisterBloquesComponent implements OnInit{
+export class RegisterBloqueComponent implements OnInit{
 
   bloque: Bloque = new Bloque;
 
@@ -28,5 +28,4 @@ export class RegisterBloquesComponent implements OnInit{
       err => console.error(err)
     )
   }
-
 }

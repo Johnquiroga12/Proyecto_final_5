@@ -1,0 +1,32 @@
+<div ng-app="myApp" ng-controller="tablaController">
+	<table>
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Nombre de Usuario</th>
+				<th>Rol</th>
+				<th>Estado</th>
+				<th>ID Persona</th>
+				<th></th>
+
+
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let usuario of usuarios">
+				<td>{{ usuario.id_usuario}} </td>
+				<td>{{ usuario.username}} </td>
+				<td>{{ usuario.rol}} </td>
+				<td>{{ usuario.estado}} </td>
+
+
+	
+					
+				<td>
+					<button class="editar" >Editar</button> 
+				</td>		
+
+			</tr>
+		</tbody>
+	</table>
+</div>

@@ -8,30 +8,9 @@ const routes: Routes = [
   },
 
   {
-    path:'register-user',
-    loadChildren: () => import("./register-user/register-user.module").then(m => m.RegisterUserModule)
-  },
-
-  {
-    path:'register-vehiculo',
-    loadChildren: () => import("./register-vehiculo/register-vehiculo.module").then(m => m.RegisterVehiculoModule)
-  },
-
-  {
     path:'register-end',
     loadChildren: () => import("./register-end/register-end.module").then(m => m.RegisterEndModule)
-  },
-
-  {
-    path:'register-registro',
-    loadChildren: () => import("./register-registro/register-registro.module").then(m => m.RegisterRegistroModule)
-  },
-
-  {
-    path:'register-bloques',
-    loadChildren: () => import("./register-bloques/register-bloques.module").then(m => m.RegisterBloquesModule)
   }
-
 ];
 
 @NgModule({

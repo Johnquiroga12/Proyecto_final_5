@@ -18,7 +18,6 @@
             </div>
 
 
-            <div class="listas">
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
                         <label class="input-group-text" for="inputGroupSelect01">Listado de Vehiculos</label>
@@ -32,10 +31,26 @@
                 </div>
 
 
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="inputGroupSelect01">Listado de Bloques</label>
+                    </div>
+
+                    <select class="custom-select" id="inputGroupSelect01">
+                        <option selected style="color: aliceblue;">Bloques ...</option>
+                        <option *ngFor="let bloque of bloqueLista" [value]="bloque.nombre">{{ bloque.nombre }}
+                        </option>
+                    </select>
+                </div>
+
+
+
                 <div class="btn-group" role="group" aria-label="Basic example">
 
-                    <a href="/auth/register-personas" class="btn  btn-primary">Crear Persona</a>
-                    <a href="/auth/register-vehiculos" class="btn  btn-primary">Crear Vehiculo</a>
+                    <a href="/administrador/registro-personas" class="btn  btn-primary">Crear Persona</a>
+                    <a href="/administrador/registro-vehiculo" class="btn  btn-primary">Crear Vehiculo</a>
+                    <a href="/administrador/registro-bloque" class="btn  btn-primary">Crear Bloque</a>
+
                 </div>
 
 
@@ -45,18 +60,22 @@
                 <div class="alert alert-primary" role="alert">
                     Recuerde generar una "Nueva Persona" antes de Asignar una Credencial
                 </div>
-                <a href="/auth/register-user" class="btn  btn-primary">Generar Credencial</a>
+                <a href="/administrador/registro-usuario" class="btn  btn-primary">Generar Credencial</a>
 
 
-            </div>
+
 
             <div>
                 <h5 class="title text-center">Listado de Control y Gestion</h5>
 
                 <div class="btn-group" role="group" aria-label="Basic example">
 
-                    <a href="/auth/register-personas" class="btn  btn-primary">Listado </a>
-                    <a href="/auth/register-vehiculos" class="btn  btn-primary">Listado</a>
+                    <a href="/administrador/lista-personas" class="btn  btn-primary">Listado de Personas</a>
+                    <a href="/administrador/lista-vehiculos" class="btn  btn-primary">Listado de Vehiculos</a>
+                    <a href="/administrador/lista-bloques" class="btn  btn-primary">Listado de Bloques</a>
+                    <a href="/administrador/lista-usuarios" class="btn  btn-primary">Listado de Usuarios</a>
+
+
                 </div>
 
             </div>
