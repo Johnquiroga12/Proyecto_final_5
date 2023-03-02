@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PersonaService } from 'src/app/services/persona.service';
 import { Persona } from 'src/app/services/class/persona';
 import { Router, ActivatedRoute } from '@angular/router';
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-editar-persona',
@@ -27,8 +28,16 @@ dataname: boolean=false;
   createPersona(){
     return this.regperso.savePersona(this.persona).subscribe(
       res => {
-        this.router.navigate(['/administrador/lista-personas'])
-      console.log(res)
+        this.router.navigate(['/administrador/lista-personas']) 
+        Swal.fire({
+          position: 'top-end',
+          icon: 'success',
+          title: 'La edicion se a completado correctamente',
+          showConfirmButton: false,
+          timer: 1500
+        })
+      
+        console.log(res)
     },
 
     err => console.error(err)

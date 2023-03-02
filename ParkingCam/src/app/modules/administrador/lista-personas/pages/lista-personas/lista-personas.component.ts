@@ -2,7 +2,7 @@ import { PersonaService } from "src/app/services/persona.service";
 import { Component, OnInit } from '@angular/core';
 import { Persona } from "src/app/services/class/persona";
 import { Router, ActivatedRoute } from '@angular/router';
-
+import Swal from 'sweetalert2'
 @Component({
   selector: 'app-lista-personas',
   templateUrl: './lista-personas.component.html',
@@ -19,15 +19,41 @@ constructor(private personasService: PersonaService, private router: Router) { }
 
   ngOnInit(): void {
     
-    this.personasService.getPersonas().subscribe(
+    
+this.listar();    
+  }
+
+  listar(){
+this.personasService.getPersonas().subscribe(
       res => this.personas = res
     )
 
-    
   }
 
   eliminar(persona){
     this.personasService.deletePersona(persona).subscribe(
+      res => {
+      
+      Swal.fire({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire(
+            'Deleted!',
+            'Your file has been deleted.',
+            'success'
+          )
+        }
+      })
+this.listar();
+
+      },
     )
   }
   cargar(carga: Persona): void {
