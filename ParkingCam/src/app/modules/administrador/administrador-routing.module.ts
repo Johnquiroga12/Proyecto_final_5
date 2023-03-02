@@ -35,10 +35,6 @@ const routes: Routes = [
   },
 
   {
-    path: 'asignar-credencial',
-    loadChildren: () => import("./asignar-credencial/asignar-credencial.module").then(m => m.AsignarCredencialModule)
-  },
-  {
     path: 'profile',
     loadChildren: () => import("./profile/profile.module").then(m => m.ProfileModule)
   },
@@ -68,6 +64,10 @@ const routes: Routes = [
   {
     path: 'editar-bloque/:id',
     loadChildren: () => import("./editar-bloque/editar-bloque.module").then(m => m.EditarBloqueModule)
+  },
+  {
+    path: 'registro-personas',
+    loadChildren: () => import("./register-personas/register-personas.module").then(m => m.RegisterPersonasModule)
   }
 
 ];

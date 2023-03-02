@@ -2,12 +2,10 @@ import { RegisterPersonasComponent } from './pages/register-personas/register-pe
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-const routes: Routes = [
-  {
-    path:'',
-    component: RegisterPersonasComponent
-  }
-];
+const routes: Routes = [{
+  path: '',
+  component: RegisterPersonasComponent
+}];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

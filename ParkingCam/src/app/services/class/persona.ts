@@ -10,5 +10,4 @@ export class Persona{
     n_emergencia: string = "";
     carrera: string = "";
     jornada: string = "";
-    estado: string = "";
 }

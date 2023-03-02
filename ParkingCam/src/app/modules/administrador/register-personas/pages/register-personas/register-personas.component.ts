@@ -1,20 +1,19 @@
-import { PersonaService } from 'src/app/services/persona.service';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Persona } from 'src/app/services/class/persona';
-import { Component, OnInit } from '@angular/core';
+import { PersonaService } from 'src/app/services/persona.service';
 
 @Component({
   selector: 'app-register-personas',
   templateUrl: './register-personas.component.html',
   styleUrls: ['./register-personas.component.css']
 })
-export class RegisterPersonasComponent implements OnInit{
+export class RegisterPersonasComponent {
 
   persona: Persona = new Persona;
   listaPersonas: Persona[];
   
   constructor(private router: Router, private personaService: PersonaService){ }
-
   ngOnInit(): void {
     
     this.personaService.getPersonas().subscribe(

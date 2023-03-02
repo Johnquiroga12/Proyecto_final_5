@@ -1,28 +1,58 @@
-<div class="wrapper">
+<div class="col-sm-12 col-md-4">
+    <h5 class="title text-center">Registrar Personas y Asignar Credenciales</h5>
+    <hr>
+    <div class="card text-center">
+        <div class="card-body">
+            <h5 class="card-title">Verificar Registros:</h5>
 
-    <div class="col-sm-12 col-md-4">
-        <h5 class="title">Asignar Credenciales</h5>
-        <hr>
-        <div class="card text-center">
-            <div class="card-body">
-                <h5 class="card-title">Seleccionar la persona:</h5>
+
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <label class="input-group-text" for="inputGroupSelect01">Listado de Personas</label>
+                </div>
+                <select class="custom-select" id="inputGroupSelect01">
+                    <option selected style="color: aliceblue;">Personas ...</option>
+                    <option *ngFor="let persona of personaLista" [value]="persona.nombre">{{ persona.nombre }}
+                    </option>
+                </select>
+            </div>
+
+
+            <div class="listas">
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
-                        <span class="input-group-text"><i data-feather="mail"></i></span>
+                        <label class="input-group-text" for="inputGroupSelect01">Listado de Vehiculos</label>
                     </div>
 
-                    <select style="background-color: rgb(225, 225, 225);">
-                        <option selected style="color: aliceblue;">Selecciona la persona</option>
-                        <option *ngFor="let persona of personaLista" [value]="persona.nombre">{{ persona.nombre }}
+                    <select class="custom-select" id="inputGroupSelect01">
+                        <option selected style="color: aliceblue;">Vehiculos ...</option>
+                        <option *ngFor="let vehiculo of vehiculoLista" [value]="vehiculo.placa">{{ vehiculo.placa }}
                         </option>
                     </select>
                 </div>
 
-                <a href="/auth/register-personas" class="btn  btn-primary">Crear Persona</a>
-                <a href="/auth/register-user" class="btn  btn-primary">Asignar Credencial</a>
+
+                <div class="btn-group" role="group" aria-label="Basic example">
+
+                    <a href="/auth/register-personas" class="btn  btn-primary">Crear Persona</a>
+                    <a href="/auth/register-vehiculos" class="btn  btn-primary">Crear Vehiculo</a>
+                </div>
+
+
+
+
+
+                <div class="alert alert-primary" role="alert">
+                    Recuerde generar una "Nueva Persona" antes de Asignar una Credencial
+                </div>
+                <a href="/auth/register-user" class="btn  btn-primary">Generar Credencial</a>
+
 
             </div>
+            <div>
+                <h5 class="title text-center">Listado de Control y Gestion</h5>
+            </div>
+
         </div>
     </div>
-
 </div>

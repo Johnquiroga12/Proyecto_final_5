@@ -30,10 +30,6 @@ const routes: Routes = [
   {
     path:'register-bloques',
     loadChildren: () => import("./register-bloques/register-bloques.module").then(m => m.RegisterBloquesModule)
-  },
-  {
-    path:'register-personas',
-    loadChildren: () => import("./register-personas/register-personas.module").then(m => m.RegisterPersonasModule)
   }
 
 ];
