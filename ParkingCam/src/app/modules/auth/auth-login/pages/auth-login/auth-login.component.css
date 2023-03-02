@@ -62,6 +62,7 @@
 
 .auth-wrapper .input-group {
   background: transparent;
+  width: 150%;
 }
 
 .auth-wrapper .card {
