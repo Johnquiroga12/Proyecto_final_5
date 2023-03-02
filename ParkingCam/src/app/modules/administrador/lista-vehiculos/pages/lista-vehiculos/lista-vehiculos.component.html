@@ -25,7 +25,7 @@
 					<button class="editar" [routerLink] = "['/administrador/editar-vehiculo', vehiculo.id_vehiculo]">Editar</button> 
 				</td>		
 				<td>
-					<button class="eliminar" >Eliminar</button> 
+					<button class="eliminar" (click)="eliminar(vehiculo.id_vehiculo) "  >Eliminar</button> 
 				</td>		
 
 			</tr>

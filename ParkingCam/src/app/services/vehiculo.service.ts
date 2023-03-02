@@ -25,5 +25,9 @@ export class VehiculoService {
   saveVehiculo(vehiculo:Vehiculo) : Observable<Vehiculo>{
     return this.http.post<Vehiculo>(`${this.URL}create`, vehiculo, {headers:this.httpHeaders});
   }
+  delete(id): Observable<Vehiculo>{
+    return this.http.delete<Vehiculo>(`${this.URL}delete/${id}`);
+  }
+
   
 }

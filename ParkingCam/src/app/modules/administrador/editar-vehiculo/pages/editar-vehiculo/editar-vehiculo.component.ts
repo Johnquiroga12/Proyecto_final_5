@@ -4,6 +4,7 @@ import { Vehiculo } from 'src/app/services/class/vehiculo';
 import { Component, OnInit } from '@angular/core';
 import { VehiculoService } from 'src/app/services/vehiculo.service';
 import { PersonaService } from 'src/app/services/persona.service';
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-editar-vehiculo',
@@ -36,8 +37,16 @@ export class EditarVehiculoComponent implements OnInit{
     return this.vehiculoService.saveVehiculo(this.vehiculo).subscribe(
       res => {
         this.router.navigate(['/administrador/lista-vehiculos'])
-      console.log(res)
-      },
+      Swal.fire({
+          position: 'top-end',
+          icon: 'success',
+          title: 'La edicion se a completado correctamente',
+          showConfirmButton: false,
+          timer: 1500
+        })
+      
+        console.log(res)
+        },
 
       err => console.error(err)
     )
