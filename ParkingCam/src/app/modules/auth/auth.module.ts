@@ -1,4 +1,5 @@
-import { FormGroup, FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -13,7 +14,11 @@ import { WelcomeAuthComponent } from './welcome-auth/welcome-auth.component';
   imports: [
     CommonModule,
     AuthRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
       ],
 
     exports: [

@@ -15,6 +15,7 @@ import { AuthLoginComponent } from './pages/auth-login/auth-login.component';
   imports: [
     CommonModule,
     AuthLoginRoutingModule,
+    HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule
