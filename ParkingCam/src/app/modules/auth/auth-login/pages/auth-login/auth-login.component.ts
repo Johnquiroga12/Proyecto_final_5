@@ -48,6 +48,10 @@ loginForm = new FormGroup({
 
         this.router.navigate(['home/dashboard']);
       }
+      else if(this.iRol == "Guardia"){
+
+        this.router.navigate(['home/dashboard']);
+      }
     }
   })
 }
