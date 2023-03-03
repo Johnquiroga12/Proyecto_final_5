@@ -24,7 +24,7 @@ this.listar();
   }
 
   listar(){
-this.personasService.getPersonas().subscribe(
+this.personasService.Persona().subscribe(
       res => this.personas = res
     )
 
@@ -79,6 +79,30 @@ this.listar();
       }
     
     }     
+
+    
+act:string='D';
+ve:any;
+idMascotaDelete:any;
+descativar2(id: any) {
+  this.personasService.getPersona(id).subscribe(data => {
+    this.ve = data
+    this.idMascotaDelete = this.ve.id_vehiculo;
+    console.log("ES LA ID -> " + this.ve.id_vehiculo);
+    this.ve.estado = this.act;
+    this.personasService.desativar2(this.ve, id).subscribe(data => {
+      console.log(data)
+      Swal.fire(
+        'Eliminado!',
+        'se a elimino correctamente.',
+        'success'
+      )
+      this.listar();
+  
+    })
+  })
+ 
+}
 
 }
 

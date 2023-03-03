@@ -17,6 +17,9 @@ export class PersonaService {
     return this.http.get<Persona[]>(`${this.URL}list`);
 
   }
+  Persona() : Observable<Persona[]>{
+    return this.http.get<Persona[]>(`${this.URL}listar`);
+  } 
   getPersona(id_persona) : Observable<Persona> {
     return this.http.get<Persona>(`${this.URL}search/${id_persona}`)
   }
@@ -27,5 +30,9 @@ export class PersonaService {
 
   deletePersona(id): Observable<Persona>{
     return this.http.delete<Persona>(`${this.URL}delete/${id}`);
+  }
+  desativar2( vehiculo:Persona,id:any){
+    return this.http.put<Persona>(this.URL+`update/${id}`,vehiculo);
+  
   }
 }
