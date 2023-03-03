@@ -10,7 +10,7 @@ import Swal from 'sweetalert2'
 })
 export class ListaVehiculosComponent implements OnInit {
   
-  vehiculos: Vehiculo[];
+  vehiculos: Vehiculo[]=[];
 
   constructor(private vehiculosService: VehiculoService) {}
 
@@ -20,7 +20,7 @@ export class ListaVehiculosComponent implements OnInit {
   
   listar(){
     this.vehiculosService
-      .getVehiculos()
+      .Vehiculos()
       .subscribe((res) => (this.vehiculos = res));
   
   }    
@@ -50,5 +50,29 @@ this.listar();
       },
     )
   }
+
+act:string='D';
+  ve:any;
+  idMascotaDelete:any;
+  descativar2(id: any) {
+    this.vehiculosService.getVehiculo(id).subscribe(data => {
+      this.ve = data
+      this.idMascotaDelete = this.ve.id_vehiculo;
+      console.log("ES LA ID -> " + this.ve.id_vehiculo);
+      this.ve.estado = this.act;
+      this.vehiculosService.desativar2(this.ve, id).subscribe(data => {
+        console.log(data)
+        Swal.fire(
+          'Eliminado!',
+          'se a elimino correctamente.',
+          'success'
+        )
+        this.listar();
+    
+      })
+    })
+   
+  }
+
  
 }

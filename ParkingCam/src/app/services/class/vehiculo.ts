@@ -5,8 +5,10 @@ export class Vehiculo {
   marca: string = '';
   modelo: string = '';
   color: string = '';
+   estado:string='A';
   persona: Persona | undefined;
 }
+
 
 interface Persona{
 

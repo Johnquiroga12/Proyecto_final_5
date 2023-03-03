@@ -18,6 +18,10 @@ export class VehiculoService {
     return this.http.get<Vehiculo[]>(`${this.URL}list`);
   } 
   
+  Vehiculos() : Observable<Vehiculo[]>{
+    return this.http.get<Vehiculo[]>(`${this.URL}listar`);
+  } 
+  
   getVehiculo(id_vehiculo) : Observable<Vehiculo> {
     return this.http.get<Vehiculo>(`${this.URL}search/${id_vehiculo}`)
   } 
@@ -28,6 +32,9 @@ export class VehiculoService {
   delete(id): Observable<Vehiculo>{
     return this.http.delete<Vehiculo>(`${this.URL}delete/${id}`);
   }
-
+ 
+  desativar2( vehiculo:Vehiculo,id:any){
+    return this.http.put<Vehiculo>(this.URL+`update/${id}`,vehiculo);
   
+  }
 }
