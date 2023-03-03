@@ -17,6 +17,11 @@ export class UsuarioService {
     return this.http.get<Usuario[]>(`${this.URL}list`);
   }
 
+ 
+  usuarios() : Observable<Usuario[]>{
+    return this.http.get<Usuario[]>(`${this.URL}listar`);
+  }
+
   getUsuario(id_usuario) : Observable<Usuario> {
     return this.http.get<Usuario>(`${this.URL}search/${id_usuario}`)
   }
@@ -25,4 +30,8 @@ export class UsuarioService {
     return this.http.post<Usuario>(`${this.URL}create`, usuario, {headers:this.httpHeaders});
   }
 
+  desativar2( vehiculo:Usuario,id:any){
+    return this.http.put<Usuario>(this.URL+`update/${id}`,vehiculo);
+  
+  }
 }

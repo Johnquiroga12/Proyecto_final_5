@@ -87,8 +87,8 @@ idMascotaDelete:any;
 descativar2(id: any) {
   this.personasService.getPersona(id).subscribe(data => {
     this.ve = data
-    this.idMascotaDelete = this.ve.id_vehiculo;
-    console.log("ES LA ID -> " + this.ve.id_vehiculo);
+    this.idMascotaDelete = this.ve.id_persona;
+    console.log("ES LA ID -> " + this.ve.id_persona);
     this.ve.estado = this.act;
     this.personasService.desativar2(this.ve, id).subscribe(data => {
       console.log(data)

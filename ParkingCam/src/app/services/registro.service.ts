@@ -16,6 +16,9 @@ export class RegistroService {
   getRegistros(): Observable<Registro[]>{
     return this.http.get<Registro[]>(`${this.URL}list`);
   }
+  Registro() : Observable<Registro[]>{
+    return this.http.get<Registro[]>(`${this.URL}listar`);
+  } 
 
   getRegistro(id_registro): Observable<Registro>{
     return this.http.get<Registro>(`${this.URL}search/${id_registro}`)
@@ -23,5 +26,10 @@ export class RegistroService {
 
   saveRegistro(registro : Registro) : Observable<Registro> {
     return this.http.post<Registro>(`${this.URL}create`, registro, {headers:this.httpHeaders});
+  }
+  
+  desativar2( vehiculo:Registro,id:any){
+    return this.http.put<Registro>(this.URL+`update/${id}`,vehiculo);
+  
   }
 }

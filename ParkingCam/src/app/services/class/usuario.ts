@@ -4,7 +4,7 @@ export class Usuario{
     username: string = "";
     password: string = "";
     rol: string = "";
-    estado: string="";
+    estado: string = "A";
     persona: Persona | undefined;
 }
 

@@ -4,6 +4,7 @@ import { PersonaService } from 'src/app/services/persona.service';
 import { Persona } from 'src/app/services/class/persona';
 import { Usuario } from 'src/app/services/class/usuario';
 import { UsuarioService } from 'src/app/services/usuario.service';
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-register-user',
@@ -33,8 +34,18 @@ export class RegisterUserComponent {
     
     return this.usuarioService.saveUsuario(this.usuario).subscribe(
       res => {
-        this.router.navigate(['/home/dashboard'])
+        this.router.navigate(['/administrador/lista-usuarios'])
       console.log(res)
+
+      Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: 'Se a creado correctamente',
+        showConfirmButton: false,
+        timer: 1500
+      })
+    
+
       },
 
       err => console.error(err)

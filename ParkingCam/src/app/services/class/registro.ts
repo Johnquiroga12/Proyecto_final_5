@@ -5,6 +5,7 @@ export class Registro{
     hora_entrada: string = "";
     hora_salida: string = "";
     observaciones: string = "";
+    estado: string = "A";
 
     bloque: Bloque | undefined;
 
