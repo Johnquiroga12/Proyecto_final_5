@@ -6,7 +6,7 @@ import { Usuario } from 'src/app/services/class/usuario';
 import { LoginService } from 'src/app/services/login.service';
 import { LoginI } from 'src/app/services/modelo/login.interface';
 
-
+ import Swal from 'sweetalert2';
 @Component({
   selector: 'app-auth-login',
   templateUrl: './auth-login.component.html',
@@ -29,32 +29,62 @@ loginForm = new FormGroup({
   ngOnInit(): void {
 
   }
-
   public onLogin(): void{
-
-  this.api.getCurrentUser(this.login).subscribe((data) => {
-
-    this.json = JSON.stringify(data);
-    this.usuar = JSON.parse(this.json);
-
-    if (this.usuar != null){
-      this.iRol = this.usuar.rol;
-
-      if(this.iRol == "Administrador"){
-        this.router.navigate(['home/dashboard']);
-      }
-
-      else if(this.iRol == "Secretaria"){
-
-        this.router.navigate(['home/dashboard']);
-      }
-      else if(this.iRol == "Guardia"){
-
-        this.router.navigate(['home/dashboard']);
-      }
+    if (!this.login.username || !this.login.password) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'Por favor ingrese su usuario y contraseña',
+        showConfirmButton: false,
+        timer: 1500
+      });
+      return;
     }
-  })
-}
-
+    this.api.getCurrentUser(this.login).subscribe((data) => {
+      this.json = JSON.stringify(data);
+      this.usuar = JSON.parse(this.json);
+  
+      if (this.usuar != null){
+        if (this.usuar.username === this.login.username && this.usuar.password === this.login.password) {
+          this.iRol = this.usuar.rol;
+  
+          if(this.iRol == "Administrador"){
+            this.router.navigate(['home/dashboard']);
+          }
+          else if(this.iRol == "Secretaria"){
+            this.router.navigate(['home/dashboard']);
+          }
+          else if(this.iRol == "Guardia"){
+            this.router.navigate(['home/dashboard']);
+          }
+          Swal.fire({
+            icon: 'success',
+            title: 'Ingresado correctamente',
+            showConfirmButton: false,
+            timer: 1500
+          })
+        }
+        else {
+          Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: 'Contraseña incorrecta',
+            showConfirmButton: false,
+            timer: 1500
+          
+          });
+        }
+      }
+      else {
+        Swal.fire({
+          icon: 'error',
+          title: 'Error',
+          text: ' Verifique su Usuario o contraseña',
+          showConfirmButton: false,
+          timer: 1500
+        });
+      }
+    });
+  }
 
 }
