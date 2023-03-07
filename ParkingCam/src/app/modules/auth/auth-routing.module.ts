@@ -10,6 +10,10 @@ const routes: Routes = [
   {
     path:'register-end',
     loadChildren: () => import("./register-end/register-end.module").then(m => m.RegisterEndModule)
+  },
+  {
+    path:'reset-password',
+    loadChildren: () => import("./reset-password/reset-password.module").then(m => m.ResetPasswordModule)
   }
 ];
 
