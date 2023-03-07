@@ -52,27 +52,77 @@
 
 							</div>
 
-							<div class="input-group mb-3">
-								<div class="input-group-prepend">
-									<span class="input-group-text"><i data-feather="text"></i></span>
-								</div>
-								<input type="text" id="login" class="input-group-text" name="carrera" [(ngModel)] = "persona.carrera" placeholder="Carrera">
 							
-								<div class="input-group-prepend">
-									<span class="input-group-text"><i data-feather="text"></i></span>
-								</div>
-								<input type="text" id="login" class="input-group-text" name="jornada" [(ngModel)] = "persona.jornada" placeholder="Jornada">
+
+							<div class="input-group mb-3">
+								<select [(ngModel)]="persona.carrera" class="form-select" name="ellegir"
+									style="font-size: 18px; height: 40px; width: 25px;">
+									<option  value="" selected disabled> seleccione su carrera </option>
+									<option value="TECNOLOGÍA SUPERIOR EN DESARROLLO DE SOFTWARE">TECNOLOGÍA SUPERIOR EN
+										DESARROLLO DE SOFTWARE</option>
+									<option value="TECNOLOGÍA SUPERIOR EN MECÁNICA INDUSTRIAL">TECNOLOGÍA SUPERIOR EN
+										MECÁNICA INDUSTRIAL</option>
+									<option value="TECNOLOGÍA EN DESARROLLO INFANTIL INTEGRAL">TECNOLOGÍA EN DESARROLLO
+										INFANTIL INTEGRAL</option>
+									<option value="ENTRENAMIENTO DEPORTIVO">ENTRENAMIENTO DEPORTIVO</option>
+									<option value="TECNOLOGÍA SUPERIOR EN PROCESAMIENTO INDUSTRIAL DE LA MADERA">
+										TECNOLOGÍA SUPERIOR EN PROCESAMIENTO INDUSTRIAL DE LA MADERA</option>
+									<option value="TECNOLOGÍA SUPERIOR EN ELECTRICIDAD">TECNOLOGÍA SUPERIOR EN
+										ELECTRICIDAD</option>
+									<option value="TECNOLOGÍA SUPERIOR EN SEGURIDAD PENITENCIARIA">TECNOLOGÍA SUPERIOR
+										EN SEGURIDAD PENITENCIARIA</option>
+									<option value="TECNOLOGÍA SUPERIOR EN ASESORÍA FINANCIERA">TECNOLOGÍA SUPERIOR EN
+										ASESORÍA FINANCIERA</option>
+									<option
+										value="TECNOLOGÍA SUPERIOR EN CONTROL DE INCENDIOS Y OPERACIONES DE RESCATE">
+										TECNOLOGÍA SUPERIOR EN CONTROL DE INCENDIOS Y OPERACIONES DE RESCATE</option>
+									<option value="TECNOLOGÍA SUPERIOR EN MECATRÓNICA">TECNOLOGÍA SUPERIOR EN
+										MECATRÓNICA</option>
+									<option value="TECNOLOGÍA SUPERIOR EN TRIBUTACIÓN">TECNOLOGÍA SUPERIOR EN
+										TRIBUTACIÓN</option>
+									<option value="TECNOLOGÍA SUPERIOR EN SEGURIDAD CIUDADANA Y ORDEN PÚBLICO">
+										TECNOLOGÍA SUPERIOR EN SEGURIDAD CIUDADANA Y ORDEN PÚBLICO</option>
+									<option value="TECNOLOGÍA SUPERIOR EN SEGURIDAD Y PREVENCIÓN DE RIESGOS LABORALES">
+										TECNOLOGÍA SUPERIOR EN SEGURIDAD Y PREVENCIÓN DE RIESGOS LABORALES</option>
+									<option value="TECNOLOGÍA SUPERIOR EN GESTIÓN DEL PATRIMONIO HISTÓRICO CULTURAL">
+										TECNOLOGÍA SUPERIOR EN GESTIÓN DEL PATRIMONIO HISTÓRICO CULTURAL</option>
+									<option value="TECNOLOGÍA SUPERIOR EN BIG DATA">TECNOLOGÍA SUPERIOR EN BIG DATA
+									</option>
+									<option value="PRODUCCIÓN Y REALIZACIÓN AUDIOVISUAL">PRODUCCIÓN Y REALIZACIÓN
+										AUDIOVISUAL</option>
+									<option value="TECNOLOGIA SUPERIOR EN CIBERSEGURIDAD">TECNOLOGIA SUPERIOR EN
+										CIBERSEGURIDAD</option>
+									<option value="TECNOLOGÍA SUPERIOR EN MANTENIMIENTO ELÉCTRICO Y CONTROL INDUSTRIAL">
+										TECNOLOGÍA SUPERIOR EN MANTENIMIENTO ELÉCTRICO Y CONTROL INDUSTRIAL</option>
+									<option value="TECNOLOGÍA SUPERIOR EN METALMECÁNICA">TECNOLOGÍA SUPERIOR EN
+										METALMECÁNICA</option>
+									<option
+										value="TECNOLOGÍA SUPERIOR EN ADMINISTRACIÓN DE INFRAESTRUCTURA Y PLATAFORMAS TECNOLÓGICAS">
+										TECNOLOGÍA SUPERIOR EN ADMINISTRACIÓN DE INFRAESTRUCTURA Y PLATAFORMAS
+										TECNOLÓGICAS</option>
+								</select>
+
 
 							</div>
 
-							<div class="input-group mb-3">
-								<div class="input-group-prepend">
-									<span class="input-group-text"><i data-feather="text"></i></span>
-								</div>
-								<input type="text" id="login" class="input-group-text" name="cargo" [(ngModel)] = "persona.cargo" placeholder="Cargo">
-							
-							</div>
 
+							<div class="input-group mb-3">
+								<select class="form-select" name="ellegir" aria-label="Default select example" [(ngModel)]="persona.cargo" id="cargo"
+								style="font-size: 18px; height: 40px; width: 25px;">
+									<option value="" selected disabled> seleccione su cargo </option>
+									<option value="Estudiante">Estudiante</option>
+									<option value="Docente">Docente</option>
+									<option value="Otro">Otro</option>
+								</select>
+								
+								<select class="form-select" name="jornada" [(ngModel)]="persona.jornada"
+								style="font-size: 18px; height: 40px; width: 25px;">
+								<option value="" selected disabled>Seleccione su jornada</option>
+								<option value="matutina">Matutina</option>
+								<option value="vespertina">Vespertina</option>
+								<option value="nocturna">Nocturna</option>
+							</select>
+							</div>
 
 
 
