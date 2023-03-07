@@ -19,7 +19,7 @@ export class ListaUsuariosComponent implements OnInit {
     this.listar();
   }
 
-  listar() {
+  public listar() {
     this.usuarioService.getUsuarios().subscribe((res) => (this.usuarios = res))
 
   }

@@ -3,6 +3,7 @@ import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Usuario } from './class/usuario';
 
+const API_URL = 'http://localhost:8080/api';
 @Injectable({
   providedIn: 'root'
 })
@@ -34,4 +35,14 @@ export class UsuarioService {
     return this.http.put<Usuario>(this.URL+`update/${id}`,vehiculo);
   
   }
+
+  //Metodos para obtener y actualizar..
+  public getAccountByDesactivation( cedula: any){
+    return this.http.get<any>(API_URL+'/usuario/search/update/'+cedula);
+  }
+
+  public updateAccountByDesactivation(id_cuenta: any, user: any){
+    return this.http.put<Usuario>(API_URL+'/usuario/user/update/'+id_cuenta, user);
+  }
+
 }

@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Registro } from './class/registro';
 
+const API_URL = 'http://localhost:8080/api';
 @Injectable({
   providedIn: 'root'
 })
@@ -30,6 +31,11 @@ export class RegistroService {
   
   desativar2( vehiculo:Registro,id:any){
     return this.http.put<Registro>(this.URL+`update/${id}`,vehiculo);
-  
+
   }
+
+
+  public newRegistro(){
+    return this.http.get<any>(API_URL+'/registro/listar');
+  } 
 }
