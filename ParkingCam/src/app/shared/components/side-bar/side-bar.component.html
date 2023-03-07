@@ -1,55 +1,54 @@
-<nav class="pc-sidebar ">
-  <div class="navbar-wrapper">
-    <div class="m-header">
-      <a href="index.html" class="b-brand">
-        
-        <img src="http://dev2020.tecazuay.edu.ec/wp-content/uploads/2022/11/cropped-LOGO-RECTANGULAR_SIN-FONDO-2048x626.png" alt="" class="logo logo-lg">
-        <img src="http://dev2020.tecazuay.edu.ec/wp-content/uploads/2022/11/cropped-LOGO-RECTANGULAR_SIN-FONDO-2048x626.png" alt="" class="logo logo-sm">
-      </a>
-    </div>
-    <div class="navbar-content">
-      <ul class="pc-navbar">
-        <li class="pc-item pc-caption">
-          <label>Navegación</label>
-        </li>
-        <li class="pc-item">
-          <a href="/home/dashboard" class="pc-link "><span class="pc-micon"><i data-feather="home"></i></span><span class="pc-mtext">Dashboard</span></a>
-        </li>
-        <li class="pc-item pc-caption">
-          <label>Administrator</label>
-          <span>Acciones Disponibles</span>
-        </li>
-        <li class="pc-item pc-hasmenu">
-          <a href="/administrador/registro-personal" class="pc-link "><span class="pc-micon"><i data-feather="box"></i></span><span class="pc-mtext">Registros</span><span class="pc-arrow"><i data-feather="chevron-right"></i></span></a>
-        </li>
-        <li class="pc-item">
-          <a href="administrador/lista-personas" class="pc-link "><span class="pc-micon"><i data-feather="feather"></i></span><span class="pc-mtext">Listado de Personas</span></a>
-        </li>
-        <li class="pc-item pc-caption">
-          <label>Gestión</label>
-          <span>Control y Gestión</span>
-        </li>
-        <li class="pc-item pc-hasmenu">
-          <a href="administrador/control-bloques" class="pc-link "><span class="pc-micon"><i data-feather="layout"></i></span><span class="pc-mtext">Control de Bloques</span><span class="pc-arrow"><i data-feather="chevron-right"></i></span></a>
-        </li>
-        <li class="pc-item pc-caption">
-          
-         <!-- <span>Control de Registros</span>
-        </li>
-        <li class="pc-item">
-          <a class="pc-link "><span class="pc-micon"><i data-feather="grid"></i></span><span class="pc-mtext">Generar Reportes</span></a>
-        </li>
-        -->
-        <li class="pc-item pc-caption">
-          <label>Perfil y Cuenta</label>
-          <span>Estado de Cuenta</span>
-        </li>
-        <li class="pc-item">
-          <a href="administrador/profile" class="pc-link "><span class="pc-micon"><i data-feather="pie-chart"></i></span><span class="pc-mtext">Perfil</span></a>
-        </li>
+<div id="sidebar" class="flex-shrink-0 p-3 bg-white" style="width: 250px;">
+  <a href="/home/dashboard" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
+    <img id="logo" src="http://dev2020.tecazuay.edu.ec/wp-content/uploads/2022/11/cropped-LOGO-RECTANGULAR_SIN-FONDO.png"> 
+  </a>
+  <ul class="list-unstyled ps-0">
+    <li class="mb-1">
+      <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
+        Inicio
+      </button>
+      <div class="collapse show" id="home-collapse">
+        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+          <li><a href="home/dashboard" class="link-dark d-inline-flex text-decoration-none rounded">Página Principal</a></li>
 
-      </ul>
+        </ul>
+      </div>
+    </li>
+    <li class="mb-1">
+      <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
+        Administrador
+      </button>
+      <div class="collapse" id="dashboard-collapse">
+        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+          <li><a href="administrador/lista-personas" class="link-dark d-inline-flex text-decoration-none rounded">Persona</a></li>
+          <li><a href="administrador/lista-vehiculos" class="link-dark d-inline-flex text-decoration-none rounded">Vehiculo</a></li>
+          <li><a href="administrador/lista-bloques" class="link-dark d-inline-flex text-decoration-none rounded">Bloque</a></li>
+          <li><a href="administrador/lista-usuarios" class="link-dark d-inline-flex text-decoration-none rounded">Usuario</a></li>
+        </ul>
+      </div>
+    </li>
+    <li class="mb-1">
+      <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
+        Control de Registros
+      </button>
+      <div class="collapse" id="orders-collapse">
+        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+          <li><a href="administrador/lista-registros" class="link-dark d-inline-flex text-decoration-none rounded">Listado Registros</a></li>
 
-    </div>
-  </div>
-</nav>
+        </ul>
+      </div>
+    </li>
+    <li class="border-top my-3"></li>
+    <li class="mb-1">
+      <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
+        Cuenta
+      </button>
+      <div class="collapse" id="account-collapse">
+        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+          <li><a href="administrador/profile" class="link-dark d-inline-flex text-decoration-none rounded">Perfil</a></li>
+          <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Cerrar Sesión</a></li>
+        </ul>
+      </div>
+    </li>
+  </ul>
+</div>

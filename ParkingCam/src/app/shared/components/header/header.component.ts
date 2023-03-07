@@ -1,10 +1,71 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { LoginService } from 'src/app/services/login.service';
+import { UsuarioService } from 'src/app/services/usuario.service';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit{
 
+  id: any;
+  nombreUsuario: any;
+  nombreRol: any;
+
+
+  isSuperAdmin: boolean = false;
+
+
+  displayMaximizable: any;
+  isLogin: boolean = false;
+
+  constructor(private usuarioService: UsuarioService){ }
+
+  ngOnInit(): void {
+    
+    this.obtenerUsuario()
+  }
+
+
+  obtenerUsuario() {
+    this.id = localStorage.getItem('id_usuario');
+    if (this.id != '' && this.id != undefined) {
+      this.usuarioService.getUsuario(this.id).subscribe((data) => {
+        console.log(data);
+        if (data != null) {
+          this.isLogin = true;
+  
+          this.nombreUsuario = data.persona?.nombre + ' ' + data.persona?.apellido;
+          this.nombreRol = data.rol;
+  
+          switch (data.rol) {
+  
+            case 'Administrador':
+  
+              this.isSuperAdmin = true;
+  
+              break;
+  
+            case 'Secretaria':
+              this.isSuperAdmin = true;
+
+              break;
+
+
+            default:
+              alert('Rol desconocido');
+              break;
+          };
+  
+        } else {
+          this.isLogin = false;
+          this.nombreUsuario = 'NULL';
+        }
+      });
+    }
+  }
+
+
+  
 }

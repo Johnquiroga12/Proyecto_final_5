@@ -9,6 +9,10 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./detalle-vehiculos.component.css'],
 })
 export class DetalleVehiculosComponent implements OnInit {
+
+  nombrePersona: any;
+
+
   constructor(
     private activatedRoute: ActivatedRoute,
     private vehiculoService: VehiculoService
@@ -27,6 +31,7 @@ export class DetalleVehiculosComponent implements OnInit {
         this.vehiculoService
           .getVehiculo(id)
           .subscribe((vehiculo) => (this.vehiculo = vehiculo));
+          this.nombrePersona = this.vehiculo.persona?.nombre;
       }
     });
   }

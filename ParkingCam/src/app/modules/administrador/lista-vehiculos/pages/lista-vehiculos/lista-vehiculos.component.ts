@@ -11,6 +11,7 @@ import Swal from 'sweetalert2'
 export class ListaVehiculosComponent implements OnInit {
   
   vehiculos: Vehiculo[]=[];
+  listaVehi:'';
 
   constructor(private vehiculosService: VehiculoService) {}
 

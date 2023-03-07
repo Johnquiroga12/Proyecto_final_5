@@ -9,7 +9,6 @@
 				<th>Nro de Plazas</th>
 				<th></th>
 				<th></th>
-				<th></th>
 
 			</tr>
 		</thead>
@@ -18,10 +17,7 @@
 				<td>{{ bloque.id_bloque}} </td>
 				<td> {{ bloque.nombre}}</td>
 				<td>{{ bloque.plazas}} </td>
-				<td>
-					<button class="detalle"
-						[routerLink]="['/administrador/editar-bloque', bloque.id_bloque]">Detalles</button>
-				</td>
+
 
 				<td>
 					<button class="editar "

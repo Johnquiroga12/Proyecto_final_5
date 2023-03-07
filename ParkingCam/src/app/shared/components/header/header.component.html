@@ -11,14 +11,14 @@
               </ul>
           </div>
           <div class="col-md-6 text-right">
-              <button type="button" class="btn btn-sm btn-primary m-r-5"><i data-feather="printer"></i> Cerrar Sesion</button>
-              <button type="button" class="btn btn-sm btn-outline-primary"><i data-feather="shopping-cart"></i>Perfil <span class="badge badge-primary m-l-5"></span></button>
+            <a href="/" class="btn btn-sm btn-primary m-r-5">Cerrar Sesion</a>
+            <a href="administrador/profile" class="btn btn-sm btn-outline-primary">Perfil</a>
           </div>
       </div>
   </div>
 </div>
 
-<header class="pc-header ">
+<header class="pc-header">
   <div class="header-wrapper">
     <div class="mr-auto pc-mob-drp">
       <ul class="list-unstyled">
@@ -28,10 +28,10 @@
       <ul class="list-unstyled">
         <li class="dropdown pc-h-item">
           <a class="pc-head-link dropdown-toggle arrow-none mr-0" data-toggle="dropdown" href="/administrador/profile" role="button" aria-haspopup="false" aria-expanded="false">
-            <img src="https://dam.muyinteresante.com.mx/wp-content/uploads/2018/05/fotos-de-perfil-son-mejor-elegidas-por-personas-extranas-afirma-estudio.jpg" alt="user-image" class="user-avtar">
+            <img src="https://i.pinimg.com/originals/6f/57/76/6f57760966a796644b8cfb0fbc449843.png" alt="user-image" class="user-avtar">
             <span>
-              <span class="user-name">Joseph William</span>
-              <span class="user-desc">Administrator</span>
+              <span class="user-name">{{ nombreUsuario }}</span>
+              <span class="user-desc">{{ nombreRol }}</span>
             </span>
           </a>
         </li>

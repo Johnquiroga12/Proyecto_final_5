@@ -11,6 +11,7 @@ import Swal from 'sweetalert2'
 export class ListaRegistrosComponent implements OnInit {
 
   registros : Registro[];
+  buscarTabla ='';
 
   constructor(private registroService : RegistroService){ }
 

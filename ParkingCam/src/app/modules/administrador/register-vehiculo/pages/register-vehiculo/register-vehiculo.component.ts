@@ -32,6 +32,7 @@ export class RegisterVehiculoComponent implements OnInit{
   }
 
   createVehiculo(){
+
     return this.vehiculoService.saveVehiculo(this.vehiculo).subscribe(
       res => {
         this.router.navigate(['/administrador/lista-vehiculos'])
@@ -49,4 +50,16 @@ export class RegisterVehiculoComponent implements OnInit{
       err => console.error(err)
     )
   }
+
+
+  validaTicket(){
+
+    if(!this.vehiculoService.getVehiculo(this.vehiculo.id_vehiculo)){
+      console.log('Vehiculo Encontrado');
+    }else{
+      this.createVehiculo();
+    }
+
+  }
+
 }

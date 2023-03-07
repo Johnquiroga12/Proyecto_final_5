@@ -11,6 +11,7 @@ import Swal from 'sweetalert2'
 export class ListaUsuariosComponent implements OnInit {
 
   usuarios: Usuario[];
+  buscarTabla: '';
 
   constructor(private usuarioService: UsuarioService) { }
 

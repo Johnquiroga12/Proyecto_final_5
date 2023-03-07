@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AdministradorRoutingModule } from './administrador-routing.module';
 import { WelcolmeAdministradorComponent } from './welcolme-administrador/welcolme-administrador.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,7 @@ import { WelcolmeAdministradorComponent } from './welcolme-administrador/welcolm
     CommonModule,
     AdministradorRoutingModule,
     SharedModule
-  ],
+     ],
   
 })
 export class AdministradorModule { }

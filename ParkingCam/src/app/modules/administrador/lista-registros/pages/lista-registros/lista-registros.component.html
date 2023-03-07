@@ -39,3 +39,56 @@
 	</table>
 </div>
 </body>
+
+
+<body>
+	<div id="wrapper">
+		<h1>Listado de Registros</h1>
+
+
+		<div class="buscador mb-3">
+			<input class="form-control" type="search" placeholder="Buscar..." [(ngModel)]="buscarTabla">	
+			<button id="nuevo" type="button" class="btn btn-light"><a routerLink="/administrador/registro-personas">Nuevo</a></button>
+
+		</div>
+
+
+
+		<table id="keywords" cellspacing="0" cellpadding="0">
+			<thead>
+				<tr>
+					<th>Nro Registro</th>
+					<th>Fecha</th>
+					<th>Hora Entrada</th>
+					<th>Hora Salida</th>
+					<th>Observaciones</th>
+					<th>ID Bloque</th>
+					<th>ID Usuario</th>
+					<th>ID Vehiculo</th>
+					<th></th>
+					<th></th>
+	
+				</tr>
+			</thead>
+			<tbody>
+				<tr *ngFor="let registro of registros | buscar:buscarTabla">
+					<td>{{ registro.id_registro}} </td>
+					<td>{{ registro.fecha}} </td>
+					<td>{{ registro.hora_entrada}} </td>
+					<td>{{ registro.hora_salida}} </td>
+					<td>{{ registro.observaciones}} </td>
+					<td>{{ registro.bloque}} </td>
+					<td>{{ registro.usuario}} </td>
+					<td>{{ registro.vehiculo}} </td>
+	
+					<td>
+						<button class="btn btn-warning" [routerLink] = "['/administrador/detalle-registros', registro.id_registro]">Detalles</button> 
+					</td>
+					<td>
+						<button class="eliminar" (click)="descativar2(registro.id_registro) " >eliminar</button> 
+					</td>				
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>

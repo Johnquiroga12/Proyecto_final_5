@@ -34,7 +34,7 @@ loginForm = new FormGroup({
       Swal.fire({
         icon: 'error',
         title: 'Error',
-        text: 'Por favor ingrese su usuario y contraseña',
+        text: 'Por favor ingrese su usuario y contraseña válidos',
         showConfirmButton: false,
         timer: 1500
       });
@@ -48,6 +48,8 @@ loginForm = new FormGroup({
         if (this.usuar.username === this.login.username && this.usuar.password === this.login.password) {
           this.iRol = this.usuar.rol;
   
+          localStorage.setItem('id_usuario', String(this.usuar.id_usuario));
+
           if(this.iRol == "Administrador"){
             this.router.navigate(['home/dashboard']);
           }
@@ -59,7 +61,7 @@ loginForm = new FormGroup({
           }
           Swal.fire({
             icon: 'success',
-            title: 'Ingresado correctamente',
+            title: 'Ingreso Realizado Correctamente',
             showConfirmButton: false,
             timer: 1500
           })
@@ -68,7 +70,7 @@ loginForm = new FormGroup({
           Swal.fire({
             icon: 'error',
             title: 'Error',
-            text: 'Contraseña incorrecta',
+            text: 'Credenciales Incorrectas, Intentelo Nuevamente',
             showConfirmButton: false,
             timer: 1500
           
