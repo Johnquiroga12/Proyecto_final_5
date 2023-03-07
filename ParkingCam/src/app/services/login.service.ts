@@ -5,6 +5,7 @@ import { Injectable } from '@angular/core';
 import { ResponseI } from './modelo/response.interface';
 import { LoginUsuario } from './class/login';
 
+const API_URL = 'http://localhost:8080/api';
 @Injectable({
   providedIn: 'root'
 })
@@ -24,5 +25,11 @@ export class LoginService {
     let direccion2 = this.URL + "singin";
 
     return this.http.post(direccion2, form);
+  }
+
+  //Ohter
+  public singIn(cedula: any, password: any){
+
+    return this.http.get(API_URL+'/singin/'+cedula+'/'+password);
   }
 }

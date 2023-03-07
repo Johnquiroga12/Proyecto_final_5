@@ -20,7 +20,7 @@ export class ListaUsuariosComponent implements OnInit {
   }
 
   listar() {
-    this.usuarioService.usuarios().subscribe((res) => (this.usuarios = res))
+    this.usuarioService.getUsuarios().subscribe((res) => (this.usuarios = res))
 
   }
 

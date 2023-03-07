@@ -21,7 +21,7 @@ export class ListaVehiculosComponent implements OnInit {
   
   listar(){
     this.vehiculosService
-      .Vehiculos()
+      .getVehiculos()
       .subscribe((res) => (this.vehiculos = res));
   
   }    

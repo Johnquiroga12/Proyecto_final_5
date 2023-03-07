@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
+const API_URL = 'http://localhost:8080/api';
 @Injectable({
   providedIn: 'root'
 })
@@ -31,8 +32,13 @@ export class PersonaService {
   deletePersona(id): Observable<Persona>{
     return this.http.delete<Persona>(`${this.URL}delete/${id}`);
   }
+
   desativar2( vehiculo:Persona,id:any){
     return this.http.put<Persona>(this.URL+`update/${id}`,vehiculo);
-  
+  }
+
+//Metodo para la busqueda de la contraseña
+  public searchCedulaChangePassword(cedula: any){
+    return this.http.get<any>(API_URL+'/persona/search/cedula/update/'+cedula);
   }
 }

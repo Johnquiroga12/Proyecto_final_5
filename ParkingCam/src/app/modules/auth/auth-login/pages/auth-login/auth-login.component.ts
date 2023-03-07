@@ -15,9 +15,15 @@ import { LoginI } from 'src/app/services/modelo/login.interface';
 export class AuthLoginComponent implements OnInit {
 
 login = new LoginUsuario();
-usuar = new Usuario();
+// usuar = new Usuario();
+usuar: any;
 json = "";
 iRol = "";
+
+public dataUser={
+  cedula:'',
+  password:''
+}
 
 loginForm = new FormGroup({
   usuario: new FormControl('', Validators.required),
@@ -30,7 +36,7 @@ loginForm = new FormGroup({
 
   }
   public onLogin(): void{
-    if (!this.login.username || !this.login.password) {
+    if (!this.dataUser.cedula || !this.dataUser.password) {
       Swal.fire({
         icon: 'error',
         title: 'Error',
@@ -40,12 +46,14 @@ loginForm = new FormGroup({
       });
       return;
     }
-    this.api.getCurrentUser(this.login).subscribe((data) => {
-      this.json = JSON.stringify(data);
-      this.usuar = JSON.parse(this.json);
+    alert(this.dataUser.cedula+ this.dataUser.password)
+    this.api.singIn(this.dataUser.cedula, this.dataUser.password).subscribe((data) => {
+      this.usuar = data
+      // this.json = JSON.stringify(data);
+      // this.usuar = JSON.parse(this.json);
   
       if (this.usuar != null){
-        if (this.usuar.username === this.login.username && this.usuar.password === this.login.password) {
+        // if (this.usuar.username === this.login.username && this.usuar.password === this.login.password) {
           this.iRol = this.usuar.rol;
   
           localStorage.setItem('id_usuario', String(this.usuar.id_usuario));
@@ -65,17 +73,17 @@ loginForm = new FormGroup({
             showConfirmButton: false,
             timer: 1500
           })
-        }
-        else {
-          Swal.fire({
-            icon: 'error',
-            title: 'Error',
-            text: 'Credenciales Incorrectas, Intentelo Nuevamente',
-            showConfirmButton: false,
-            timer: 1500
+        // }
+        // else {
+        //   Swal.fire({
+        //     icon: 'error',
+        //     title: 'Error',
+        //     text: 'Credenciales Incorrectas, Intentelo Nuevamente',
+        //     showConfirmButton: false,
+        //     timer: 1500
           
-          });
-        }
+        //   });
+        // }
       }
       else {
         Swal.fire({

@@ -18,6 +18,7 @@ export class VehiculoService {
     return this.http.get<Vehiculo[]>(`${this.URL}list`);
   } 
   
+  //Metodo no vale
   Vehiculos() : Observable<Vehiculo[]>{
     return this.http.get<Vehiculo[]>(`${this.URL}listar`);
   } 
