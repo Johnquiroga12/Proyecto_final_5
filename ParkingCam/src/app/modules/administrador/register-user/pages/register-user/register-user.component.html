@@ -9,18 +9,34 @@
 								alt="" class="img-fluid mb-4">
 							<h4 class="mb-3 f-w-400">Registrar Usuarios</h4>
 
+							<div class="row mt-2">
+								<!-- <div class="col-md-12 d-flex justify-content-center align-items-center"> -->
+									<div class="text-center" style="border: 3px solid black;" class="row rounded"
+										style="box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);">
+										<img [src]="usuario.foto ? 'data:image/jpeg;base64,' + usuario.foto : 'https://i.pinimg.com/originals/6f/57/76/6f57760966a796644b8cfb0fbc449843.png'"
+											alt="" (click)="fileInput.click()" [style.max-height]="'90px'"
+											[style.min-height]="'90px'">
+										<input type="file" #fileInput style="display: none;"
+											accept="image/jpeg, image/jpg, image/png"
+											(change)="loadAnimalPicture($event)">
+									</div>
+								<!-- </div> -->
+							</div>
+
 
 							<div class="input-group mb-3">
 								<div class="input-group-prepend">
 									<span class="input-group-text"><i data-feather="text"></i></span>
 								</div>
-								<input type="text" id="user" class="input-group-text" name="username" [(ngModel)] = "usuario.username" placeholder="Cédula">
-								
+								<input type="text" id="user" class="input-group-text" name="username"
+									[(ngModel)]="usuario.username" placeholder="Cédula">
+
 								<div class="input-group-prepend">
 									<span class="input-group-text"><i data-feather="text"></i></span>
 								</div>
 
-								<input type="text" id="user" class="input-group-text" name="password" [(ngModel)] = "usuario.password" placeholder="Ingrese su contraseña">
+								<input type="text" id="user" class="input-group-text" name="password"
+									[(ngModel)]="usuario.password" placeholder="Ingrese su contraseña">
 
 							</div>
 
@@ -29,15 +45,18 @@
 								<div class="input-group-prepend">
 									<span class="input-group-text"><i data-feather="text"></i></span>
 								</div>
-								<input type="text" id="user" class="input-group-text" name="rol" [(ngModel)] = "usuario.rol" placeholder="Rol">
-							
+								<input type="text" id="user" class="input-group-text" name="rol"
+									[(ngModel)]="usuario.rol" placeholder="Rol">
+
 							</div>
 
 							<div class="input-group mb-3">
 
-								<select class="form-select" id="seleccionar" name="seleccion" id="persons" [(ngModel)] = "usuario.persona">
-									<option selected disabled >Seleccione Persona</option>
-									<option *ngFor="let persona of listaPersonas" [value]="persona.id_persona"> {{persona.nombre}} </option>
+								<select class="form-select" id="seleccionar" name="seleccion" id="persons"
+									[(ngModel)]="usuario.persona">
+									<option selected disabled>Seleccione Persona</option>
+									<option *ngFor="let persona of listaPersonas" [value]="persona.id_persona">
+										{{persona.nombre}} </option>
 								</select>
 							</div>
 
@@ -45,7 +64,7 @@
 
 
 							<input type="submit" class="btn btn-primary" value="Guardar">
-							
+
 						</form>
 					</div>
 				</div>
@@ -53,5 +72,3 @@
 		</div>
 	</div>
 </div>
-
-

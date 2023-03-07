@@ -20,6 +20,7 @@ export class HeaderComponent implements OnInit{
   displayMaximizable: any;
   isLogin: boolean = false;
 
+  informacionUser:any
   constructor(private usuarioService: UsuarioService){ }
 
   ngOnInit(): void {
@@ -35,7 +36,7 @@ export class HeaderComponent implements OnInit{
         console.log(data);
         if (data != null) {
           this.isLogin = true;
-  
+  this.informacionUser = data
           this.nombreUsuario = data.persona?.nombre + ' ' + data.persona?.apellido;
           this.nombreRol = data.rol;
   

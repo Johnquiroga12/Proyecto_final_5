@@ -5,6 +5,7 @@ export class Usuario{
     password: string = "";
     rol: string = "";
     estado: string = "A";
+    foto: string;
     persona: Persona | undefined;
 }
 
