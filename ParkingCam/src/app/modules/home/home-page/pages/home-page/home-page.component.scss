@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Chango&display=swap');
+
+body {
+  min-height: 100vh;
+  display: grid;
+  -webkit-font-smoothing: antialiased;
+  color: #063a26;
+  background: linear-gradient(157deg, rgb(130, 177, 173) 0%, rgb(160, 236, 172) 52%, rgb(172, 228, 253) 100%);
+}
+
+h1 {
+  font-family: 'Chango', cursive;
+  text-align: center;
+  font-size: 35px;
+  text-shadow: 1px 1px 1px #fff;
+  align-self: center;
+}
+
+.card-container {
+  display: grid;
+  gap: 32px;
+  padding: 56px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  transition: all 0.2s ease-in-out;
+  opacity: 0.8;
+
+  h3 {
+    font-size: 24px;
+    margin-top: 8px;
+    font-family: 'Chango', cursive;
+  }
+
+  &:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.55);
+    color: #212121;
+    opacity: 1;
+  }
+}
+
+.translate {
+  &:hover {
+    transform: translate(0, -3px);
+  }
+}
+
+.translate-rotate {
+  &:hover {
+    transform: translate(0, -2px) rotate(1deg);
+  }
+}
+
+.shrink {
+  &:hover {
+    transform: scale(99%);
+  }
+}
+
+.grow {
+  &:hover {
+    transform: scale(101%);
+  }
+}
+
+.pulse {
+  &:hover {
+    animation: pulse 0.6s infinite alternate;
+  }
+}
+
+.skew {
+  &:hover {
+    transform: skewX(-3deg);
+  }
+}
+
+.translate-grow {
+  &:hover {
+    transform: translate(0, -3px) scale(101%);
+  }
+}
+
+.go-crazy {
+  &:hover {
+    transform: translate(0, -3px) scale(101%) skewX(-3deg) rotate(1deg);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(100%);
+  }
+
+  50% {
+    transform: scale(101%);
+  }
+
+  100% {
+    transform: scale(100%);
+  }
+}

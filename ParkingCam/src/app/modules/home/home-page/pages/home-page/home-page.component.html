@@ -1,21 +1,44 @@
+<!-- <div class="card-body">
+new
+</div> -->
 
-    <div class="card-body">
-        
+
+ <h1>Administración</h1>
+
+<div class="card-container">
+
+  <div class="card translate">
+    <h3>Personas</h3>
+    <p>18</p>
+  </div>
+
+  <div class="card translate">
+    <h3>Crarros</h3>
+    <p>23</p>
+  </div>
+
+  <div class="card translate">
+    <h3>Estudiantes</h3>
+    <p>27</p>
+  </div>
+
+  <div class="card translate">
+    <h3>Move up</h3>
+    <p>Hear me roar</p>
+  </div>
 
 </div>
+
+<!--
 
 <body>
 	<div id="wrapper">
 		<h1>Listado de Registros</h1>
 
-
 		<div class="buscador mb-3">
-			<input class="form-control" type="search" placeholder="Buscar..." [(ngModel)]="buscarTabla">	
+			<input class="form-control" type="search" placeholder="Buscar..." [(ngModel)]="buscarTabla">
 
 		</div>
-
-
-
 		<table id="keywords" cellspacing="0" cellpadding="0">
 			<thead>
 				<tr>
@@ -26,7 +49,7 @@
 					<th>Observaciones</th>
 					<th></th>
 					<th></th>
-	
+
 				</tr>
 			</thead>
 			<tbody>
@@ -36,22 +59,71 @@
 					<td>{{ registro.hora_entrada}} </td>
 					<td>{{ registro.hora_salida}} </td>
 					<td>{{ registro.observaciones}} </td>
-	
+
 					<td>
-						<button class="btn btn-light" [routerLink] = "['/administrador/detalle-registros', registro.id_registro]">Detalles</button> 
+						<button class="btn btn-light"
+							[routerLink]="['/administrador/detalle-registros', registro.id_registro]">Detalles</button>
 					</td>
 					<td>
-						<button class="btn btn-light" (click)="descativar2(registro.id_registro) " >Eliminar</button> 
-					</td>				
+						<button class="btn btn-light" (click)="descativar2(registro.id_registro) ">Eliminar</button>
+					</td>
 				</tr>
 			</tbody>
 		</table>
 	</div>
+</body> -->
+
+
+<body>
+	<div class="wrapper">
+		<h1>Listado de Registros</h1>
+		<div class="content">
+			<div class="search-container">
+				<div class="container"> <input class="form-control" type="search" placeholder="Buscar..."
+						[(ngModel)]="buscarTabla">
+				</div>
+
+			</div>
+			<div style="max-height: 400px; overflow-y: scroll;">
+			<table class="table custom-table" id="keywords" cellspacing="0" cellpadding="0">
+				<thead>
+					<tr>
+						<th scope="col">Nro Registro</th>
+						<th scope="col">Fecha</th>
+						<th scope="col">Hora Entrada</th>
+						<th scope="col">Hora Salida</th>
+						<th scope="col">Observaciones</th>
+						<th scope="col">GESTIÓN</th>
+
+					</tr>
+				</thead>
+				<tbody>
+					<tr *ngFor="let registro of registros | buscar:buscarTabla">
+						<td>{{registro.id_registro}}</td>
+						<td>{{registro.fecha}}</td>
+						<td>{{registro.hora_entrada}}</td>
+						<td>{{registro.hora_salida}}</td>
+						<td>{{registro.observaciones}}</td>
+						<td><button type="button" class="btn btn-info"
+								[routerLink]="['/administrador/detalle-registros', registro.id_registro]"> Detalles
+							</button>
+							<button class="btn btn-danger" role="button"
+								(click)="descativar2(registro.id_registro) ">Eliminar
+							</button>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		</div>
+
+
+	</div>
 </body>
 
 <div class="card-footer">
-    <footer>
-    <p >@ParkingCam</p>
-    <p><b>TEC. AZUAY INSTITUTO UNIVERSITARIO</b></p>
-  </footer>
+	<footer>
+		<p>@ParkingCam</p>
+		<p><b>TEC. AZUAY INSTITUTO UNIVERSITARIO</b></p>
+	</footer>
 </div>

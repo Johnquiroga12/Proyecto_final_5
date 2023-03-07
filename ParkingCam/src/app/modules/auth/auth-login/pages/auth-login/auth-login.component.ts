@@ -46,7 +46,7 @@ loginForm = new FormGroup({
       });
       return;
     }
-    alert(this.dataUser.cedula+ this.dataUser.password)
+    // alert(this.dataUser.cedula+ this.dataUser.password)
     this.api.singIn(this.dataUser.cedula, this.dataUser.password).subscribe((data) => {
       this.usuar = data
       // this.json = JSON.stringify(data);
@@ -57,6 +57,8 @@ loginForm = new FormGroup({
           this.iRol = this.usuar.rol;
   
           localStorage.setItem('id_usuario', String(this.usuar.id_usuario));
+
+          localStorage.setItem('rol', String(this.usuar.rol));
 
           if(this.iRol == "Administrador"){
             this.router.navigate(['home/dashboard']);
@@ -85,15 +87,15 @@ loginForm = new FormGroup({
         //   });
         // }
       }
-      else {
-        Swal.fire({
-          icon: 'error',
-          title: 'Error',
-          text: ' Verifique su Usuario o contraseña',
-          showConfirmButton: false,
-          timer: 1500
-        });
-      }
+     
+    }, (err)=>{
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: ' Verifique su Usuario o contraseña',
+        showConfirmButton: false,
+        timer: 1500
+      });
     });
   }
 

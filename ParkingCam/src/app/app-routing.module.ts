@@ -4,6 +4,7 @@ import { WelcomeHomeComponent } from './modules/home/welcome-home/welcome-home.c
 import { WelcomeBienvenidaComponent } from './modules/bienvenida/welcome-bienvenida/welcome-bienvenida.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthguardGuard } from './authguard.guard';
 
 
 const routes: Routes = [
@@ -28,13 +29,13 @@ const routes: Routes = [
 
   {
     path: 'administrador',
-    component: WelcolmeAdministradorComponent,
+    component: WelcolmeAdministradorComponent, canActivate: [AuthguardGuard], data: {expectedRoles: 'Administrador'},
     loadChildren: () => import("./modules/administrador/administrador.module").then(m => m.AdministradorModule)
   },
 
   {
     path: 'guardia',
-    component: WelcomeGuardiaComponent,
+    component: WelcomeGuardiaComponent, canActivate: [AuthguardGuard], data: {expectedRoles: 'Guardia'},
     loadChildren: () => import("./modules/guardia/guardia.module").then(m => m.GuardiaModule)
   },
 
