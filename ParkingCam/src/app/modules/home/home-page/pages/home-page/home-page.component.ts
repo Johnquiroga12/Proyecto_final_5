@@ -17,8 +17,14 @@ export class HomePageComponent implements OnInit{
   constructor(private registroService: RegistroService) { }
 
   ngOnInit(): void {
-    this.listar();
+    setInterval(() => {
+      this.listar();
+ 
+    }, 1000);
+
   }
+
+  
 
   listar() {
     this.registroService.Registro().subscribe(
