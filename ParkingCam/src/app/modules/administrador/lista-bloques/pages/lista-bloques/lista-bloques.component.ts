@@ -12,6 +12,8 @@ import Swal from 'sweetalert2'
 export class ListaBloquesComponent implements OnInit {
 
   bloques: Bloque[];
+  listaBlo:'';
+
 
   constructor(private bloquesService: BloqueService) { }
 

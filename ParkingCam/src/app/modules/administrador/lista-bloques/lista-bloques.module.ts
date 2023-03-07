@@ -4,11 +4,13 @@ import { CommonModule } from '@angular/common';
 
 import { ListaBloquesRoutingModule } from './lista-bloques-routing.module';
 import { ListaBloquesComponent } from './pages/lista-bloques/lista-bloques.component';
+import { BuscarPipe } from './buscar.pipe';
 
 
 @NgModule({
   declarations: [
-    ListaBloquesComponent
+    ListaBloquesComponent,
+    BuscarPipe
   ],
   imports: [
     CommonModule,

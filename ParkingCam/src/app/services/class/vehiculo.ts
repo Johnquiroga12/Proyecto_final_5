@@ -5,7 +5,8 @@ export class Vehiculo {
   marca: string = '';
   modelo: string = '';
   color: string = '';
-   estado:string='A';
+  estado:string='A';
+  ticket:string='';
   persona: Persona | undefined;
 }
 
