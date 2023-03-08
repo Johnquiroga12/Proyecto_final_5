@@ -28,7 +28,7 @@
 			</thead>
 			<tbody>
 			
-				<tr *ngFor="let vehiculo of vehiculos | buscar:listaVehi">
+				<tr *ngFor="let vehiculo of vehiculos | buscar:listaVehi | paginate: { itemsPerPage: 4, currentPage: page }">
 					<td>{{ vehiculo.placa}} </td>
 					<td>{{ vehiculo.marca}} </td>
 					<td>{{ vehiculo.modelo}} </td>
@@ -47,6 +47,8 @@
 	
 				</tr>
 			</tbody>
+			<pagination-controls (pageChange)="page = $event" previousLabel="Previous" nextLabel="Next"></pagination-controls>
+
 		</table>
 	</div>
 </body>

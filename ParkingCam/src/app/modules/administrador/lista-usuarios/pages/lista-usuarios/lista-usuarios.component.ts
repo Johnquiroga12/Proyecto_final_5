@@ -12,6 +12,7 @@ export class ListaUsuariosComponent implements OnInit {
 
   usuarios: Usuario[];
   buscarTabla: '';
+  page: number;
 
   constructor(private usuarioService: UsuarioService) { }
 

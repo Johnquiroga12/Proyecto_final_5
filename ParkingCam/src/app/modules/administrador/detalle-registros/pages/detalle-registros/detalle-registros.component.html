@@ -1,19 +1,23 @@
-<div class="container mt-15 text-center">
-    <div class="row justify-content-center">
-        <div class="col-md-4">
 
-            <div class="card">
-                <div class="card-header"><h5>Detalles de los Registros</h5></div>
-                <div class="card-body">
-                    <p>{{ registro.id_registro}} {{registro.fecha}} </p>
-                    <p>{{ registro.hora_entrada}} </p>
-                    <p>ASD {{ registro.hora_salida}} </p>
-                </div>
-            </div>
-        </div>
-        
+
+<div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
+    <div class="bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+      <div class="my-3 p-3">
+        <h2 class="display-5">Detalles del Registro</h2>
+        <p class="lead">Datos de Ingreso y Salida</p>
+      </div>
+
+      <div class="card-body">
+        <p>Número de Registro: {{ registro.id_registro}} </p>
+        <p>Fecha: {{registro.fecha}} </p>
+        <p>Hora de Ingreso: {{ registro.hora_entrada}} </p>
+        <p>Hora de Salida:  {{ registro.hora_salida}} </p>
     </div>
-    <div class="justify-content-center">
-        <button class="btn btn-default mt-5" routerLink="/administrador/lista-registros">&laquo;Volver</button>
+  
+
+      <div class="justify-content-center">
+        <button class="btn btn-default mt-5" routerLink="/administrador/lista-personas">&laquo;Volver</button>
     </div>
-</div>
+
+    </div>
+  </div>

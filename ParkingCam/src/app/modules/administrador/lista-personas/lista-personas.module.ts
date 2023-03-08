@@ -5,6 +5,7 @@ import { ListaPersonasRoutingModule } from './lista-personas-routing.module';
 import { ListaPersonasComponent } from './pages/lista-personas/lista-personas.component';
 import { FormsModule } from '@angular/forms';
 import { SearchPipe } from 'src/app/services/class/search.pipe';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { SearchPipe } from 'src/app/services/class/search.pipe';
     CommonModule,
     ListaPersonasRoutingModule,
     RouterModule,
-    FormsModule
+    FormsModule,
+    NgxPaginationModule
     ],
 
   exports: [

@@ -14,11 +14,14 @@ export class ListaPersonasComponent implements OnInit {
   personas: Persona[] = [];
   persona = new Persona();
   buscarTabla ='';
-
+  showPagination: boolean;
+  page: number;
+  previousPage: number;
 
   constructor(private personasService: PersonaService, private router: Router) { }
 
   ngOnInit(): void {
+
 
     this.listar();
   }
@@ -104,6 +107,6 @@ export class ListaPersonasComponent implements OnInit {
 
   }
 
-
+  
 }
 

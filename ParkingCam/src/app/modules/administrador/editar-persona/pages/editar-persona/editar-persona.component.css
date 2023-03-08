@@ -7,9 +7,14 @@
     overflow: hidden;
     min-width: 100%;
     min-height: 100vh;
-    background: #114a6d;
+    background: #ffffff;
   }
   
+  .card{
+    transform: translate(-15%, -5%);
+    
+  }
+
   @media (min-width: 1200px) {
     .auth-wrapper .container {
         max-width: 1140px;

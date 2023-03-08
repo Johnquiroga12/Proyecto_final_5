@@ -24,7 +24,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr *ngFor="let bloque of bloques | buscar:listaBlo">
+				<tr *ngFor="let bloque of bloques | buscar:listaBlo | paginate: { itemsPerPage: 4, currentPage: pages }">
 					<td>{{ bloque.id_bloque}} </td>
 					<td> {{ bloque.nombre}}</td>
 					<td>{{ bloque.plazas}} </td>
@@ -41,6 +41,7 @@
 	
 				</tr>
 			</tbody>
+			<pagination-controls (pageChange)="pages = $event" previousLabel="Previous" nextLabel="Next"></pagination-controls>
 		</table>
 	</div>
 </body>

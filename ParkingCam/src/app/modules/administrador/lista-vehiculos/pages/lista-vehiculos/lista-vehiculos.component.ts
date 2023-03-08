@@ -12,6 +12,7 @@ export class ListaVehiculosComponent implements OnInit {
   
   vehiculos: Vehiculo[]=[];
   listaVehi:'';
+  page: number;
 
   constructor(private vehiculosService: VehiculoService) {}
 

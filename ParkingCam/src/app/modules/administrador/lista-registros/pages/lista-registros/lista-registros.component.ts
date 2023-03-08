@@ -12,6 +12,8 @@ export class ListaRegistrosComponent implements OnInit {
 
   registros: Registro[];
   buscarTabla = '';
+  page: number;
+
 
   constructor(private registroService: RegistroService) { }
 

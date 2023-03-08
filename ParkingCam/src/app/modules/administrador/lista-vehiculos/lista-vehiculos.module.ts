@@ -1,3 +1,4 @@
+import { NgxPaginationModule } from 'ngx-pagination';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -15,7 +16,8 @@ import { BuscarPipe } from './buscar.pipe';
   imports: [
     CommonModule,
     ListaVehiculosRoutingModule,
-    FormsModule
+    FormsModule,
+    NgxPaginationModule
   ],
   exports:[
     ListaVehiculosComponent

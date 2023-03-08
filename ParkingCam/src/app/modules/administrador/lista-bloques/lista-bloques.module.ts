@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { ListaBloquesRoutingModule } from './lista-bloques-routing.module';
 import { ListaBloquesComponent } from './pages/lista-bloques/lista-bloques.component';
 import { BuscarPipe } from './buscar.pipe';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { BuscarPipe } from './buscar.pipe';
   imports: [
     CommonModule,
     ListaBloquesRoutingModule,
-    FormsModule
+    FormsModule,
+    NgxPaginationModule
   ],
   exports: [
     ListaBloquesComponent

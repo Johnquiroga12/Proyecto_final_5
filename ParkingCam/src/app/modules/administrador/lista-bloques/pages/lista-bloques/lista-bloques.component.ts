@@ -13,6 +13,8 @@ export class ListaBloquesComponent implements OnInit {
 
   bloques: Bloque[];
   listaBlo:'';
+  pages: number;
+
 
 
   constructor(private bloquesService: BloqueService) { }
