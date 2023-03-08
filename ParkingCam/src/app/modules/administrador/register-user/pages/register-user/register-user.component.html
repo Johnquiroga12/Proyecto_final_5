@@ -10,7 +10,7 @@
 							<h4 class="mb-3 f-w-400">Registrar Usuarios</h4>
 
 							<div class="row mt-2">
-								 <div class="col-md-12 d-flex justify-content-center align-items-center"> 
+								<div class="col-md-12 d-flex justify-content-center align-items-center">
 									<div class="text-center" style="border: 3px solid black;" class="row rounded"
 										style="box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);">
 										<img [src]="usuario.foto ? 'data:image/jpeg;base64,' + usuario.foto : 'https://i.pinimg.com/originals/6f/57/76/6f57760966a796644b8cfb0fbc449843.png'"
@@ -20,11 +20,11 @@
 											accept="image/jpeg, image/jpg, image/png"
 											(change)="loadAnimalPicture($event)">
 									</div>
-								 </div> 
+								</div>
 							</div>
 
 
-							<div class="input-group mb-3">
+							<div class="input-group mb-3 mt-4">
 								<div class="input-group-prepend">
 									<span class="input-group-text"><i data-feather="text"></i></span>
 								</div>
@@ -45,8 +45,13 @@
 								<div class="input-group-prepend">
 									<span class="input-group-text"><i data-feather="text"></i></span>
 								</div>
-								<input type="text" id="user" class="input-group-text" name="rol"
-									[(ngModel)]="usuario.rol" placeholder="Rol">
+								<select class="form-select" [(ngModel)]="usuario.rol" name="rol"
+									style="font-size: 18px; height: 40px; width: 25px;">
+
+									<option value="" selected disabled>Seleccione el Rol ...</option>
+									<option value="Administrador">Administrador</option>
+									<option value="Secretaria">Secretaria</option>
+								</select>
 
 							</div>
 
@@ -56,14 +61,13 @@
 									[(ngModel)]="usuario.persona">
 									<option selected disabled>Seleccione Persona</option>
 									<option *ngFor="let persona of listaPersonas" [value]="persona.id_persona">
-										{{persona.nombre}} </option>
+										{{persona.nombre}} {{persona.apellido}} </option>
 								</select>
 							</div>
 
-
-
-
 							<input type="submit" class="btn btn-primary" value="Guardar">
+
+							<p class="mb-2 mt-3"><a href="/administrador/lista-usuarios" class="f-w-400">Regresar</a>
 
 						</form>
 					</div>

@@ -3,7 +3,7 @@
       <div class="perfil-usuario-portada">
           <div class="perfil-usuario-avatar">
 
-            <img [src]="cargoPerfil ? 'data:image/jpeg;base64,' + cargoPerfil : '../../../../assets/img/fotonull.png'">
+            <img [src]=" fotoPerfil ? 'data:image/jpeg;base64,' + fotoPerfil : '../../../../assets/img/fotonull.png'">
 
               <!--
                 <img src="https://i.pinimg.com/originals/6f/57/76/6f57760966a796644b8cfb0fbc449843.png" alt="img-avatar">
@@ -14,15 +14,15 @@
   <div class="perfil-usuario-body">
       <div class="perfil-usuario-bio">
           <h3 class="titulo"> {{ nombreUsuario }}</h3>
-          <p class="texto">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua.</p>
-              <p class="texto"> {{ nombreRol }}</p>
+          <p class="texto">Usted cuenta con acceso total a todas las funcionalidades y pestañas del sistema ParkingCam, el cual esta enfocado a la optimización del parqueadero del ISTA.</p>
+          
+          <p class="texto"> {{ nombreRol }}</p>
       </div>
       <div class="perfil-usuario-footer">
           <ul class="lista-datos">
               <li><i class="icono fas fa-map-signs"></i> Número de Cédula</li>
-              <li><i class="icono fas fa-phone-alt"></i> Direccion de correo electronico:</li>
-              <li><i class="icono fas fa-briefcase"></i> Número de Télefono:</li>
+              <li><i class="icono fas fa-phone-alt"></i> Dirección de correo electrónico:</li>
+              <li><i class="icono fas fa-briefcase"></i> Número de Teléfono:</li>
               <li><i class="icono fas fa-building"></i> Número de Emergencia:</li>
               <li><i class="icono fas fa-building"></i> Jornada:</li>
               <li><i class="icono fas fa-building"></i> Cargo:</li>

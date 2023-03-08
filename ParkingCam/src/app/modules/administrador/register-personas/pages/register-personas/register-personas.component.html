@@ -17,7 +17,7 @@
 									<span class="input-group-text"><i data-feather="text"></i></span>
 								</div>
 								<input type="text" id="persona" class="input-group-text" name="cedula"
-									[(ngModel)]="persona.cedula" placeholder="Nro Cedula">
+									[(ngModel)]="persona.cedula" placeholder="Cédula">
 
 
 
@@ -45,7 +45,7 @@
 								</div>
 
 								<input type="email" id="persona" class="input-group-text" name="correo"
-									[(ngModel)]="persona.correo" placeholder="Correo">
+									[(ngModel)]="persona.correo" placeholder="Correo Electrónico">
 
 							</div>
 
@@ -134,6 +134,8 @@
 									<option value="" selected disabled>Cargo ...</option>
 									<option value="Estudiante">Estudiante</option>
 									<option value="Docente">Docente</option>
+									<option value="Docente">Otro</option>
+
 									<option value="Otro">Otro</option>
 								</select>
 
@@ -145,9 +147,9 @@
 								style="font-size: 18px; height: 40px; width: 25px;">
 								
 								<option value=""  selected disabled>Jornada ...</option>
-								<option value="matutina">Matutina</option>
-								<option value="vespertina">Vespertina</option>
-								<option value="nocturna">Nocturna</option>
+								<option value="Matutina">Matutina</option>
+								<option value="Vespertina">Vespertina</option>
+								<option value="Nocturna">Nocturna</option>
 							</select>
 
 							</div>

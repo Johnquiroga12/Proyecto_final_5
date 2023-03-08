@@ -58,12 +58,14 @@
 									[(ngModel)]="vehiculo.persona">
 									<option selected disabled>Seleccione Persona</option>
 									<option *ngFor="let persona of listaPersonas" [value]="persona.id_persona">
-										{{persona.nombre}} </option>
+										{{persona.nombre}} {{persona.apellido}}</option>
 								</select>
 							</div>
 
 
 							<input type="submit" class="btn btn-primary" value="Guardar Registro">
+
+							<p class="mb-2 mt-3"><a href="/administrador/lista-vehiculos" class="f-w-400">Regresar</a>
 
 						</form>
 					</div>

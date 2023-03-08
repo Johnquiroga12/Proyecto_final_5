@@ -28,7 +28,7 @@ const routes: Routes = [
 
   {
     path: 'administrador',
-    component: WelcolmeAdministradorComponent, canActivate: [AuthguardGuard], data: {expectedRoles: 'Administrador'},
+    component: WelcolmeAdministradorComponent, canActivate: [AuthguardGuard], data: {expectedRoles: ['Administrador', 'Secretaria'] },
     loadChildren: () => import("./modules/administrador/administrador.module").then(m => m.AdministradorModule)
   }
 

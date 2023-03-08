@@ -5,7 +5,7 @@ import { AuthguardGuard } from 'src/app/authguard.guard';
 const routes: Routes = [
 
   {
-    path:'dashboard', canActivate: [AuthguardGuard], data: {expectedRoles: ['Administrador', 'Guardia'] },
+    path:'dashboard', canActivate: [AuthguardGuard], data: {expectedRoles: ['Administrador', 'Secretaria'] },
     loadChildren: () => import("./home-page/home-page.module").then(m => m.HomePageModule)
   }
 ];
