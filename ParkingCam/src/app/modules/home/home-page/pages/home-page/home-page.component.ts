@@ -14,6 +14,7 @@ export class HomePageComponent implements OnInit{
 
   registros: Registro[];
   buscarTabla = '';
+  page: number;
   public datosEstadiscos: any;
 
   constructor(private registroService: RegistroService, private personaService: PersonaService ) { }
