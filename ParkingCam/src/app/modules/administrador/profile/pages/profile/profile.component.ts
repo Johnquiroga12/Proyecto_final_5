@@ -48,7 +48,7 @@ export class ProfileComponent implements OnInit{
           this.celularPerfil = data.persona?.celular;
           this.emergenciaPerfil = data.persona?.n_emergencia;
           this.jornadaPerfil = data.persona?.jornada;
-          this.cargoPerfil = data.persona?.cargo;
+          this.cargoPerfil = data?.foto;
 
   
         } else {

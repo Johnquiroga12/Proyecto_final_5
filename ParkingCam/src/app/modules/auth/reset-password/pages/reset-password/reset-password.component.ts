@@ -43,7 +43,7 @@ export class ResetPasswordComponent implements OnInit {
     if (this.cedula.cedulap == '' || this.cedula.cedulap == undefined) {
       Swal.fire({
         icon: 'warning',
-        title: 'Debe ingresar su cédula.',
+        title: 'Porfavor, completa todos los campos requeridos',
         showConfirmButton: false,
         timer: 1500,
       });
@@ -57,7 +57,7 @@ export class ResetPasswordComponent implements OnInit {
             Swal.fire({
               position: 'top-end',
               icon: 'success',
-              title: 'Usuario encontrado, ingrese sus nuevas credenciales.',
+              title: 'Usuario Encontrado, ingrese sus nuevas credenciales.',
               showConfirmButton: false,
               timer: 1500
             })
@@ -66,7 +66,7 @@ export class ResetPasswordComponent implements OnInit {
         }, (err)=>{
           Swal.fire({
             icon: 'error',
-            title: 'Cédula no encontrada.',
+            title: 'Ingrese un dato válido.',
             showConfirmButton: false,
             timer: 1500,
           });
@@ -84,7 +84,7 @@ export class ResetPasswordComponent implements OnInit {
           (data) => {
             Swal.fire({
               icon: 'success',
-              title: 'Le informamos que su clave de acceso fue cambiado satisfactoriamente',
+              title: 'El proceso ha sido ejecutado correctamente',
               showConfirmButton: false,
             });
 
@@ -104,7 +104,6 @@ export class ResetPasswordComponent implements OnInit {
         showConfirmButton: false,
         timer: 1500,
       });
-      // alert('Las contraseñas no coinciden');
     }
   }
 

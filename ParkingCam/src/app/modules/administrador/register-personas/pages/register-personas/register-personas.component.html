@@ -69,10 +69,14 @@
 							</div>
 
 
+
 							<div class="input-group mb-3">
+								<div class="input-group-prepend">
+									<span class="input-group-text"><i data-feather="text"></i></span>
+								</div>
 								<select [(ngModel)]="persona.carrera" class="form-select" name="ellegir"
 									style="font-size: 18px; height: 40px; width: 25px;">
-									<option value=""  selected disabled> seleccione su carrera </option>
+									<option value=""  selected disabled>Carrera ...</option>
 									<option value="TECNOLOGÍA SUPERIOR EN DESARROLLO DE SOFTWARE">TECNOLOGÍA SUPERIOR EN
 										DESARROLLO DE SOFTWARE</option>
 									<option value="TECNOLOGÍA SUPERIOR EN MECÁNICA INDUSTRIAL">TECNOLOGÍA SUPERIOR EN
@@ -117,34 +121,42 @@
 										TECNOLÓGICAS</option>
 								</select>
 
-
 							</div>
 
 
+
 							<div class="input-group mb-3">
+								<div class="input-group-prepend">
+									<span class="input-group-text"><i data-feather="text"></i></span>
+								</div>
 								<select class="form-select" name="ellegir"  [(ngModel)]="persona.cargo" 
 								style="font-size: 18px; height: 40px; width: 25px;">
-									<option value="" selected disabled> seleccione su cargo </option>
+									<option value="" selected disabled>Cargo ...</option>
 									<option value="Estudiante">Estudiante</option>
 									<option value="Docente">Docente</option>
 									<option value="Otro">Otro</option>
 								</select>
-								
+
+								<div class="input-group-prepend">
+									<span class="input-group-text"><i data-feather="text"></i></span>
+								</div>
+
 								<select class="form-select"  [(ngModel)]="persona.jornada" name="jornada"
 								style="font-size: 18px; height: 40px; width: 25px;">
 								
-								<option value=""  selected disabled>Seleccione su jornada</option>
+								<option value=""  selected disabled>Jornada ...</option>
 								<option value="matutina">Matutina</option>
 								<option value="vespertina">Vespertina</option>
 								<option value="nocturna">Nocturna</option>
 							</select>
+
 							</div>
 
 
 
-
-
 							<input type="submit" class="btn btn-primary" value="Guardar Registro">
+
+							<p class="mb-2 mt-3"><a href="/administrador/lista-personas" class="f-w-400">Regresar</a>
 
 						</form>
 					</div>

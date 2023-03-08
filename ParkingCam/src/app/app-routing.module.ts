@@ -1,4 +1,3 @@
-import { WelcomeGuardiaComponent } from './modules/guardia/welcome-guardia/welcome-guardia.component';
 import { WelcolmeAdministradorComponent } from './modules/administrador/welcolme-administrador/welcolme-administrador.component';
 import { WelcomeHomeComponent } from './modules/home/welcome-home/welcome-home.component';
 import { WelcomeBienvenidaComponent } from './modules/bienvenida/welcome-bienvenida/welcome-bienvenida.component';
@@ -31,13 +30,7 @@ const routes: Routes = [
     path: 'administrador',
     component: WelcolmeAdministradorComponent, canActivate: [AuthguardGuard], data: {expectedRoles: 'Administrador'},
     loadChildren: () => import("./modules/administrador/administrador.module").then(m => m.AdministradorModule)
-  },
-
-  {
-    path: 'guardia',
-    component: WelcomeGuardiaComponent, canActivate: [AuthguardGuard], data: {expectedRoles: 'Guardia'},
-    loadChildren: () => import("./modules/guardia/guardia.module").then(m => m.GuardiaModule)
-  },
+  }
 
 
 

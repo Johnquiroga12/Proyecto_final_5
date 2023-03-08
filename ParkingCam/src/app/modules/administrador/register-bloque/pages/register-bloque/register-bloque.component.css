@@ -6,7 +6,7 @@
   overflow: hidden;
   min-width: 100%;
   min-height: 100vh;
-  background: #114a6d;
+  background: #ffffff;
 }
 
 
@@ -67,43 +67,24 @@
 
 
 .btn-primary {
-  color: #010101;
-  background-color: #81b9db;
-  border-color: #7267EF;
+  color: #ffffff;
+  background-color: #1a46a3;
+  border-color: #ffffff;
+  
 }
 
 .btn-primary:hover {
   color: #fff;
   background-color: #0a58a5;
-  border-color: #4739ea;
+  border-color: #1a46a3;
 }
 
-.btn-primary:focus, .btn-primary.focus {
-  color: #fff;
-  background-color: #5244eb;
-  border-color: #4739ea;
-  box-shadow: 0 0 0 0.2rem rgba(135, 126, 241, 0.5);
-}
-
-.btn-primary.disabled, .btn-primary:disabled {
-  color: #fff;
-  background-color: #7267EF;
-  border-color: #7267EF;
-}
-
-.btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active,
-.show > .btn-primary.dropdown-toggle {
-  color: #fff;
-  background-color: #4739ea;
-  border-color: #3c2de9;
-}
-
-.btn-primary:not(:disabled):not(.disabled):active:focus, .btn-primary:not(:disabled):not(.disabled).active:focus,
-  .show > .btn-primary.dropdown-toggle:focus {
-  box-shadow: 0 0 0 0.2rem rgba(135, 126, 241, 0.5);
-}
 
 .card{
-  transform: translate(-5%, 5%);
+  transform: translate(-5%, -15%);
   
+}
+#boton{
+  color: #fafafa;
+  align: right;
 }

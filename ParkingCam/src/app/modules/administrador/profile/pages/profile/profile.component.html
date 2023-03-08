@@ -2,7 +2,12 @@
   <div class="perfil-usuario-header">
       <div class="perfil-usuario-portada">
           <div class="perfil-usuario-avatar">
-              <img src="https://i.pinimg.com/originals/6f/57/76/6f57760966a796644b8cfb0fbc449843.png" alt="img-avatar">
+
+            <img [src]="cargoPerfil ? 'data:image/jpeg;base64,' + cargoPerfil : '../../../../assets/img/fotonull.png'">
+
+              <!--
+                <img src="https://i.pinimg.com/originals/6f/57/76/6f57760966a796644b8cfb0fbc449843.png" alt="img-avatar">
+                -->
           </div>
       </div>
   </div>
