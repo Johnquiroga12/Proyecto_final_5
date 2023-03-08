@@ -3,30 +3,22 @@ new
 </div> -->
 
 
- <h1>Administración</h1>
+<h1>Administración</h1>
+<!--  -->
+ <div class="card-container">
 
-<div class="card-container">
-
-  <div class="card translate">
-    <h3>Personas</h3>
-    <p>18</p>
+  <div class="card translate" *ngFor="let data of datosEstadiscos | keyvalue">
+    <div class="card-header">
+		<h3>{{data.key}}</h3>
+	  </div>
+    <p>Datos {{data.value }}</p>
   </div>
 
-  <div class="card translate">
-    <h3>Crarros</h3>
-    <p>23</p>
-  </div>
-
-  <div class="card translate">
-    <h3>Estudiantes</h3>
-    <p>27</p>
-  </div>
 </div>
 
 
-
 <body>
-	<div id="wrapper">
+	<div id="contenedorli">
 		<h1>Listado de Registros</h1>
 
 		<div class="buscador mb-3">
@@ -40,8 +32,10 @@ new
 					<th>Fecha</th>
 					<th>Hora Entrada</th>
 					<th>Hora Salida</th>
+					<th>Placa</th>
+					<th>Propietario</th>
+					<th>Bloque</th>
 					<th>Observaciones</th>
-					<th></th>
 					<th></th>
 
 				</tr>
@@ -52,14 +46,15 @@ new
 					<td>{{ registro.fecha}} </td>
 					<td>{{ registro.hora_entrada}} </td>
 					<td>{{ registro.hora_salida}} </td>
+					<td>{{ registro.vehiculo.placa}} </td>
+					<td>{{ registro.vehiculo.persona.nombre}} </td>
+					<td>{{ registro.bloque.nombre}} </td>
+
 					<td>{{ registro.observaciones}} </td>
 
 					<td>
 						<button class="btn btn-light"
 							[routerLink]="['/administrador/detalle-registros', registro.id_registro]">Detalles</button>
-					</td>
-					<td>
-						<button class="btn btn-light" (click)="descativar2(registro.id_registro) ">Eliminar</button>
 					</td>
 				</tr>
 			</tbody>

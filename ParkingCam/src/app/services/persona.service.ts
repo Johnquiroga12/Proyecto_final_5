@@ -41,4 +41,9 @@ export class PersonaService {
   public searchCedulaChangePassword(cedula: any){
     return this.http.get<any>(API_URL+'/persona/search/cedula/update/'+cedula);
   }
+
+  public obtenerResumen(){
+    return this.http.get<any>(API_URL+'/persona/resumen/data');
+  }
+  
 }

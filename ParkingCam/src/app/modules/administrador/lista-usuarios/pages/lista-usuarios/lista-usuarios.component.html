@@ -16,6 +16,8 @@
 					<th>Nombre Usuario</th>
 					<th>Rol</th>
 					<th>Estado</th>
+					<th>Persona</th>
+
 					<th></th>
 				</tr>
 			</thead>
@@ -25,6 +27,8 @@
 					<td>{{ usuario.username}} </td>
 					<td>{{ usuario.rol}} </td>
 					<td>{{ usuario.estado}} </td>
+					<td>{{ usuario.persona.nombre}} </td>
+
 					<td>
 						<button class="btn btn-light" (click)="descativar2(usuario.id_usuario) ">Eliminar</button>
 					</td>

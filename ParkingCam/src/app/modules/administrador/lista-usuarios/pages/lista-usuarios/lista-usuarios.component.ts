@@ -25,8 +25,6 @@ export class ListaUsuariosComponent implements OnInit {
 
   }
 
-
-
   act: string = 'D';
   ve: any;
   idMascotaDelete: any;

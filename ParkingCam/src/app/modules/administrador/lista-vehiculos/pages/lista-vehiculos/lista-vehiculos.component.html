@@ -20,9 +20,11 @@
 					<th>Modelo</th>
 					<th>Color</th>
 					<th>Ticket</th>
+					<th>Propietario</th>
 					<th></th>
 					<th></th>
 					<th></th>
+
 	
 				</tr>
 			</thead>
@@ -34,6 +36,9 @@
 					<td>{{ vehiculo.modelo}} </td>
 					<td>{{ vehiculo.color}} </td>
 					<td>{{ vehiculo.ticket}} </td>
+					<td>{{ vehiculo.persona.nombre}} </td>
+
+					
 
 					<td>
 						<button class="btn btn-light" [routerLink] = "['/administrador/detalle-vehiculos', vehiculo.id_vehiculo]">Detalles</button> 

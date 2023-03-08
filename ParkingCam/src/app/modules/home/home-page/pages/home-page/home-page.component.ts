@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Registro } from 'src/app/services/class/registro';
+import { PersonaService } from 'src/app/services/persona.service';
 import { RegistroService } from 'src/app/services/registro.service';
 import Swal from 'sweetalert2';
 
@@ -13,12 +14,14 @@ export class HomePageComponent implements OnInit{
 
   registros: Registro[];
   buscarTabla = '';
+  public datosEstadiscos: any;
 
-  constructor(private registroService: RegistroService) { }
+  constructor(private registroService: RegistroService, private personaService: PersonaService ) { }
 
   ngOnInit(): void {
     setInterval(() => {
       this.listar();
+      this.getDataOfEstadistic();
  
     }, 1000);
 
@@ -32,6 +35,12 @@ export class HomePageComponent implements OnInit{
     )
   }
 
+  public getDataOfEstadistic() {
+    this.personaService.obtenerResumen().subscribe((data) => {
+      this.datosEstadiscos = data;
+      console.log({data: this.datosEstadiscos})
+    });
+  }
 
   act: string = 'D';
   ve: any;

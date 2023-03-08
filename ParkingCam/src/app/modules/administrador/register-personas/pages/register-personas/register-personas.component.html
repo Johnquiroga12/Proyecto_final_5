@@ -16,7 +16,7 @@
 								<div class="input-group-prepend">
 									<span class="input-group-text"><i data-feather="text"></i></span>
 								</div>
-								<input type="text" id="persona" class="input-group-text" name="cedula"
+								<input required type="text" id="persona" class="input-group-text" name="cedula"
 									[(ngModel)]="persona.cedula" placeholder="Cédula">
 
 
@@ -25,7 +25,7 @@
 									<span class="input-group-text"><i data-feather="text"></i></span>
 								</div>
 
-								<input type="text" id="persona" class="input-group-text" name="nombre"
+								<input required  type="text" id="persona" class="input-group-text" name="nombre"
 									[(ngModel)]="persona.nombre" placeholder="Nombre">
 
 							</div>
@@ -44,7 +44,7 @@
 									<span class="input-group-text"><i data-feather="text"></i></span>
 								</div>
 
-								<input type="email" id="persona" class="input-group-text" name="correo"
+								<input required type="email" id="persona" class="input-group-text" name="correo"
 									[(ngModel)]="persona.correo" placeholder="Correo Electrónico">
 
 							</div>
@@ -56,14 +56,14 @@
 								<div class="input-group-prepend">
 									<span class="input-group-text"><i data-feather="text"></i></span>
 								</div>
-								<input type="text" id="persona" class="input-group-text" name="celular"
+								<input  required type="text" id="persona" class="input-group-text" name="celular"
 									[(ngModel)]="persona.celular" placeholder="Celular">
 
 								<div class="input-group-prepend">
 									<span class="input-group-text"><i data-feather="text"></i></span>
 								</div>
 
-								<input type="text" id="persona" class="input-group-text" name="emergencia"
+								<input  required type="text" id="persona" class="input-group-text" name="emergencia"
 									[(ngModel)]="persona.n_emergencia" placeholder="Contacto Emergencia">
 
 							</div>
@@ -132,9 +132,9 @@
 								<select class="form-select" name="ellegir"  [(ngModel)]="persona.cargo" 
 								style="font-size: 18px; height: 40px; width: 25px;">
 									<option value="" selected disabled>Cargo ...</option>
-									<option value="Estudiante">Estudiante</option>
+									<option value="Estudiante">Personal Administrativo</option>
 									<option value="Docente">Docente</option>
-									<option value="Docente">Otro</option>
+									<option value="Docente">Estudiante</option>
 
 									<option value="Otro">Otro</option>
 								</select>
@@ -156,7 +156,7 @@
 
 
 
-							<input type="submit" class="btn btn-primary" value="Guardar Registro">
+							<input (click)="createPersona()" class="btn btn-primary" value="Guardar Registro">
 
 							<p class="mb-2 mt-3"><a href="/administrador/lista-personas" class="f-w-400">Regresar</a>
 

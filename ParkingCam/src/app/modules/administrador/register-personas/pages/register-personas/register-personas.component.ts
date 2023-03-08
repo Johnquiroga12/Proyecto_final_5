@@ -22,22 +22,46 @@ export class RegisterPersonasComponent {
   }
 
   createPersona(){
-    return this.personaService.savePersona(this.persona).subscribe(
-      res => {
-        this.router.navigate(['/administrador/lista-personas'])
-      console.log(res)
-    
-      Swal.fire({
-        position: 'top-end',
-        icon: 'success',
-        title: 'Se a creado correctamente',
-        showConfirmButton: false,
-        timer: 1500
-      })
-    
-      },
 
-      err => console.error(err)
-    )
+  if(this.persona.cedula === '' || this.persona.nombre === '' || this.persona.apellido === '' ||
+    this.persona.correo === '' || this.persona.celular === '' || this.persona.n_emergencia === ''){
+
+    console.log("Error");
+
+    Swal.fire({
+      position: 'top-end',
+      icon: 'warning',
+      title: 'Complete todos los registros',
+      showConfirmButton: false,
+      timer: 1500
+    })
+
+    return null;
+      
+    }else{
+
+
+      return this.personaService.savePersona(this.persona).subscribe(
+        res => {
+          this.router.navigate(['/administrador/lista-personas'])
+        console.log(res)
+      
+        Swal.fire({
+          position: 'top-end',
+          icon: 'success',
+          title: 'Se a creado correctamente',
+          showConfirmButton: false,
+          timer: 1500
+        })
+      
+        },
+  
+        err => console.error(err)
+      )
+    }
+
+    
   }
+
+  re
 }
