@@ -1,6 +1,5 @@
 
 h1 {
-  font-family: 'Chango';
   text-align: center;
   font-size: 35px;
   text-shadow: 1px 1px 1px #fff;
@@ -20,17 +19,17 @@ h1 {
   padding: 24px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
   transition: all 0.2s ease-in-out;
-  opacity: 0.8;
+  
 
   h3 {
     font-size: 24px;
-    margin-top: 8px;
+    margin-top: 5px;
     font-family: 'Chango';
   }
 
   &:hover {
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.55);
-    color: #212121;
+    box-shadow: 0 6px 20px rgba(0, 49, 247, 0.55);
+    color: #666565;
     opacity: 1;
   }
 }

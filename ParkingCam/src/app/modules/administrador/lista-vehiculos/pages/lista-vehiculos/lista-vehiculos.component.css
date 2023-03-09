@@ -111,9 +111,12 @@ html, body, div, span, applet, object, iframe, h2, h3, h4, h5, h6, p, blockquote
   
   
   .buscador{
-  
+
     max-width: 500px;
     top: 100%;
+    position: relative;
+    left: 63px;
+  
   }
   
   #nuevo{

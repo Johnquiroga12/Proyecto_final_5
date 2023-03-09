@@ -114,6 +114,9 @@ h1 {
 
   max-width: 500px;
   top: 100%;
+  position: relative;
+  left: 48px;
+
 }
 
 #nuevo{
@@ -128,4 +131,5 @@ h1 {
   font-size: 13px;
 
 }
+
 

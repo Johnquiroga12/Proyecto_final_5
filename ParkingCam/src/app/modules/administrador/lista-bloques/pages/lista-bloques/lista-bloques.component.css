@@ -111,16 +111,19 @@ html, body, div, span, applet, object, iframe, h2, h3, h4, h5, h6, p, blockquote
   
   
   .buscador{
-  
-    max-width: 500px;
+
+    max-width: 350px;
     top: 100%;
+    position: relative;
+    left: 275px;
+  
   }
   
   #nuevo{
    
     position: fixed;
     top: 18%;
-    left: 79%;
+    left: 62%;
   }
   
   .btn{
