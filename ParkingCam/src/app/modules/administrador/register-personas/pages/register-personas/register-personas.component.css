@@ -1,4 +1,9 @@
 
+.invalid {
+  border: 2px solid red;
+  background-color: #ffeeee;
+  color: #ff0000;
+}
 .auth-wrapper {
     position: relative;
     display: flex;

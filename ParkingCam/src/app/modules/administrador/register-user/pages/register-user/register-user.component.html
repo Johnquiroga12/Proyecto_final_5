@@ -28,14 +28,14 @@
 								<div class="input-group-prepend">
 									<span class="input-group-text"><i data-feather="text"></i></span>
 								</div>
-								<input type="text" id="user" class="input-group-text" name="username"
+								<input type="text" id="user" class="input-group-text" name="username" onkeypress="return event.charCode >= 48 && event.charCode <= 57"  maxlength="10" #myInput minlength="10" (input)="onInputChange($event)" (keydown)="onKeyDown($event)"
 									[(ngModel)]="usuario.username" placeholder="Cédula">
 
 								<div class="input-group-prepend">
 									<span class="input-group-text"><i data-feather="text"></i></span>
 								</div>
 
-								<input type="text" id="user" class="input-group-text" name="password"
+								<input type="text" id="user" class="input-group-text" name="password"  maxlength="6" #myInput minlength="6" (input)="InputChange($event)" (keydown)="onKeyDown($event)"
 									[(ngModel)]="usuario.password" placeholder="Ingrese su contraseña">
 
 							</div>
@@ -59,9 +59,9 @@
 
 							<div class="input-group mb-3">
 
-								<select class="form-select" id="seleccionar" name="seleccion" id="persons"
+								<select class="form-select"  name="persona"
 									[(ngModel)]="usuario.persona">
-									<option selected disabled>Seleccione Persona</option>
+									<option value="" selected disabled>Seleccione Persona</option>
 									<option *ngFor="let persona of listaPersonas" [value]="persona.id_persona">
 										{{persona.nombre}} {{persona.apellido}} </option>
 								</select>

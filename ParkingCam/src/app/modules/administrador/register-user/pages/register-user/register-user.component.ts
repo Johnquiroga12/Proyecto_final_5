@@ -13,14 +13,38 @@ import Swal from 'sweetalert2'
 })
 export class RegisterUserComponent {
 
+  onKeyDown(event: KeyboardEvent) {
+    this.onInputChange(event);
+  }
+  onInputChange(event: any) {
+    const value = event.target.value;
+    const input = event.target;
+
+    if (!/^\d+$/.test(value) || value.length < 10) {
+      input.classList.add('invalid');
+    } else {
+      input.classList.remove('invalid');
+    }
+  }
+  InputChange(event: any) {
+    const value = event.target.value;
+    const input = event.target;
+
+    if (!/^[a-zA-Z0-9]+$/.test(value) || value.length < 5) {
+      input.classList.add('invalid');
+    } else {
+      input.classList.remove('invalid');
+    }
+  }
+
   usuario: Usuario = new Usuario;
-  listaPersonas : Persona[];
+  listaPersonas: Persona[];
   listaUsuarios: Usuario[];
 
   constructor(private router: Router, private usuarioService: UsuarioService,
-    private personaService: PersonaService){} 
+    private personaService: PersonaService) { }
   ngOnInit(): void {
-    
+
     this.usuarioService.getUsuarios().subscribe(
       listaV => this.listaUsuarios = listaV
     );
@@ -29,27 +53,44 @@ export class RegisterUserComponent {
       lista => this.listaPersonas = lista
     );
   }
-  
-  createUsuario(){
+
+  createUsuario() {
+    if (this.usuario.username === ''|| this.usuario.password===''
+    || this.usuario.rol==null ||  this.usuario.persona==null
     
-    return this.usuarioService.saveUsuario(this.usuario).subscribe(
-      res => {
-        this.router.navigate(['/administrador/lista-usuarios'])
-      console.log(res)
+    ) {
+      console.log("Error");
 
       Swal.fire({
         position: 'top-end',
-        icon: 'success',
-        title: 'Se a creado correctamente',
+        icon: 'warning',
+        title: 'Complete todos los registros',
         showConfirmButton: false,
         timer: 1500
       })
-    
 
-      },
+      return null;
 
-      err => console.error(err)
-    )
+    } else {
+      return this.usuarioService.saveUsuario(this.usuario).subscribe(
+        res => {
+          this.router.navigate(['/administrador/lista-usuarios'])
+          console.log(res)
+
+          Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Se a creado correctamente',
+            showConfirmButton: false,
+            timer: 1500
+          })
+
+
+        },
+
+        err => console.error(err)
+      )
+    }
   }
 
   //Metodos de la foto
@@ -59,7 +100,7 @@ export class RegisterUserComponent {
     const fileSize = file.size; // tamaño en bytes
     if (fileSize > 1048576) {
       // mensaje de error al usuario
-     // this.showError('El tamaño máximo de la foto debe ser de 1 MB.');
+      // this.showError('El tamaño máximo de la foto debe ser de 1 MB.');
       event.target.value = null;
     } else {
 

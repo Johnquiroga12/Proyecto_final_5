@@ -10,10 +10,36 @@ import { LoginI } from 'src/app/services/modelo/login.interface';
 @Component({
   selector: 'app-auth-login',
   templateUrl: './auth-login.component.html',
+ // template: `<input type="text" #myInput minlength="10" (input)="onInputChange(myInput)" />`,
   styleUrls: ['./auth-login.component.css']
 })
 export class AuthLoginComponent implements OnInit {
-
+    
+  
+  onKeyDown(event: KeyboardEvent) {
+    this.onInputChange(event);
+  }
+  onInputChange(event: any) {
+    const value = event.target.value;
+    const input = event.target;
+  
+    if (!/^\d+$/.test(value) || value.length < 10) {
+      input.classList.add('invalid');
+    } else {
+      input.classList.remove('invalid');
+    }
+  }
+  InputChange(event: any) {
+    const value = event.target.value;
+    const input = event.target;
+  
+    if (!/^[a-zA-Z0-9]+$/.test(value) || value.length <5  ) {
+      input.classList.add('invalid');
+    } else {
+      input.classList.remove('invalid');
+    }
+  }  
+  
 login = new LoginUsuario();
 // usuar = new Usuario();
 usuar: any;
@@ -97,8 +123,8 @@ loginForm = new FormGroup({
         timer: 1500
       });
     });
-  }
 
+  }
 
 
 }
