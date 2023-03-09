@@ -15,14 +15,14 @@
 								<div class="input-group-prepend">
 									<span class="input-group-text"><i data-feather="mail"></i></span>
 								</div>
-								<input type="text" class="input-group-text" placeholder="Cédula" id="cedula"
+								<input type="text" class="input-group-text" placeholder="Cédula"  onkeypress="return event.charCode >= 48 && event.charCode <= 57"  maxlength="10" #myInput minlength="10" (input)="onInputChange($event)" (keydown)="onKeyDown($event)" id="cedula"
 									name="cedula" [(ngModel)]="dataUser.cedula" required>
 							</div>
 							<div class="input-group mb-4">
 								<div class="input-group-prepend">
 									<span class="input-group-text"><i data-feather="lock"></i></span>
 								</div>
-								<input type="password" class="input-group-text" placeholder="Contraseña" id="password"
+								<input type="password" class="input-group-text" placeholder="Contraseña" id="password" maxlength="6" #myInput minlength="6" (input)="InputChange($event)" (keydown)="onKeyDown($event)"
 									name="password" [(ngModel)]="dataUser.password" required>
 							</div>
 
