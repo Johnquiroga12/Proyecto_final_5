@@ -4,6 +4,7 @@ import { HomePageRoutingModule } from './home-page-routing.module';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { BuscarPipe } from './buscar.pipe';
 import { FormsModule } from '@angular/forms';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { FormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     HomePageRoutingModule,
-    FormsModule
+    FormsModule,
+    NgxPaginationModule
   ],
   exports:[
     HomePageComponent

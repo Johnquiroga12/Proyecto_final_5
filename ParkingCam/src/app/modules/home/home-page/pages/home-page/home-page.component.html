@@ -41,7 +41,7 @@ new
 				</tr>
 			</thead>
 			<tbody>
-				<tr *ngFor="let registro of registros | buscar:buscarTabla">
+				<tr *ngFor="let registro of registros | buscar:buscarTabla | paginate: { itemsPerPage: 4, currentPage: page }">
 					<td>{{ registro.id_registro}} </td>
 					<td>{{ registro.fecha}} </td>
 					<td>{{ registro.hora_entrada}} </td>
@@ -58,6 +58,7 @@ new
 					</td>
 				</tr>
 			</tbody>
+			<pagination-controls (pageChange)="page = $event"></pagination-controls>
 		</table>
 	</div>
 </body> 
