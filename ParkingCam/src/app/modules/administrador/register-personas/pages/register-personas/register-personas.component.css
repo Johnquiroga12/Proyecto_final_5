@@ -1,4 +1,6 @@
-
+.campo-invalido {
+  border: 2px solid red;
+}
 .invalid {
   border: 2px solid red;
   background-color: #ffeeee;

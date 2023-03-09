@@ -33,7 +33,7 @@ export class AuthLoginComponent implements OnInit {
     const value = event.target.value;
     const input = event.target;
   
-    if (!/^[a-zA-Z0-9]+$/.test(value) || value.length <5  ) {
+    if (!/^[a-zA-Z0-9]+$/.test(value) || value.length <6  ) {
       input.classList.add('invalid');
     } else {
       input.classList.remove('invalid');

@@ -44,8 +44,8 @@
 									<span class="input-group-text"><i data-feather="text"></i></span>
 								</div>
 
-								<input required type="email" id="persona" class="input-group-text" name="correo"
-									[(ngModel)]="persona.correo" placeholder="Correo Electrónico">
+								<input required type="email" id="correo" class="input-group-text" name="correo" onblur="validarCorreo()"
+									[(ngModel)]="persona.correo" placeholder="Correo Electrónico" required> 
 
 							</div>
 
@@ -63,7 +63,7 @@
 									<span class="input-group-text"><i data-feather="text"></i></span>
 								</div>
 
-								<input  required type="text" id="persona" class="input-group-text" name="emergencia"
+								<input  required type="text" id="persona" class="input-group-text" name="emergencia" onkeypress="return event.charCode >= 48 && event.charCode <= 57"  maxlength="10" #myInput minlength="6"(input)="InputChange($event)" (keydown)=" onKeyDown($event)"
 									[(ngModel)]="persona.n_emergencia" placeholder="Contacto Emergencia">
 
 							</div>

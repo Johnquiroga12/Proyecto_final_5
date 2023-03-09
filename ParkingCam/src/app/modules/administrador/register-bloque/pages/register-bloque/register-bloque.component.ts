@@ -20,6 +20,22 @@ export class RegisterBloqueComponent implements OnInit{
   }
 
   createBloque(){
+
+    if(this.bloque.nombre === '' || this.bloque.plazas === ''  ){
+  
+    console.log("Error");
+  
+    Swal.fire({
+      position: 'top-end',
+      icon: 'warning',
+      title: 'Complete todos los registros',
+      showConfirmButton: false,
+      timer: 1500
+    })
+  
+    return null;
+      
+    }else{
     return this.bloqueService.saveBloque(this.bloque).subscribe(
       res => {
         this.router.navigate(['/administrador/lista-bloques'])
@@ -35,5 +51,6 @@ export class RegisterBloqueComponent implements OnInit{
 
       err => console.error(err)
     )
-  }
+      }
+      }
 }

@@ -10,13 +10,42 @@ import Swal from 'sweetalert2'
   styleUrls: ['./editar-persona.component.css']
 })
 export class EditarPersonaComponent implements OnInit {
+  
+
+  onKeyDown(event: KeyboardEvent) {
+    this.onInputChange(event);
+  }
+  onInputChange(event: any) {
+    const value = event.target.value;
+    const input = event.target;
+  
+    if (!/^\d+$/.test(value) || value.length < 10) {
+      input.classList.add('invalid');
+    } else {
+      input.classList.remove('invalid');
+    }
+  }
+  InputChange(event: any) {
+    const value = event.target.value;
+    const input = event.target;
+  
+    if (!/^\d+$/.test(value) || value.length < 6) {
+      input.classList.add('invalid');
+    } else {
+      input.classList.remove('invalid');
+    }
+  }
+
+
 
   sumatotal=0;
   persona = new Persona();
   perso: Persona[] = [];
   getclientes: Persona[] = [];
 dataname: boolean=false;
+
   
+
   tableIndex = 0;
 
   constructor(private regperso: PersonaService,   private router: Router, private acrouter: ActivatedRoute) { }
@@ -25,7 +54,28 @@ dataname: boolean=false;
     this.cargar();
     
   }
+
   createPersona(){
+    
+  if(this.persona.cedula === '' || this.persona.nombre === '' || this.persona.apellido === '' ||
+  this.persona.correo === '' || this.persona.celular === '' || this.persona.n_emergencia === ''
+  ||  this.persona.carrera==null || this.persona.cargo==null || this.persona.jornada==null
+  ){
+
+  console.log("Error");
+
+  Swal.fire({
+    position: 'top-end',
+    icon: 'warning',
+    title: 'Complete todos los registros',
+    showConfirmButton: false,
+    timer: 1500
+  })
+
+  return null;
+    
+  }else{
+
     return this.regperso.savePersona(this.persona).subscribe(
       res => {
         this.router.navigate(['/administrador/lista-personas']) 
@@ -44,13 +94,14 @@ dataname: boolean=false;
     
     )
   }
+  }
 
   cargar(): void {
     this.acrouter.params.subscribe(params => {
       let id = params['id']
       if (id) {
         this.dataname = true;
-        this.regperso.getPersona(id).subscribe((cliente) => this.persona = cliente)
+        this.regperso.getPersona(id).subscribe((per) => this.persona = per)
       }
     })
   }

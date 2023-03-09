@@ -51,7 +51,7 @@ export class RegisterPersonasComponent {
 
   if(this.persona.cedula === '' || this.persona.nombre === '' || this.persona.apellido === '' ||
     this.persona.correo === '' || this.persona.celular === '' || this.persona.n_emergencia === ''
-    ||  this.persona.carrera==null || this.persona.cargo==null || this.persona.jornada==null
+    ||  this.persona.carrera=='' || this.persona.cargo=='' || this.persona.jornada===''
     ){
 
     console.log("Error");

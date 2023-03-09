@@ -14,7 +14,7 @@
 								<div class="input-group-prepend">
 									<span class="input-group-text"><i data-feather="text"></i></span>
 								</div>
-								<input type="text" id="login" class="input-group-text" name="cedula" [(ngModel)] = "persona.cedula" placeholder="Cedula">
+								<input type="text" id="login" class="input-group-text" name="cedula" [(ngModel)] = "persona.cedula" placeholder="Cedula" onkeypress="return event.charCode >= 48 && event.charCode <= 57"  maxlength="10" #myInput minlength="10" (input)="onInputChange($event)" (keydown)="onKeyDown($event)">
 								
 								<div class="input-group-prepend">
 									<span class="input-group-text"><i data-feather="text"></i></span>
@@ -43,19 +43,19 @@
 								<div class="input-group-prepend">
 									<span class="input-group-text"><i data-feather="text"></i></span>
 								</div>
-								<input type="text" id="login" class="input-group-text" name="celular" [(ngModel)] = "persona.celular" placeholder="Celular">
+								<input type="text" id="login" class="input-group-text" name="celular" [(ngModel)] = "persona.celular" placeholder="Celular" onkeypress="return event.charCode >= 48 && event.charCode <= 57"  maxlength="10" #myInput minlength="6"(input)="InputChange($event)" (keydown)=" onKeyDown($event)">
 							
 								<div class="input-group-prepend">
 									<span class="input-group-text"><i data-feather="text"></i></span>
 								</div>
-								<input type="text" id="login" class="input-group-text" name="n_emergencia" [(ngModel)] = "persona.n_emergencia" placeholder="Numero Emergencia">
+								<input type="text" id="login" class="input-group-text" name="n_emergencia" [(ngModel)] = "persona.n_emergencia" placeholder="Numero Emergencia" onkeypress="return event.charCode >= 48 && event.charCode <= 57"  maxlength="10" #myInput minlength="6"(input)="InputChange($event)" (keydown)=" onKeyDown($event)"> 
 
 							</div>
 
 							
 
 							<div class="input-group mb-3">
-								<select [(ngModel)]="persona.carrera" class="form-select" name="ellegir"
+								<select [(ngModel)]="persona.carrera" class="form-select" name="carrera" 
 									style="font-size: 18px; height: 40px; width: 25px;">
 									<option  value="" selected disabled> seleccione su carrera </option>
 									<option value="TECNOLOGÍA SUPERIOR EN DESARROLLO DE SOFTWARE">TECNOLOGÍA SUPERIOR EN
@@ -107,7 +107,7 @@
 
 
 							<div class="input-group mb-3">
-								<select class="form-select" name="ellegir" aria-label="Default select example" [(ngModel)]="persona.cargo" id="cargo"
+								<select class="form-select" name="cargo" aria-label="Default select example" [(ngModel)]="persona.cargo" 
 								style="font-size: 18px; height: 40px; width: 25px;">
 									<option value="" selected disabled> seleccione su cargo </option>
 									<option value="Estudiante">Estudiante</option>

@@ -32,8 +32,8 @@
 								<input type="text" id="vehiculo" class="input-group-text" name="color" [(ngModel)] = "vehiculo.color" placeholder="Color">
 							</div>
 							<div class="input-group mb-3">
-								<select class="form-select" id="seleccionar" name="seleccion" id="vehiculs" [(ngModel)] = "vehiculo.persona">
-									<option selected disabled>Seleccione Persona</option>
+								<select class="form-select" id="persona" name="persona" id="vehiculs" [(ngModel)] = "vehiculo.persona">
+									<option value="" selected disabled>Seleccione Persona</option>
 									<option *ngFor="let persona of listaPersonas" [value]="persona.id_persona"> {{persona.nombre}} {{persona.apellido}}</option>
 								</select>
 							</div>

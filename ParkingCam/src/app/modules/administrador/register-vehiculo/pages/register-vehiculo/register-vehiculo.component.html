@@ -15,7 +15,7 @@
 									<span class="input-group-text"><i data-feather="text"></i></span>
 								</div>
 								<input type="text" id="vehiculo" class="input-group-text" name="placa"
-									[(ngModel)]="vehiculo.placa" placeholder="Placa">
+									[(ngModel)]="vehiculo.placa" placeholder="Placa" maxlength="6" #myInput minlength="6"(input)="InputChange($event)" (keydown)=" onKeyDown($event)">
 
 								<div class="input-group-prepend">
 									<span class="input-group-text"><i data-feather="text"></i></span>
@@ -53,12 +53,11 @@
 
 
 							<div class="input-group mb-3">
-
-								<select class="form-select" id="seleccionar" name="seleccion" id="vehiculs"
-									[(ngModel)]="vehiculo.persona">
-									<option selected disabled>Seleccione Persona</option>
+								<select class="form-select" id="vehiculs" name="persona" [(ngModel)]="vehiculo.persona">
+									<option value="" selected disabled>Persona..........</option>
 									<option *ngFor="let persona of listaPersonas" [value]="persona.id_persona">
-										{{persona.nombre}} {{persona.apellido}}</option>
+										{{persona.nombre}} {{persona.apellido}}
+									</option>
 								</select>
 							</div>
 
