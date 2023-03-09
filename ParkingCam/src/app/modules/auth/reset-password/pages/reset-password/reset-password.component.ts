@@ -93,7 +93,7 @@ export class ResetPasswordComponent implements OnInit {
         }, (err)=>{
           Swal.fire({
             icon: 'error',
-            title: 'Ingrese un dato válido.',
+            title: 'Ingrese una cedula valida. ',
             showConfirmButton: false,
             timer: 1500,
           });
