@@ -1,0 +1,117 @@
+
+.invalid {
+    border: 2px solid red;
+    background-color: #ffeeee;
+    color: #ff0000;
+  }
+  .auth-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    min-width: 100%;
+    min-height: 100vh;
+    background: #ffffff;
+  }
+  
+  
+  .col-md-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  
+  .input-group-prepend {
+    margin-right: -1.5px;
+    margin-left: -1.5px;
+  }
+  
+  .mb-3,
+  .my-3 {
+      margin-bottom: 1rem !important;
+  }
+  
+  .input-group-prepend,
+  .input-group-append {
+      display: flex;
+  }
+  
+  .input-group-prepend .btn,
+    .input-group-append .btn {
+      position: relative;
+      z-index: 2;
+  }
+  
+  
+  .input-group-prepend .btn:focus,
+      .input-group-append .btn:focus {
+      z-index: 3;
+  }
+  
+  .input-group-prepend .btn + .btn,
+    .input-group-prepend .btn + .input-group-text,
+    .input-group-prepend .input-group-text + .input-group-text,
+    .input-group-prepend .input-group-text + .btn,
+    .input-group-append .btn + .btn,
+    .input-group-append .btn + .input-group-text,
+    .input-group-append .input-group-text + .input-group-text,
+    .input-group-append .input-group-text + .btn {
+      margin-left: -1.5px;
+  }
+  
+  .input-group-prepend {
+      margin-right: -1.5px;
+  }
+  .mb-2,
+  .my-2 {
+      margin-bottom: 0.5rem !important;
+  }
+  
+  .f-w-400 {
+    font-weight: 400;
+  }
+  
+  
+  .btn-primary {
+    color: #010101;
+    background-color: #81b9db;
+    border-color: #7267EF;
+  }
+  
+  .btn-primary:hover {
+    color: #fff;
+    background-color: #0a58a5;
+    border-color: #4739ea;
+  }
+  
+  .btn-primary:focus, .btn-primary.focus {
+    color: #fff;
+    background-color: #5244eb;
+    border-color: #4739ea;
+    box-shadow: 0 0 0 0.2rem rgba(135, 126, 241, 0.5);
+  }
+  
+  .btn-primary.disabled, .btn-primary:disabled {
+    color: #fff;
+    background-color: #7267EF;
+    border-color: #7267EF;
+  }
+  
+  .btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active,
+  .show > .btn-primary.dropdown-toggle {
+    color: #fff;
+    background-color: #4739ea;
+    border-color: #3c2de9;
+  }
+  
+  .btn-primary:not(:disabled):not(.disabled):active:focus, .btn-primary:not(:disabled):not(.disabled).active:focus,
+    .show > .btn-primary.dropdown-toggle:focus {
+    box-shadow: 0 0 0 0.2rem rgba(135, 126, 241, 0.5);
+  }
+  
+  .card{
+    transform: translate(-5%, -10%);
+    
+  }
+  
+  

@@ -75,7 +75,7 @@ const routes: Routes = [
   },
 
   {
-    path: 'editar-user', canActivate: [AuthguardGuard], data: {expectedRoles: ['Administrador', 'Secretaria'] },
+    path: 'editar-user/:id', canActivate: [AuthguardGuard], data: {expectedRoles: ['Administrador', 'Secretaria'] },
     loadChildren: () => import("./editar-user/editar-user.module").then(m => m.EditarUserModule)
   },
 

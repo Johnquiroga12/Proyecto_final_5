@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 import { EditarUserRoutingModule } from './editar-user-routing.module';
 import { EditarUserComponent } from './pages/editar-user/editar-user.component';
@@ -11,7 +12,9 @@ import { EditarUserComponent } from './pages/editar-user/editar-user.component';
   ],
   imports: [
     CommonModule,
-    EditarUserRoutingModule
+    EditarUserRoutingModule,
+    FormsModule
+  
   ],
   exports: [
     EditarUserComponent

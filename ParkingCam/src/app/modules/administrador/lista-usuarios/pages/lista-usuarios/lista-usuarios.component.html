@@ -28,12 +28,12 @@
 					<td>{{ usuario.rol}} </td>
 					<td>{{ usuario.estado}} </td>
 					<td>{{ usuario.persona.nombre}} </td>
+					<td>
+						<button class="btn btn-light " [routerLink]="['/administrador/editar-user', usuario.id_usuario ] " >Editar</button>
+					</td>
 
 					<td>
 						<button class="btn btn-light" (click)="descativar2(usuario.id_usuario) ">Eliminar</button>
-					</td>
-					<td>
-						<button class="btn btn-light">Editar</button>
 					</td>
 				</tr>
 			</tbody>
