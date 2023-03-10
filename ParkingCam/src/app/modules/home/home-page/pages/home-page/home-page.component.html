@@ -1,13 +1,10 @@
-
-
-
- <div class="card-container">
-  <div class="card" style="width: 18rem;" *ngFor="let data of datosEstadiscos | keyvalue">
-	<div class="card-body">
-	  <h3 class="card-title">{{data.key}}</h3>
-	  <p class="card-text">Datos: {{data.value }}</p>
+<div class="card-container">
+	<div class="card" style="width: 18rem;" *ngFor="let data of datosEstadiscos | keyvalue">
+		<div class="card-body">
+			<h3 class="card-title">{{data.key}}</h3>
+			<p class="card-text">Datos: {{data.value }}</p>
+		</div>
 	</div>
-  </div>
 
 
 
@@ -32,13 +29,18 @@
 					<th>Placa</th>
 					<th>Propietario</th>
 					<th>Bloque</th>
+					<th>Bloque</th>
+
+					<!--
 					<th>Observaciones</th>
+-->
 					<th></th>
 
 				</tr>
 			</thead>
 			<tbody>
-				<tr *ngFor="let registro of registros | buscar:buscarTabla | paginate: { itemsPerPage: 4, currentPage: page }">
+				<tr
+					*ngFor="let registro of registros | buscar:buscarTabla | paginate: { itemsPerPage: 4, currentPage: page }">
 					<td>{{ registro.id_registro}} </td>
 					<td>{{ registro.fecha}} </td>
 					<td>{{ registro.hora_entrada}} </td>
@@ -46,9 +48,10 @@
 					<td>{{ registro.vehiculo.placa}} </td>
 					<td>{{ registro.vehiculo.persona.nombre}} </td>
 					<td>{{ registro.bloque.nombre}} </td>
-
-					<td>{{ registro.observaciones}} </td>
-
+					<td>{{ registro.condicion}} </td>
+					<!--
+						<td>{{ registro.observaciones}} </td>
+-->
 					<td>
 						<button class="btn btn-light"
 							[routerLink]="['/administrador/detalle-registros', registro.id_registro]">Detalles</button>
@@ -58,7 +61,7 @@
 			<pagination-controls (pageChange)="page = $event"></pagination-controls>
 		</table>
 	</div>
-</body> 
+</body>
 
 
 
@@ -66,9 +69,9 @@
 	<footer class="bg-light text-center text-lg-start">
 		<!-- Copyright -->
 		<div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-		  © 2023 Copyright:
-		  <a class="text-dark" href="https://mdbootstrap.com/">ParkingCam</a>
+			© 2023 Copyright:
+			<a class="text-dark" href="https://mdbootstrap.com/">ParkingCam</a>
 		</div>
 		<!-- Copyright -->
-	  </footer>
+	</footer>
 </div>

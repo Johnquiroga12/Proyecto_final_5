@@ -1,12 +1,12 @@
+
 <body>
-	<div id="wrapper">
+	<div id="contenedorli">
 		<h1>Listado de Registros</h1>
 
 		<div class="buscador mb-3">
-			<input class="form-control" type="search" placeholder="Buscar..." [(ngModel)]="buscarTabla">	
+			<input class="form-control" type="search" placeholder="Buscar..." [(ngModel)]="buscarTabla">
 
 		</div>
-
 		<table id="keywords" cellspacing="0" cellpadding="0">
 			<thead>
 				<tr>
@@ -14,10 +14,12 @@
 					<th>Fecha</th>
 					<th>Hora Entrada</th>
 					<th>Hora Salida</th>
+					<th>Placa</th>
+					<th>Propietario</th>
+					<th>Bloque</th>
 					<th>Observaciones</th>
 					<th></th>
-					<th></th>
-	
+
 				</tr>
 			</thead>
 			<tbody>
@@ -26,18 +28,19 @@
 					<td>{{ registro.fecha}} </td>
 					<td>{{ registro.hora_entrada}} </td>
 					<td>{{ registro.hora_salida}} </td>
+					<td>{{ registro.vehiculo.placa}} </td>
+					<td>{{ registro.vehiculo.persona.nombre}} </td>
+					<td>{{ registro.bloque.nombre}} </td>
+
 					<td>{{ registro.observaciones}} </td>
-	
+
 					<td>
-						<button class="btn btn-light" [routerLink] = "['/administrador/detalle-registros', registro.id_registro]">Detalles</button> 
+						<button class="btn btn-light"
+							[routerLink]="['/administrador/detalle-registros', registro.id_registro]">Detalles</button>
 					</td>
-					<td>
-						<button class="btn btn-light" (click)="descativar2(registro.id_registro) " >Eliminar</button> 
-					</td>				
 				</tr>
 			</tbody>
-			<pagination-controls (pageChange)="page = $event" previousLabel="Previous" nextLabel="Next"></pagination-controls>
-
+			<pagination-controls (pageChange)="page = $event"></pagination-controls>
 		</table>
 	</div>
-</body>
+</body> 

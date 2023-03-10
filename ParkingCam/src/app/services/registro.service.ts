@@ -3,13 +3,13 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Registro } from './class/registro';
 
-const API_URL = 'http://localhost:8080/api';
+const API_URL = 'http://138.197.127.252:8080/api';
 @Injectable({
   providedIn: 'root'
 })
 export class RegistroService {
 
-  URL: string = 'http://localhost:8080/api/registro/';
+  URL: string = 'http://138.197.127.252:8080/api/registro/';
   private httpHeaders = new HttpHeaders({'Content-Type' : 'application/json'});
 
   constructor(private http:HttpClient) { }

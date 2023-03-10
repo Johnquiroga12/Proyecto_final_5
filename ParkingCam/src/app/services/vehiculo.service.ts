@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class VehiculoService {
 
-  URL: string = 'http://localhost:8080/api/vehiculo/';
+  URL: string = 'http://138.197.127.252:8080/api/vehiculo/';
   
   private httpHeaders = new HttpHeaders({'Content-Type': 'application/json'});
   

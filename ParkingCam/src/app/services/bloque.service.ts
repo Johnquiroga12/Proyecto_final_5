@@ -8,7 +8,7 @@ import { Bloque } from './class/bloque';
 })
 export class BloqueService {
 
-  URL: string = 'http://localhost:8080/api/bloque/'
+  URL: string = 'http://138.197.127.252:8080/api/bloque/'
   private httpHeaders = new HttpHeaders({'Content-Type': 'application/json'});
   
   constructor(private http: HttpClient) { }

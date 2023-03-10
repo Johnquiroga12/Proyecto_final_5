@@ -1,3 +1,4 @@
+import { EditarUserModule } from './editar-user/editar-user.module';
 import { DetallePersonasComponent } from './detalle-personas/pages/detalle-personas/detalle-personas.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -72,6 +73,12 @@ const routes: Routes = [
     path: 'editar-bloque/:id', canActivate: [AuthguardGuard], data: {expectedRoles: ['Administrador', 'Secretaria'] },
     loadChildren: () => import("./editar-bloque/editar-bloque.module").then(m => m.EditarBloqueModule)
   },
+
+  {
+    path: 'editar-user', canActivate: [AuthguardGuard], data: {expectedRoles: ['Administrador', 'Secretaria'] },
+    loadChildren: () => import("./editar-user/editar-user.module").then(m => m.EditarUserModule)
+  },
+
   {
     path: 'registro-personas', canActivate: [AuthguardGuard], data: {expectedRoles: ['Administrador', 'Secretaria'] },
     loadChildren: () => import("./register-personas/register-personas.module").then(m => m.RegisterPersonasModule)

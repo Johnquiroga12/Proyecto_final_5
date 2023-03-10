@@ -3,13 +3,13 @@ import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Usuario } from './class/usuario';
 
-const API_URL = 'http://localhost:8080/api';
+const API_URL = 'http://138.197.127.252:8080/api';
 @Injectable({
   providedIn: 'root'
 })
 export class UsuarioService {
 
-  URL: string = 'http://localhost:8080/api/usuario/';
+  URL: string = 'http://138.197.127.252:8080/api/usuario/';
   private httpHeaders = new HttpHeaders({'Content-Type': 'application/json'});
   
   constructor(private http: HttpClient) { }

@@ -5,13 +5,13 @@ import { Injectable } from '@angular/core';
 import { ResponseI } from './modelo/response.interface';
 import { LoginUsuario } from './class/login';
 
-const API_URL = 'http://localhost:8080/api';
+const API_URL = 'http://138.197.127.252:8080/api';
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
 
-  URL: string = 'http://localhost:8080/api/';
+  URL: string = 'http://138.197.127.252:8080/api/';
 
   constructor(private http: HttpClient) { }
 
