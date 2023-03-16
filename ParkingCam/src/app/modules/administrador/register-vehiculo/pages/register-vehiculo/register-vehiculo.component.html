@@ -15,7 +15,8 @@
 									<span class="input-group-text"><i data-feather="text"></i></span>
 								</div>
 								<input type="text" id="vehiculo" class="input-group-text" name="placa"
-									[(ngModel)]="vehiculo.placa" placeholder="Placa" maxlength="8" #myInput minlength="6"(input)="InputChange($event)" (keydown)=" onKeyDown($event)">
+									[(ngModel)]="vehiculo.placa" placeholder="Placa" maxlength="8" #myInput
+									minlength="8" (input)="InputChange($event)" (keydown)=" onKeyDown($event)">
 
 								<div class="input-group-prepend">
 									<span class="input-group-text"><i data-feather="text"></i></span>
@@ -53,14 +54,15 @@
 
 
 							<div class="input-group mb-3">
-								<select class="form-select" id="vehiculs" name="persona" [(ngModel)]="vehiculo.persona">
-									<option value="" selected disabled>Persona..........</option>
+								<input type="text" class="form-control" list="datalistOptions" id="idpersona"
+									name="idpers" list="datalistOptions" id="exampleDataList"
+									placeholder=" Seleccione una persona ..." [(ngModel)]="vehiculo.persona">
+								<datalist id="datalistOptions">
 									<option *ngFor="let persona of listaPersonas" [value]="persona.id_persona">
 										{{persona.nombre}} {{persona.apellido}}
 									</option>
-								</select>
+								</datalist>
 							</div>
-
 
 							<input type="submit" class="btn btn-primary" value="Guardar Registro">
 

@@ -38,8 +38,7 @@ export class HeaderComponent implements OnInit {
         if (data != null) {
           this.isLogin = true;
           this.informacionUser = data;
-          this.nombreUsuario =
-            data.persona?.nombre + ' ' + data.persona?.apellido;
+          this.nombreUsuario = data.persona?.nombre + ' ' + data.persona?.apellido;
           this.nombreRol = data.rol;
 
           switch (data.rol) {

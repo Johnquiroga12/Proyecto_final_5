@@ -3,10 +3,14 @@
 	<div id="contenedorli">
 		<h1>Listado de Registros</h1>
 
+
 		<div class="buscador mb-3">
-			<input class="form-control" type="search" placeholder="Buscar..." [(ngModel)]="buscarTabla">
+			<input class="form-control" type="search" placeholder="Buscar..." [(ngModel)]="buscarTabla">	
+			<button id="nuevo" type="button" class="btn btn-light" (click)="onImprimir()">Nuevo</button>
 
 		</div>
+
+
 		<table id="keywords" cellspacing="0" cellpadding="0">
 			<thead>
 				<tr>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Registro } from 'src/app/services/class/registro';
+import { ImpresionService } from 'src/app/services/impresion.service';
 import { RegistroService } from 'src/app/services/registro.service';
 import Swal from 'sweetalert2'
 
@@ -15,11 +16,12 @@ export class ListaRegistrosComponent implements OnInit {
   page: number;
 
 
-  constructor(private registroService: RegistroService) { }
+  constructor(private registroService: RegistroService,
+    private srvImpresion: ImpresionService) { }
 
   ngOnInit(): void {
 
-   
+
     setInterval(() => {
       this.listar();
     }, 1000);
@@ -28,14 +30,31 @@ export class ListaRegistrosComponent implements OnInit {
   listar() {
     this.registroService.Registro().subscribe(
       res => this.registros = res
+
     )
+  }
+
+  onImprimir() {
+
+    const encabezado = ["ID Registro", "Fecha", "Marca", "Placa", "Propietario", "Cargo", "Hora", "Condición", "Observaciones"]
+    
+    const cuerpo = [
+
+      
+      ["1", "13/03/2023", "Entrada", "NA"],
+      ["1", "13/03/2023", "Entrada", "NA"]
+
+    ]; 
+      
+
+    this.srvImpresion.imprimir(encabezado, cuerpo, "Lista Registros", true);
   }
 
 
   act: string = 'D';
   ve: any;
   idMascotaDelete: any;
-  
+
   descativar2(id: any) {
     // this.registroService.getRegistro(id).subscribe(data => {
     //   this.ve = data
